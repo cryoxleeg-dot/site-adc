@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where python:*)",
+      "Bash(where python3:*)",
+      "Bash(where npx:*)",
+      "Bash(where node:*)",
+      "Bash(npx --version)",
+      "Bash(python -m http.server --help)",
+      "Bash(python3 -m http.server --help)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

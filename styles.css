@@ -1,0 +1,1227 @@
+/* ============================================
+   VARIABLES CSS — Palette de couleurs
+   Modifier ici pour changer les couleurs partout.
+   ============================================ */
+:root {
+  --couleur-charbon: #1A1A1A;
+  --couleur-ambre: #E8943A;
+  --couleur-ambre-fonce: #D07A28;
+  --couleur-or-doux: #F5C16C;
+  --couleur-creme: #F9F6F0;
+  --couleur-blanc: #FFFFFF;
+  --couleur-gris: #4A4A4A;
+  --couleur-texte: #333333;
+
+  /* Hauteur de la barre de navigation (utilisée pour le décalage des sections) */
+  --hauteur-nav: 64px;
+
+  /* Padding vertical des sections (responsive) */
+  --section-py: clamp(60px, 8vw, 100px);
+}
+
+/* ============================================
+   RÉINITIALISATION ET BASE
+   ============================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--hauteur-nav);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--couleur-texte);
+  line-height: 1.6;
+}
+
+/* ============================================
+   TYPOGRAPHIE — Hiérarchie et espacement
+   ============================================ */
+h1 {
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h2 {
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+h3 {
+  letter-spacing: normal;
+  line-height: 1.3;
+}
+
+p {
+  letter-spacing: 0.01em;
+}
+
+/* ============================================
+   LIEN D'ACCÈS RAPIDE (Skip Link)
+   ============================================ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  background-color: var(--couleur-ambre);
+  color: var(--couleur-charbon);
+  padding: 12px 24px;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================
+   BARRE DE NAVIGATION FIXE
+   ============================================ */
+.nav-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--hauteur-nav);
+  background-color: var(--couleur-charbon);
+  z-index: 1000;
+  transition: box-shadow 0.3s ease;
+}
+
+.nav-header.nav-scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 1010;
+}
+
+.nav-logo-img {
+  height: 32px;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+
+.nav-logo:hover .nav-logo-img {
+  opacity: 0.8;
+}
+
+/* Liens de navigation — mobile overlay par défaut */
+.nav-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(26, 26, 26, 0.97);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1005;
+}
+
+.nav-links.menu-ouvert {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-links a {
+  color: var(--couleur-blanc);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a:hover {
+  color: var(--couleur-ambre);
+}
+
+.nav-links a.nav-lien-actif {
+  color: var(--couleur-ambre);
+}
+
+/* Groupe droite : langue + hamburger */
+.nav-droite {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 1010;
+}
+
+/* Sélecteur de langue */
+.nav-langue {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btn-langue {
+  background: none;
+  border: none;
+  padding: 8px 4px;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  transition: color 0.2s;
+}
+
+.btn-langue-active {
+  color: var(--couleur-ambre);
+  cursor: default;
+}
+
+.btn-langue-inactive {
+  color: var(--couleur-blanc);
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.btn-langue-inactive:hover {
+  opacity: 1;
+  color: var(--couleur-or-doux);
+}
+
+.langue-separateur {
+  color: var(--couleur-gris);
+}
+
+/* ============================================
+   BOUTON HAMBURGER (masqué sur desktop)
+   ============================================ */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1010;
+}
+
+.hamburger-barre {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--couleur-blanc);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger.ouvert .hamburger-barre:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.ouvert .hamburger-barre:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.ouvert .hamburger-barre:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================
+   SECTIONS — Styles communs
+   ============================================ */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--hauteur-nav) 16px 0;
+  scroll-margin-top: var(--hauteur-nav);
+}
+
+.section-contenu {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+/* h2 de section — style unifié avec accent ambre */
+.section h1,
+.section h2 {
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+/* h2 sur fond clair → charbon */
+.section-services h2,
+.section-a-propos h2 {
+  color: var(--couleur-charbon);
+}
+
+/* h2 sur fond foncé → or doux */
+.section-accueil h2,
+.section-contact h2 {
+  color: var(--couleur-or-doux);
+}
+
+/* Accent ambre sous les h2 de section (pas le hero h1 ni la modale) */
+.section-services h2::after,
+.section-a-propos h2::after,
+.section-contact h2::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  background-color: var(--couleur-ambre);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* ============================================
+   BOUTONS — Style unifié
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  min-height: 44px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--couleur-ambre);
+  outline-offset: 2px;
+}
+
+/* Bouton primaire — fond ambre, texte charbon (contraste WCAG AA 6:1+) */
+.btn-primaire {
+  background-color: var(--couleur-ambre);
+  color: var(--couleur-charbon);
+  border: 2px solid var(--couleur-ambre);
+}
+
+.btn-primaire:hover {
+  background-color: var(--couleur-ambre-fonce);
+  border-color: var(--couleur-ambre-fonce);
+  color: var(--couleur-charbon);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(232, 148, 58, 0.3);
+}
+
+/* Bouton secondaire — bordure blanche, fond transparent */
+.btn-secondaire {
+  background-color: transparent;
+  color: var(--couleur-blanc);
+  border: 2px solid var(--couleur-blanc);
+}
+
+.btn-secondaire:hover {
+  background-color: var(--couleur-ambre);
+  border-color: var(--couleur-ambre);
+  color: var(--couleur-charbon);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(232, 148, 58, 0.3);
+}
+
+/* Bouton outline ambre (cartes de services 1-3) */
+.btn-carte-outline {
+  background-color: transparent;
+  color: var(--couleur-ambre);
+  border: 2px solid var(--couleur-ambre);
+  width: 100%;
+  padding: 12px 20px;
+}
+
+.btn-carte-outline:hover {
+  background-color: var(--couleur-ambre);
+  color: var(--couleur-charbon);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(232, 148, 58, 0.3);
+}
+
+/* Bouton plein (carte tenue de livres) */
+.btn-carte-plein {
+  width: 100%;
+  padding: 12px 20px;
+}
+
+/* Bouton d'envoi du formulaire */
+.btn-envoyer {
+  width: 100%;
+  padding: 14px 32px;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+/* ============================================
+   HERO — Section Accueil
+   ============================================ */
+.section-accueil {
+  min-height: 100vh;
+  padding-top: var(--hauteur-nav);
+  background-color: var(--couleur-charbon);
+  color: var(--couleur-blanc);
+  background-image: radial-gradient(
+    ellipse at 50% 40%,
+    rgba(232, 148, 58, 0.04) 0%,
+    transparent 70%
+  );
+  position: relative;
+}
+
+.hero-contenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-logo {
+  max-width: 80px;
+  height: auto;
+  animation: hero-apparition 0.8s ease-out both;
+}
+
+.hero-titre {
+  color: var(--couleur-or-doux);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+}
+
+.hero-sous-titre {
+  color: var(--couleur-blanc);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+}
+
+.hero-description {
+  color: #B0B0B0;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.hero-boutons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.hero-boutons .btn {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Animations séquentielles du hero */
+@keyframes hero-apparition {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-anim {
+  animation: hero-apparition 0.7s ease-out both;
+}
+
+/* Indicateur de scroll */
+.hero-scroll-indicateur {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  animation: hero-apparition 0.7s ease-out 1.2s both;
+}
+
+.hero-chevron {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid var(--couleur-blanc);
+  border-bottom: 2px solid var(--couleur-blanc);
+  transform: rotate(45deg);
+  opacity: 0.5;
+  animation: chevron-rebond 2s ease-in-out infinite;
+}
+
+.hero-scroll-indicateur:hover .hero-chevron {
+  opacity: 1;
+  border-color: var(--couleur-ambre);
+}
+
+@keyframes chevron-rebond {
+  0%, 100% {
+    transform: rotate(45deg) translateY(0);
+  }
+  50% {
+    transform: rotate(45deg) translateY(8px);
+  }
+}
+
+/* ============================================
+   SERVICES — Section
+   ============================================ */
+.section-services {
+  background-color: var(--couleur-blanc);
+  color: var(--couleur-texte);
+  min-height: auto;
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+
+.services-contenu {
+  max-width: 960px;
+}
+
+.services-sous-titre {
+  color: var(--couleur-gris);
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+}
+
+/* Grille des cartes — mobile : 1 colonne */
+.services-grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  text-align: left;
+}
+
+.carte-service {
+  background-color: var(--couleur-creme);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carte-service:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.carte-icone {
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.carte-titre {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--couleur-charbon);
+  margin-bottom: 12px;
+}
+
+.carte-description {
+  font-size: 0.9rem;
+  color: var(--couleur-gris);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.carte-tarif {
+  margin-bottom: 20px;
+}
+
+.tarif-sur-demande {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--couleur-gris);
+}
+
+.tarif-prix {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--couleur-ambre);
+  margin-bottom: 8px;
+}
+
+.tarif-exclusions {
+  font-size: 0.75rem;
+  color: var(--couleur-gris);
+  line-height: 1.4;
+}
+
+/* ============================================
+   À PROPOS — Section
+   ============================================ */
+.section-a-propos {
+  background-color: var(--couleur-creme);
+  color: var(--couleur-texte);
+  min-height: auto;
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+
+.apropos-contenu {
+  max-width: 960px;
+}
+
+.apropos-sous-titre {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--couleur-charbon);
+  margin-bottom: 20px;
+}
+
+.apropos-philosophie {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.apropos-texte {
+  color: var(--couleur-gris);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.apropos-separateur {
+  border: none;
+  width: 56px;
+  height: 3px;
+  background-color: var(--couleur-ambre);
+  margin: 44px auto;
+  border-radius: 2px;
+}
+
+/* Grille des profils — mobile : 1 colonne */
+.equipe-grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.carte-profil {
+  background-color: var(--couleur-blanc);
+  border-radius: 12px;
+  padding: 28px 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Photo de profil */
+.photo-profil {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--couleur-ambre);
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.photo-profil:hover {
+  box-shadow: 0 0 0 4px rgba(232, 148, 58, 0.2);
+}
+
+.photo-placeholder {
+  background-color: #D0D0D0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-initiales {
+  color: var(--couleur-blanc);
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.profil-nom {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--couleur-charbon);
+  margin-bottom: 6px;
+}
+
+.profil-role {
+  color: var(--couleur-ambre);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.profil-etudes {
+  color: var(--couleur-gris);
+  font-size: 0.75rem;
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.profil-description {
+  color: var(--couleur-gris);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
+/* ============================================
+   CONTACT — Section
+   ============================================ */
+.section-contact {
+  background-color: var(--couleur-charbon);
+  color: var(--couleur-blanc);
+  min-height: auto;
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+
+.contact-contenu {
+  max-width: 960px;
+}
+
+.contact-sous-titre {
+  color: #B0B0B0;
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+}
+
+.contact-grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  text-align: left;
+}
+
+.contact-infos-titre {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--couleur-blanc);
+  margin-bottom: 24px;
+}
+
+.contact-liste {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.contact-liste li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #B0B0B0;
+  font-size: 0.9rem;
+}
+
+.contact-icone {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.contact-lien {
+  color: var(--couleur-blanc);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-lien:hover {
+  color: var(--couleur-ambre);
+}
+
+.contact-note {
+  color: #808080;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin-top: 16px;
+}
+
+/* Formulaire */
+.champ-groupe {
+  margin-bottom: 18px;
+}
+
+.champ-groupe label {
+  display: block;
+  color: var(--couleur-blanc);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.champ-groupe input[type="text"],
+.champ-groupe input[type="email"],
+.champ-groupe input[type="tel"],
+.champ-groupe select,
+.champ-groupe textarea {
+  width: 100%;
+  background-color: #2A2A2A;
+  border: 1px solid #3A3A3A;
+  border-radius: 8px;
+  color: var(--couleur-blanc);
+  padding: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 44px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.champ-groupe input:focus,
+.champ-groupe select:focus,
+.champ-groupe textarea:focus {
+  outline: none;
+  border-color: var(--couleur-ambre);
+  box-shadow: 0 0 0 2px rgba(232, 148, 58, 0.2);
+}
+
+.champ-groupe textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.champ-groupe select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B0B0B0' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.champ-groupe select option {
+  background-color: #2A2A2A;
+  color: var(--couleur-blanc);
+}
+
+/* Case de consentement (Loi 25) */
+.champ-consentement {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.consentement-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.consentement-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--couleur-ambre);
+  cursor: pointer;
+}
+
+.consentement-texte {
+  color: #B0B0B0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.lien-politique {
+  color: var(--couleur-ambre);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+.lien-politique:hover {
+  color: var(--couleur-or-doux);
+}
+
+.champs-obligatoires {
+  color: #808080;
+  font-size: 0.75rem;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* ============================================
+   MODALE — Politique de confidentialité
+   ============================================ */
+.modale-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modale-overlay.modale-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modale-contenu {
+  background-color: var(--couleur-blanc);
+  color: var(--couleur-texte);
+  border-radius: 12px;
+  max-width: 700px;
+  width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 28px 20px;
+  position: relative;
+}
+
+.modale-fermer {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--couleur-gris);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.modale-fermer:hover {
+  color: var(--couleur-charbon);
+}
+
+.politique-texte h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--couleur-charbon);
+  margin-bottom: 8px;
+}
+
+.politique-date {
+  color: var(--couleur-gris);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.politique-texte h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--couleur-charbon);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.politique-texte p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--couleur-gris);
+  margin-bottom: 4px;
+}
+
+.politique-texte a {
+  color: var(--couleur-ambre);
+}
+
+/* ============================================
+   PIED DE PAGE
+   ============================================ */
+.footer {
+  background-color: var(--couleur-charbon);
+  color: #888888;
+  padding: 36px 24px;
+  font-size: 0.8125rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-politique {
+  margin: 0;
+}
+
+.footer-politique .lien-politique {
+  color: #888888;
+  text-decoration: none;
+}
+
+.footer-politique .lien-politique:hover {
+  color: var(--couleur-ambre);
+}
+
+/* ============================================
+   ANIMATIONS AU DÉFILEMENT (Scroll Reveal)
+   Les éléments ne sont masqués QUE si JS est actif.
+   Sans JS, tout reste visible.
+   ============================================ */
+
+/* État initial : invisible (seulement si JS est actif) */
+.js-enabled .scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* État final : visible (classe ajoutée par l'observer) */
+.js-enabled .scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Délais en cascade pour les cartes de services */
+.js-enabled .carte-service:nth-child(1) { transition-delay: 0s; }
+.js-enabled .carte-service:nth-child(2) { transition-delay: 0.1s; }
+.js-enabled .carte-service:nth-child(3) { transition-delay: 0.2s; }
+.js-enabled .carte-service:nth-child(4) { transition-delay: 0.3s; }
+
+/* ============================================
+   SCROLLBAR PERSONNALISÉE (WebKit)
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--couleur-charbon);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3A3A3A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--couleur-ambre);
+}
+
+/* ============================================
+   RESPONSIVE — Tablette portrait (≥ 576px)
+   ============================================ */
+@media (min-width: 576px) {
+
+  .section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .hero-logo {
+    max-width: 100px;
+  }
+
+  .hero-boutons {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .hero-boutons .btn {
+    width: auto;
+    max-width: none;
+  }
+
+  .services-grille {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .carte-service {
+    padding: 32px 28px;
+  }
+
+  .carte-profil {
+    padding: 32px 28px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE — Tablette paysage / petit desktop (≥ 768px)
+   ============================================ */
+@media (min-width: 768px) {
+
+  .nav-logo-img {
+    height: 40px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    flex-direction: row;
+    gap: 32px;
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    min-height: 0;
+  }
+
+  .btn-langue {
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .apropos-philosophie {
+    max-width: 800px;
+  }
+
+  .equipe-grille {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grille {
+    grid-template-columns: 2fr 3fr;
+    gap: 48px;
+  }
+
+  .modale-overlay {
+    padding: 24px;
+  }
+
+  .modale-contenu {
+    width: 100%;
+    max-height: 85vh;
+    padding: 40px 36px;
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    gap: 0;
+    text-align: left;
+    justify-content: space-between;
+  }
+
+  .champ-groupe input[type="text"],
+  .champ-groupe input[type="email"],
+  .champ-groupe input[type="tel"],
+  .champ-groupe select,
+  .champ-groupe textarea {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVE — Desktop (≥ 1024px)
+   ============================================ */
+@media (min-width: 1024px) {
+
+  .hero-logo {
+    max-width: 120px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITÉ — Réduction des animations
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Afficher tout immédiatement, pas d'animation scroll reveal */
+  .js-enabled .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

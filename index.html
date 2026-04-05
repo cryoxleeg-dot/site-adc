@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Titre SEO (mis à jour par script.js selon la langue) -->
+  <title>Affaire de Chiffres | CPA Montréal — Fiscalité, Audit, Comptabilité</title>
+
+  <!-- Meta SEO (mises à jour par script.js selon la langue) -->
+  <meta name="description" id="meta-description" content="Cabinet CPA à Montréal offrant des services de planification fiscale, audit et certification, intégration technologique et tenue de livres pour particuliers, travailleurs autonomes et PME. Fondé en 2017.">
+  <meta name="keywords" id="meta-keywords" content="CPA Montréal, comptable Montréal, fiscalité, audit, tenue de livres, planification fiscale, intégration technologique, cabinet comptable Montérégie, Affaire de Chiffres">
+  <meta name="robots" content="index, follow">
+
+  <!-- DOMAINE : Remplacer l'URL ci-dessous par votre nom de domaine final -->
+  <link rel="canonical" href="https://affairedechiffres.com/">
+
+  <!-- Open Graph (partage réseaux sociaux) — mis à jour par script.js -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Affaire de Chiffres">
+  <meta property="og:locale" id="og-locale" content="fr_CA">
+  <meta property="og:title" id="og-title" content="Affaire de Chiffres | CPA Montréal — Fiscalité, Audit, Comptabilité">
+  <meta property="og:description" id="og-description" content="Cabinet CPA à Montréal offrant des services de planification fiscale, audit et certification, intégration technologique et tenue de livres pour particuliers, travailleurs autonomes et PME. Fondé en 2017.">
+  <!-- DOMAINE : Remplacer l'URL ci-dessous par votre nom de domaine final -->
+  <meta property="og:url" content="https://affairedechiffres.com/">
+  <meta property="og:image" content="images/Bannière_Linked_In_ADC.png">
+  <meta property="og:image:width" content="1584">
+  <meta property="og:image:height" content="396">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" id="tw-title" content="Affaire de Chiffres | CPA Montréal — Fiscalité, Audit, Comptabilité">
+  <meta name="twitter:description" id="tw-description" content="Cabinet CPA à Montréal offrant des services de planification fiscale, audit et certification, intégration technologique et tenue de livres pour particuliers, travailleurs autonomes et PME. Fondé en 2017.">
+  <meta name="twitter:image" content="images/Bannière_Linked_In_ADC.png">
+
+  <!-- Thème mobile -->
+  <meta name="theme-color" content="#1A1A1A">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/Logo_Square_v1.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/Logo_Square_v1.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Google Fonts — Inter (300, 400, 500, 600, 700) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Lien d'accès rapide au contenu (accessibilité clavier) -->
+  <a href="#contenu-principal" class="skip-link" id="skip-link">
+    <span data-lang="fr">Passer au contenu principal</span>
+    <span data-lang="en">Skip to main content</span>
+  </a>
+
+  <!-- ============================================
+       BARRE DE NAVIGATION FIXE
+       ============================================ -->
+  <header class="nav-header" id="nav-header">
+    <nav class="nav-container" role="navigation" aria-label="Navigation principale">
+
+      <!-- Logo à gauche -->
+      <a href="#accueil" class="nav-logo">
+        <img src="images/Logo_Rectangle_v1.png" alt="Logo Affaire de Chiffres" id="img-logo-nav" class="nav-logo-img" width="160" height="40">
+      </a>
+
+      <!-- Liens de navigation au centre (menu mobile en overlay sur petits écrans) -->
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li role="none">
+          <a href="#accueil" role="menuitem" aria-label="Accueil">
+            <span data-lang="fr">Accueil</span><span data-lang="en">Home</span>
+          </a>
+        </li>
+        <li role="none">
+          <a href="#services" role="menuitem" aria-label="Services">
+            <span data-lang="fr">Services</span><span data-lang="en">Services</span>
+          </a>
+        </li>
+        <li role="none">
+          <a href="#a-propos" role="menuitem" aria-label="À propos">
+            <span data-lang="fr">À propos</span><span data-lang="en">About</span>
+          </a>
+        </li>
+        <li role="none">
+          <a href="#contact" role="menuitem" aria-label="Contact">
+            <span data-lang="fr">Contact</span><span data-lang="en">Contact</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Groupe droite : sélecteur de langue + hamburger -->
+      <div class="nav-droite">
+
+        <!-- Sélecteur de langue (toujours visible) -->
+        <div class="nav-langue">
+          <button type="button" class="btn-langue" id="btn-fr" data-langue="fr" aria-label="Passer en français">FR</button>
+          <span class="langue-separateur">|</span>
+          <button type="button" class="btn-langue" id="btn-en" data-langue="en" aria-label="Switch to English">EN</button>
+        </div>
+
+        <!-- Bouton hamburger (visible uniquement sur mobile) -->
+        <button type="button" class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="hamburger-barre"></span>
+          <span class="hamburger-barre"></span>
+          <span class="hamburger-barre"></span>
+        </button>
+
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- ============================================
+       CONTENU PRINCIPAL
+       ============================================ -->
+  <main id="contenu-principal" role="main">
+
+    <!-- Section Accueil — Hero plein écran -->
+    <section id="accueil" class="section section-accueil" aria-label="Accueil">
+      <div class="section-contenu hero-contenu">
+
+        <!-- Logo carré centré -->
+        <img src="images/Logo_Square_v1.png" alt="Affaire de Chiffres — Cabinet CPA" id="img-logo-hero" class="hero-logo" width="120" height="120" loading="lazy">
+
+        <!-- Titre principal (h1 unique pour le SEO) -->
+        <h1 class="hero-titre hero-anim" style="animation-delay: 0.2s;">
+          <span data-lang="fr">Expertise comptable & conseil</span>
+          <span data-lang="en">Accounting expertise & advisory</span>
+        </h1>
+
+        <!-- Sous-titre -->
+        <p class="hero-sous-titre hero-anim" style="animation-delay: 0.4s;">
+          <span data-lang="fr">Votre allié pour une gestion financière éclairée</span>
+          <span data-lang="en">Your partner for informed financial management</span>
+        </p>
+
+        <!-- Paragraphe descriptif -->
+        <p class="hero-description hero-anim" style="animation-delay: 0.6s;">
+          <span data-lang="fr">Cabinet CPA basé à Montréal, Affaire de Chiffres accompagne les particuliers, travailleurs autonomes et PME en fiscalité, audit, intégration technologique et comptabilité depuis 2017.</span>
+          <span data-lang="en">A Montréal-based CPA firm, Affaire de Chiffres has been supporting individuals, self-employed workers and SMBs with tax planning, audit, technology integration and bookkeeping since 2017.</span>
+        </p>
+
+        <!-- Boutons d'action -->
+        <div class="hero-boutons hero-anim" style="animation-delay: 0.8s;">
+          <a href="#contact" class="btn btn-primaire">
+            <span data-lang="fr">Prendre rendez-vous</span>
+            <span data-lang="en">Book a consultation</span>
+          </a>
+          <a href="#services" class="btn btn-secondaire">
+            <span data-lang="fr">Découvrir nos services</span>
+            <span data-lang="en">Discover our services</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Indicateur de scroll (chevron animé) -->
+      <a href="#services" class="hero-scroll-indicateur" aria-label="Défiler vers les services">
+        <span class="hero-chevron"></span>
+      </a>
+
+    </section>
+
+    <!-- Section Services — fond blanc -->
+    <section id="services" class="section section-services" aria-label="Services">
+      <div class="section-contenu services-contenu">
+
+        <!-- En-tête de section -->
+        <h2 class="scroll-reveal">
+          <span data-lang="fr">Nos services</span><span data-lang="en">Our services</span>
+        </h2>
+        <p class="services-sous-titre scroll-reveal">
+          <span data-lang="fr">Des solutions adaptées à vos besoins comptables et financiers</span>
+          <span data-lang="en">Solutions tailored to your accounting and financial needs</span>
+        </p>
+
+        <!-- Grille des 4 cartes de services -->
+        <div class="services-grille">
+
+          <!-- Carte 1 — Planification fiscale -->
+          <article class="carte-service scroll-reveal">
+            <span class="carte-icone" aria-hidden="true">&#x1F4CB;</span>
+            <h3 class="carte-titre">
+              <span data-lang="fr">Planification fiscale</span>
+              <span data-lang="en">Tax planning</span>
+            </h3>
+            <p class="carte-description">
+              <span data-lang="fr">Nous accompagnons les particuliers et les entreprises dans l'optimisation de leur situation fiscale, en conformité avec les lois et règlements en vigueur.</span>
+              <span data-lang="en">We help individuals and businesses optimize their tax situation in compliance with applicable laws and regulations.</span>
+            </p>
+            <div class="carte-tarif">
+              <p class="tarif-sur-demande">
+                <span data-lang="fr">Chaque situation est unique</span>
+                <span data-lang="en">Every situation is unique</span>
+              </p>
+            </div>
+            <a href="#contact" class="btn btn-carte-outline">
+              <span data-lang="fr">Demander un estimé gratuit</span>
+              <span data-lang="en">Request a free estimate</span>
+            </a>
+          </article>
+
+          <!-- Carte 2 — Audit et certification -->
+          <article class="carte-service scroll-reveal">
+            <span class="carte-icone" aria-hidden="true">&#x1F50D;</span>
+            <h3 class="carte-titre">
+              <span data-lang="fr">Audit et certification</span>
+              <span data-lang="en">Audit &amp; assurance</span>
+            </h3>
+            <p class="carte-description">
+              <span data-lang="fr">Nous réalisons des missions d'audit, d'examen et de compilation adaptées aux besoins de votre organisation.</span>
+              <span data-lang="en">We provide audit, review and compilation engagements tailored to your organization's needs.</span>
+            </p>
+            <div class="carte-tarif">
+              <p class="tarif-sur-demande">
+                <span data-lang="fr">Chaque situation est unique</span>
+                <span data-lang="en">Every situation is unique</span>
+              </p>
+            </div>
+            <a href="#contact" class="btn btn-carte-outline">
+              <span data-lang="fr">Demander un estimé gratuit</span>
+              <span data-lang="en">Request a free estimate</span>
+            </a>
+          </article>
+
+          <!-- Carte 3 — Intégration technologique -->
+          <article class="carte-service scroll-reveal">
+            <span class="carte-icone" aria-hidden="true">&#x1F4BB;</span>
+            <h3 class="carte-titre">
+              <span data-lang="fr">Intégration technologique</span>
+              <span data-lang="en">Technology integration</span>
+            </h3>
+            <p class="carte-description">
+              <span data-lang="fr">Nous aidons nos clients à sélectionner et à implanter des outils technologiques pour moderniser leurs processus comptables et financiers.</span>
+              <span data-lang="en">We help our clients select and implement technology solutions to modernize their accounting and financial processes.</span>
+            </p>
+            <div class="carte-tarif">
+              <p class="tarif-sur-demande">
+                <span data-lang="fr">Chaque situation est unique</span>
+                <span data-lang="en">Every situation is unique</span>
+              </p>
+            </div>
+            <a href="#contact" class="btn btn-carte-outline">
+              <span data-lang="fr">Demander un estimé gratuit</span>
+              <span data-lang="en">Request a free estimate</span>
+            </a>
+          </article>
+
+          <!-- Carte 4 — Tenue de livres et comptabilité (avec tarif affiché) -->
+          <article class="carte-service carte-service-vedette scroll-reveal">
+            <span class="carte-icone" aria-hidden="true">&#x1F4CA;</span>
+            <h3 class="carte-titre">
+              <span data-lang="fr">Tenue de livres et comptabilité</span>
+              <span data-lang="en">Bookkeeping &amp; accounting</span>
+            </h3>
+            <p class="carte-description">
+              <span data-lang="fr">Prise en charge complète ou partielle de votre comptabilité : saisie des transactions, conciliations bancaires, production d'états financiers et rapports périodiques.</span>
+              <span data-lang="en">Full or partial management of your bookkeeping: transaction entry, bank reconciliations, financial statement preparation and periodic reporting.</span>
+            </p>
+            <div class="carte-tarif">
+              <p class="tarif-prix">
+                <span data-lang="fr">À partir de 650&nbsp;$/mois</span>
+                <span data-lang="en">Starting at $650/month</span>
+              </p>
+              <!-- Exclusions toujours visibles — conformité art. 94 Code de déontologie des CPA du Québec -->
+              <p class="tarif-exclusions">
+                <span data-lang="fr">Avant taxes. Frais d'abonnement aux logiciels tiers (Dext et outils similaires) non inclus. Le tarif varie selon la complexité des opérations et la fréquence de production des rapports.</span>
+                <span data-lang="en">Before taxes. Third-party software subscription fees (Dext and similar tools) not included. Pricing varies based on operational complexity and reporting frequency.</span>
+              </p>
+            </div>
+            <a href="#contact" class="btn btn-primaire btn-carte-plein">
+              <span data-lang="fr">Demander une soumission</span>
+              <span data-lang="en">Request a quote</span>
+            </a>
+          </article>
+
+        </div><!-- /.services-grille -->
+
+      </div>
+    </section>
+
+    <!-- Section À propos — fond crème -->
+    <section id="a-propos" class="section section-a-propos" aria-label="À propos">
+      <div class="section-contenu apropos-contenu">
+
+        <!-- Titre de section -->
+        <h2 class="scroll-reveal">
+          <span data-lang="fr">À propos</span><span data-lang="en">About</span>
+        </h2>
+
+        <!-- ============================================
+             BLOC PHILOSOPHIE
+             ============================================ -->
+        <div class="apropos-philosophie scroll-reveal">
+          <h3 class="apropos-sous-titre">
+            <span data-lang="fr">Notre approche</span>
+            <span data-lang="en">Our approach</span>
+          </h3>
+          <p class="apropos-texte">
+            <span data-lang="fr">Chez Affaire de Chiffres, nous croyons que la comptabilité moderne repose sur l'intégration judicieuse des technologies émergentes. En exploitant des outils tels que Dext, KNIME et d'autres solutions d'automatisation, nous simplifions les processus comptables de nos clients pour qu'ils puissent se concentrer sur la croissance de leur entreprise. Depuis 2017, nous combinons rigueur professionnelle et innovation technologique au service des particuliers et des entreprises de Montréal et de la Montérégie.</span>
+            <span data-lang="en">At Affaire de Chiffres, we believe that modern accounting relies on the smart integration of emerging technologies. By leveraging tools such as Dext, KNIME and other automation solutions, we simplify our clients' accounting processes so they can focus on growing their business. Since 2017, we have been combining professional rigour and technological innovation to serve individuals and businesses in Montréal and the Montérégie region.</span>
+          </p>
+        </div>
+
+        <!-- Séparateur visuel ambre -->
+        <hr class="apropos-separateur" aria-hidden="true">
+
+        <!-- ============================================
+             BLOC ÉQUIPE
+             ============================================ -->
+        <div class="apropos-equipe scroll-reveal">
+          <h3 class="apropos-sous-titre">
+            <span data-lang="fr">Notre équipe</span>
+            <span data-lang="en">Our team</span>
+          </h3>
+
+          <div class="equipe-grille">
+
+            <!-- Carte Profil — Luc Pilon -->
+            <article class="carte-profil">
+              <!-- PHOTO : Remplacer ce placeholder par la photo professionnelle de Luc Pilon. Utiliser une image carrée de minimum 240x240px. Placer l'image dans le dossier images/ et remplacer le placeholder par une balise img avec class="photo-profil" -->
+              <div class="photo-profil photo-placeholder" aria-label="Photo de Luc Pilon">
+                <span class="photo-initiales">LP</span>
+              </div>
+              <h3 class="profil-nom">Luc Pilon, CA, CPA</h3>
+              <p class="profil-role">
+                <span data-lang="fr">Fondateur</span>
+                <span data-lang="en">Founder</span>
+              </p>
+              <p class="profil-description">
+                <span data-lang="fr">Plus de 20 ans d'expérience en comptabilité et en gestion financière. Vice-président finances chez Wolftec Inc. Luc apporte à Affaire de Chiffres une expertise approfondie acquise dans des environnements corporatifs exigeants.</span>
+                <span data-lang="en">Over 20 years of experience in accounting and financial management. VP Finance at Wolftec Inc. Luc brings to Affaire de Chiffres deep expertise gained in demanding corporate environments.</span>
+              </p>
+            </article>
+
+            <!-- Carte Profil — Charles-Étienne Pilon -->
+            <article class="carte-profil">
+              <!-- PHOTO : Remplacer ce placeholder par la photo professionnelle de Charles-Étienne Pilon. Mêmes spécifications que ci-dessus. -->
+              <div class="photo-profil photo-placeholder" aria-label="Photo de Charles-Étienne Pilon">
+                <span class="photo-initiales">CP</span>
+              </div>
+              <h3 class="profil-nom">Charles-Étienne Pilon</h3>
+              <!-- ============================================= -->
+              <!-- TITRE MODULAIRE : Charles-Étienne Pilon       -->
+              <!-- Modifier le texte ci-dessous lors de           -->
+              <!-- l'obtention du permis CPA.                     -->
+              <!-- Remplacer par : "CPA" ou "CPA, M. Fisc."      -->
+              <!-- selon le titre obtenu.                         -->
+              <!-- ============================================= -->
+              <div id="titre-ce">
+                <p class="profil-role">
+                  <span data-lang="fr">Candidat à l'exercice de la profession de CPA</span>
+                  <span data-lang="en">CPA Candidate</span>
+                </p>
+                <p class="profil-etudes">
+                  <span data-lang="fr">Étudiant à la maîtrise en fiscalité, HEC Montréal</span>
+                  <span data-lang="en">Master's student in Taxation, HEC Montréal</span>
+                </p>
+              </div>
+              <p class="profil-description">
+                <span data-lang="fr">Passionné par l'intégration des technologies dans la pratique comptable, Charles-Étienne se spécialise en fiscalité et en optimisation des processus par les outils numériques.</span>
+                <span data-lang="en">Passionate about integrating technology into accounting practice, Charles-Étienne specializes in taxation and process optimization through digital tools.</span>
+              </p>
+            </article>
+
+          </div><!-- /.equipe-grille -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section Contact — fond charbon -->
+    <section id="contact" class="section section-contact" aria-label="Contact">
+      <div class="section-contenu contact-contenu">
+
+        <!-- En-tête de section -->
+        <h2 class="scroll-reveal">
+          <span data-lang="fr">Nous joindre</span><span data-lang="en">Contact us</span>
+        </h2>
+        <p class="contact-sous-titre scroll-reveal">
+          <span data-lang="fr">Prenez rendez-vous ou demandez un estimé gratuit</span>
+          <span data-lang="en">Book a consultation or request a free estimate</span>
+        </p>
+
+        <!-- Layout deux colonnes : infos + formulaire -->
+        <div class="contact-grille">
+
+          <!-- ============================================
+               COLONNE GAUCHE — Informations de contact
+               ============================================ -->
+          <div class="contact-infos scroll-reveal">
+            <h3 class="contact-infos-titre">
+              <span data-lang="fr">Coordonnées</span>
+              <span data-lang="en">Contact information</span>
+            </h3>
+
+            <ul class="contact-liste">
+              <li>
+                <span class="contact-icone" aria-hidden="true">&#x2709;</span>
+                <a href="mailto:conseils@affairedechiffres.com" class="contact-lien">conseils@affairedechiffres.com</a>
+              </li>
+              <li>
+                <span class="contact-icone" aria-hidden="true">&#x1F4CD;</span>
+                <span>
+                  <span data-lang="fr">Montréal, Québec</span>
+                  <span data-lang="en">Montréal, Quebec</span>
+                </span>
+              </li>
+              <li>
+                <span class="contact-icone" aria-hidden="true">&#x1F30D;</span>
+                <span>
+                  <span data-lang="fr">Montréal et Montérégie</span>
+                  <span data-lang="en">Montréal and Montérégie</span>
+                </span>
+              </li>
+            </ul>
+
+            <p class="contact-note">
+              <span data-lang="fr">Nous répondons habituellement dans un délai de 24 à 48 heures ouvrables.</span>
+              <span data-lang="en">We typically respond within 24 to 48 business hours.</span>
+            </p>
+          </div>
+
+          <!-- ============================================
+               COLONNE DROITE — Formulaire de contact
+               ============================================ -->
+          <div class="contact-formulaire scroll-reveal">
+            <!-- ============================================= -->
+            <!-- FORMSPREE : Remplacer VOTRE_ID ci-dessous     -->
+            <!-- par votre identifiant Formspree.               -->
+            <!-- Créez un compte gratuit sur formspree.io,      -->
+            <!-- créez un nouveau formulaire, et copiez l'ID    -->
+            <!-- (ex: "xaabbccdd") dans l'URL action.           -->
+            <!-- ============================================= -->
+            <form action="https://formspree.io/f/VOTRE_ID" method="POST" id="formulaire-contact">
+              <input type="hidden" name="_next" value="#contact">
+              <input type="hidden" name="_gotcha" style="display:none">
+
+              <!-- Nom complet -->
+              <div class="champ-groupe">
+                <label for="champ-nom">
+                  <span data-lang="fr">Nom complet *</span>
+                  <span data-lang="en">Full name *</span>
+                </label>
+                <span data-lang="fr">
+                  <input type="text" id="champ-nom" name="nom" required placeholder="Votre nom">
+                </span>
+                <span data-lang="en">
+                  <input type="text" name="nom" required placeholder="Your name">
+                </span>
+              </div>
+
+              <!-- Courriel -->
+              <div class="champ-groupe">
+                <label for="champ-courriel">
+                  <span data-lang="fr">Courriel *</span>
+                  <span data-lang="en">Email *</span>
+                </label>
+                <span data-lang="fr">
+                  <input type="email" id="champ-courriel" name="courriel" required placeholder="votre@courriel.com">
+                </span>
+                <span data-lang="en">
+                  <input type="email" name="courriel" required placeholder="your@email.com">
+                </span>
+              </div>
+
+              <!-- Téléphone (optionnel) -->
+              <div class="champ-groupe">
+                <label for="champ-telephone">
+                  <span data-lang="fr">Téléphone</span>
+                  <span data-lang="en">Phone</span>
+                </label>
+                <input type="tel" id="champ-telephone" name="telephone" placeholder="(514) 555-0000">
+              </div>
+
+              <!-- Entreprise (optionnel) -->
+              <div class="champ-groupe">
+                <label for="champ-entreprise">
+                  <span data-lang="fr">Entreprise</span>
+                  <span data-lang="en">Company</span>
+                </label>
+                <span data-lang="fr">
+                  <input type="text" id="champ-entreprise" name="entreprise" placeholder="Nom de votre entreprise (facultatif)">
+                </span>
+                <span data-lang="en">
+                  <input type="text" name="entreprise" placeholder="Your company name (optional)">
+                </span>
+              </div>
+
+              <!-- Service concerné (optionnel) — deux select bilingues -->
+              <div class="champ-groupe">
+                <label>
+                  <span data-lang="fr">Service concerné</span>
+                  <span data-lang="en">Service of interest</span>
+                </label>
+                <select name="service" data-lang="fr">
+                  <option value="" disabled selected>Sélectionner un service</option>
+                  <option value="Planification fiscale">Planification fiscale</option>
+                  <option value="Audit et certification">Audit et certification</option>
+                  <option value="Intégration technologique">Intégration technologique</option>
+                  <option value="Tenue de livres et comptabilité">Tenue de livres et comptabilité</option>
+                  <option value="Autre">Autre</option>
+                </select>
+                <select name="service" data-lang="en">
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="Tax planning">Tax planning</option>
+                  <option value="Audit & assurance">Audit &amp; assurance</option>
+                  <option value="Technology integration">Technology integration</option>
+                  <option value="Bookkeeping & accounting">Bookkeeping &amp; accounting</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div class="champ-groupe">
+                <label for="champ-message">
+                  <span data-lang="fr">Message *</span>
+                  <span data-lang="en">Message *</span>
+                </label>
+                <span data-lang="fr">
+                  <textarea id="champ-message" name="message" rows="5" required placeholder="Décrivez votre besoin ou posez votre question"></textarea>
+                </span>
+                <span data-lang="en">
+                  <textarea name="message" rows="5" required placeholder="Describe your need or ask your question"></textarea>
+                </span>
+              </div>
+
+              <!-- Case de consentement (Loi 25 — obligatoire) -->
+              <div class="champ-groupe champ-consentement">
+                <label class="consentement-label">
+                  <input type="checkbox" name="consentement" required>
+                  <span class="consentement-texte">
+                    <span data-lang="fr">J'accepte que mes renseignements personnels soient utilisés par Affaire de Chiffres dans le seul but de répondre à ma demande, conformément à la <a href="#" class="lien-politique" data-ouvrir-politique>politique de confidentialité</a>.</span>
+                    <span data-lang="en">I consent to my personal information being used by Affaire de Chiffres solely to respond to my inquiry, in accordance with the <a href="#" class="lien-politique" data-ouvrir-politique>privacy policy</a>.</span>
+                  </span>
+                </label>
+              </div>
+
+              <!-- Bouton d'envoi -->
+              <button type="submit" class="btn btn-primaire btn-envoyer">
+                <span data-lang="fr">Envoyer &#x27A4;</span>
+                <span data-lang="en">Send &#x27A4;</span>
+              </button>
+
+              <!-- Indication champs obligatoires -->
+              <p class="champs-obligatoires">
+                <span data-lang="fr">* Champs obligatoires</span>
+                <span data-lang="en">* Required fields</span>
+              </p>
+
+            </form>
+          </div>
+
+        </div><!-- /.contact-grille -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       MODALE — Politique de confidentialité (Loi 25)
+       ============================================ -->
+  <div class="modale-overlay" id="modale-politique" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modale-contenu">
+      <button type="button" class="modale-fermer" id="modale-fermer" aria-label="Fermer">&times;</button>
+
+      <!-- Version française -->
+      <div data-lang="fr" class="politique-texte">
+        <h2>Politique de confidentialité</h2>
+        <p class="politique-date">Dernière mise à jour : [date de publication du site]</p>
+
+        <h3>1. Responsable de la protection des renseignements personnels</h3>
+        <p>Affaire de Chiffres<br>Montréal, Québec<br>Courriel : <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a></p>
+
+        <h3>2. Renseignements collectés</h3>
+        <p>Par le biais du formulaire de contact de ce site, nous collectons les renseignements suivants : nom, adresse courriel, et le contenu de votre message. Vous pouvez également fournir, de manière facultative, votre numéro de téléphone, le nom de votre entreprise et le service qui vous intéresse.</p>
+
+        <h3>3. Finalité de la collecte</h3>
+        <p>Vos renseignements sont collectés dans le seul but de répondre à votre demande de renseignements, de soumission ou de prise de rendez-vous.</p>
+
+        <h3>4. Conservation</h3>
+        <p>Vos renseignements sont conservés uniquement pour la durée nécessaire au traitement de votre demande, puis sont supprimés de manière sécurisée.</p>
+
+        <h3>5. Partage</h3>
+        <p>Vos renseignements ne sont partagés avec aucun tiers, à l'exception de Formspree Inc., qui assure le traitement technique de la transmission du formulaire. Formspree agit à titre de sous-traitant et est tenu à des obligations de confidentialité.</p>
+
+        <h3>6. Vos droits</h3>
+        <p>Conformément à la Loi sur la protection des renseignements personnels dans le secteur privé du Québec, vous avez le droit d'accéder à vos renseignements, de les faire rectifier ou supprimer. Pour exercer ces droits, contactez-nous à <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a>.</p>
+
+        <h3>7. Consentement</h3>
+        <p>En soumettant le formulaire de contact, vous consentez à la collecte et à l'utilisation de vos renseignements aux fins décrites ci-dessus.</p>
+      </div>
+
+      <!-- Version anglaise -->
+      <div data-lang="en" class="politique-texte">
+        <h2>Privacy policy</h2>
+        <p class="politique-date">Last updated: [website publication date]</p>
+
+        <h3>1. Person responsible for the protection of personal information</h3>
+        <p>Affaire de Chiffres<br>Montréal, Quebec<br>Email: <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a></p>
+
+        <h3>2. Information collected</h3>
+        <p>Through the contact form on this website, we collect the following information: name, email address, and the content of your message. You may also optionally provide your phone number, company name, and the service you are interested in.</p>
+
+        <h3>3. Purpose of collection</h3>
+        <p>Your information is collected solely to respond to your inquiry, quote request, or appointment booking.</p>
+
+        <h3>4. Retention</h3>
+        <p>Your information is retained only for the time necessary to process your request, then securely deleted.</p>
+
+        <h3>5. Sharing</h3>
+        <p>Your information is not shared with any third party, except Formspree Inc., which handles the technical processing of form submissions. Formspree acts as a subcontractor and is bound by confidentiality obligations.</p>
+
+        <h3>6. Your rights</h3>
+        <p>In accordance with Quebec's Act respecting the protection of personal information in the private sector, you have the right to access, rectify, or delete your personal information. To exercise these rights, contact us at <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a>.</p>
+
+        <h3>7. Consent</h3>
+        <p>By submitting the contact form, you consent to the collection and use of your information for the purposes described above.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================
+       PIED DE PAGE
+       ============================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <p>
+        <span data-lang="fr">&copy; 2025 Affaire de Chiffres. Tous droits réservés.</span>
+        <span data-lang="en">&copy; 2025 Affaire de Chiffres. All rights reserved.</span>
+      </p>
+      <p class="footer-politique">
+        <a href="#" class="lien-politique" data-ouvrir-politique>
+          <span data-lang="fr">Politique de confidentialité</span>
+          <span data-lang="en">Privacy policy</span>
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       BALISAGE STRUCTURÉ — Schema.org (SEO local)
+       ============================================ -->
+  <!-- DOMAINE : Remplacer l'URL ci-dessous par votre nom de domaine final -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AccountingService",
+    "name": "Affaire de Chiffres",
+    "description": "Cabinet CPA à Montréal offrant des services de planification fiscale, audit, intégration technologique et tenue de livres.",
+    "url": "https://affairedechiffres.com",
+    "email": "conseils@affairedechiffres.com",
+    "foundingDate": "2017",
+    "areaServed": [
+      { "@type": "City", "name": "Montréal" },
+      { "@type": "AdministrativeArea", "name": "Montérégie" }
+    ],
+    "serviceType": ["Tax Planning", "Audit", "Technology Integration", "Bookkeeping"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montréal",
+      "addressRegion": "QC",
+      "addressCountry": "CA"
+    },
+    "image": "images/Logo_Rectangle_v1.png",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Script de gestion bilingue, navigation et interactions -->
+  <script src="script.js"></script>
+
+</body>
+</html>
