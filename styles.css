@@ -1283,10 +1283,13 @@ p {
   border: 1px solid #ddd;
   border-radius: 8px;
   background: var(--couleur-blanc);
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--couleur-gris);
-  letter-spacing: 0.02em;
+  padding: 12px 16px;
+}
+
+.carrousel-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 @keyframes defilement {
