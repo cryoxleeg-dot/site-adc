@@ -1209,6 +1209,96 @@ p {
 }
 
 /* ============================================
+   SECTION OUTILS TECHNOLOGIQUES
+   ============================================ */
+.section-outils {
+  background-color: var(--couleur-blanc);
+  color: var(--couleur-texte);
+  min-height: auto;
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+
+.section-outils h2 {
+  color: var(--couleur-charbon);
+}
+
+.section-outils h2::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--couleur-ambre);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.outils-contenu {
+  text-align: center;
+}
+
+.outils-surtitre {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--couleur-ambre);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.outils-description {
+  max-width: 540px;
+  margin: 16px auto 40px;
+  color: var(--couleur-gris);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.carrousel-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.carrousel-piste {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: defilement 25s linear infinite;
+}
+
+.carrousel-wrapper:hover .carrousel-piste {
+  animation-play-state: paused;
+}
+
+.carrousel-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 72px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: var(--couleur-blanc);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--couleur-gris);
+  letter-spacing: 0.02em;
+}
+
+@keyframes defilement {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ============================================
    ACCESSIBILITÉ — Réduction des animations
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
