@@ -1206,21 +1206,31 @@ p {
   .hero-logo {
     max-width: 120px;
   }
+
+  .carrousel-logo {
+    width: 220px;
+    height: 96px;
+    padding: 16px 24px;
+  }
+
+  .carrousel-piste {
+    gap: 36px;
+  }
 }
 
 /* ============================================
    SECTION OUTILS TECHNOLOGIQUES
    ============================================ */
 .section-outils {
-  background-color: var(--couleur-blanc);
-  color: var(--couleur-texte);
+  background-color: var(--couleur-charbon);
+  color: var(--couleur-blanc);
   min-height: auto;
   padding-top: var(--section-py);
   padding-bottom: var(--section-py);
 }
 
 .section-outils h2 {
-  color: var(--couleur-charbon);
+  color: var(--couleur-blanc);
 }
 
 .section-outils h2::after {
@@ -1249,7 +1259,7 @@ p {
 .outils-description {
   max-width: 540px;
   margin: 16px auto 40px;
-  color: var(--couleur-gris);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -1280,9 +1290,9 @@ p {
   justify-content: center;
   width: 160px;
   height: 72px;
-  border: 1px solid #ddd;
+  border: 1px solid transparent;
   border-radius: 8px;
-  background: var(--couleur-blanc);
+  background: transparent;
   padding: 12px 16px;
 }
 
