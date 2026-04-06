@@ -436,7 +436,7 @@ p {
 }
 
 .hero-logo {
-  max-width: 80px;
+  max-width: 280px;
   height: auto;
   animation: hero-apparition 0.8s ease-out both;
 }
@@ -1095,6 +1095,7 @@ p {
 
   .hero-boutons {
     flex-direction: row;
+    justify-content: center;
     gap: 16px;
   }
 
