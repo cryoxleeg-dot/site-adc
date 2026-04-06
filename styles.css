@@ -664,6 +664,12 @@ p {
   grid-template-columns: 1fr;
   gap: 24px;
   margin-top: 8px;
+  justify-items: center;
+}
+
+.equipe-grille .carte-profil {
+  max-width: 420px;
+  width: 100%;
 }
 
 .carte-profil {
