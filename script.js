@@ -456,18 +456,101 @@
     fr: {
       succes: 'Votre message a été envoyé avec succès. Nous vous répondrons dans les 24 prochaines heures.',
       erreur: 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous écrire directement à conseils@affairedechiffres.com.',
-      envoi: 'Envoi en cours...'
+      envoi: 'Envoi en cours...',
+      validation: 'Veuillez corriger les erreurs ci-dessus avant d\'envoyer.',
+      nomVide: 'Veuillez entrer votre nom.',
+      courrielVide: 'Veuillez entrer votre adresse courriel.',
+      courrielInvalide: 'Veuillez entrer une adresse courriel valide (ex. : nom@domaine.com).'
     },
     en: {
       succes: 'Your message was sent successfully. We will get back to you within 24 hours.',
       erreur: 'An error occurred while sending. Please try again or email us directly at conseils@affairedechiffres.com.',
-      envoi: 'Sending...'
+      envoi: 'Sending...',
+      validation: 'Please correct the errors above before submitting.',
+      nomVide: 'Please enter your name.',
+      courrielVide: 'Please enter your email address.',
+      courrielInvalide: 'Please enter a valid email address (e.g. name@domain.com).'
     }
   };
+
+  // Regex pour valider le format courriel
+  var regexCourriel = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  /**
+   * Affiche ou efface une erreur inline sur un champ.
+   * @param {HTMLElement} champ — l'input
+   * @param {string} idErreur — l'id du span d'erreur
+   * @param {string|null} message — le message d'erreur, ou null pour effacer
+   */
+  function afficherErreurChamp(champ, idErreur, message) {
+    var span = document.getElementById(idErreur);
+    if (message) {
+      span.textContent = message;
+      span.classList.add('visible');
+      champ.classList.add('champ-invalide');
+    } else {
+      span.textContent = '';
+      span.classList.remove('visible');
+      champ.classList.remove('champ-invalide');
+    }
+  }
+
+  /**
+   * Valide le champ nom. Retourne true si valide.
+   */
+  function validerNom() {
+    var champ = document.getElementById('champ-nom');
+    var msgs = messagesFormulaire[langueActive] || messagesFormulaire.fr;
+    if (champ.value.trim() === '') {
+      afficherErreurChamp(champ, 'erreur-nom', msgs.nomVide);
+      return false;
+    }
+    afficherErreurChamp(champ, 'erreur-nom', null);
+    return true;
+  }
+
+  /**
+   * Valide le champ courriel. Retourne true si valide.
+   */
+  function validerCourriel() {
+    var champ = document.getElementById('champ-courriel');
+    var msgs = messagesFormulaire[langueActive] || messagesFormulaire.fr;
+    var valeur = champ.value.trim();
+    if (valeur === '') {
+      afficherErreurChamp(champ, 'erreur-courriel', msgs.courrielVide);
+      return false;
+    }
+    if (!regexCourriel.test(valeur)) {
+      afficherErreurChamp(champ, 'erreur-courriel', msgs.courrielInvalide);
+      return false;
+    }
+    afficherErreurChamp(champ, 'erreur-courriel', null);
+    return true;
+  }
 
   function initialiserFormulaire() {
     var formulaire = document.getElementById('formulaire-contact');
     if (!formulaire) return;
+
+    var champNom = document.getElementById('champ-nom');
+    var champCourriel = document.getElementById('champ-courriel');
+
+    // Validation en temps réel au blur (quand l'utilisateur quitte le champ)
+    champNom.addEventListener('blur', validerNom);
+    champCourriel.addEventListener('blur', validerCourriel);
+
+    // Effacer l'erreur dès que l'utilisateur corrige
+    champNom.addEventListener('input', function () {
+      if (champNom.value.trim() !== '') {
+        afficherErreurChamp(champNom, 'erreur-nom', null);
+      }
+    });
+    champCourriel.addEventListener('input', function () {
+      var valeur = champCourriel.value.trim();
+      if (valeur !== '' && regexCourriel.test(valeur)) {
+        afficherErreurChamp(champCourriel, 'erreur-courriel', null);
+      }
+    });
 
     formulaire.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -475,6 +558,19 @@
       var msgDiv = document.getElementById('form-message');
       var btnEnvoyer = formulaire.querySelector('.btn-envoyer');
       var msgs = messagesFormulaire[langueActive] || messagesFormulaire.fr;
+
+      // Valider avant envoi
+      var nomValide = validerNom();
+      var courrielValide = validerCourriel();
+
+      if (!nomValide || !courrielValide) {
+        msgDiv.textContent = msgs.validation;
+        msgDiv.className = 'form-message form-message-erreur';
+        // Focus sur le premier champ en erreur
+        if (!nomValide) champNom.focus();
+        else champCourriel.focus();
+        return;
+      }
 
       // Afficher état d'envoi
       msgDiv.textContent = msgs.envoi;
@@ -493,6 +589,9 @@
           msgDiv.textContent = msgs.succes;
           msgDiv.className = 'form-message form-message-succes';
           formulaire.reset();
+          // Effacer les erreurs inline après reset
+          afficherErreurChamp(champNom, 'erreur-nom', null);
+          afficherErreurChamp(champCourriel, 'erreur-courriel', null);
         } else {
           msgDiv.textContent = msgs.erreur;
           msgDiv.className = 'form-message form-message-erreur';
