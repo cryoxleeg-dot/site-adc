@@ -1364,27 +1364,26 @@ p {
   text-align: left;
 }
 
-.carte-outil-nom {
-  color: var(--couleur-or-doux);
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 16px;
+.carte-outil-knime {
+  background: var(--couleur-creme);
 }
 
-.carte-outil-logo-lien {
-  display: inline-block;
-  margin-bottom: 20px;
-  transition: opacity 0.2s ease;
-}
-
-.carte-outil-logo-lien:hover {
-  opacity: 0.8;
+.carte-outil-knime .carte-outil-description {
+  color: var(--couleur-texte);
 }
 
 .carte-outil-logo {
   max-width: 160px;
   max-height: 60px;
   object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.carte-outil-nom {
+  color: var(--couleur-or-doux);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 
 .carte-outil-description {
