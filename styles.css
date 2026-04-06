@@ -1227,30 +1227,17 @@ p {
 /* ============================================
    SECTION OUTILS TECHNOLOGIQUES
    ============================================ */
-.section-outils {
-  background-color: var(--couleur-charbon);
-  color: var(--couleur-blanc);
-  min-height: auto;
-  padding-top: var(--section-py);
-  padding-bottom: var(--section-py);
-}
-
-.section-outils h2 {
-  color: var(--couleur-blanc);
-}
-
-.section-outils h2::after {
-  content: '';
-  display: block;
-  width: 56px;
-  height: 3px;
-  background: var(--couleur-ambre);
-  margin: 12px auto 0;
-  border-radius: 2px;
+.outils-titre-hero {
+  color: var(--couleur-or-doux);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .outils-contenu {
   text-align: center;
+  margin-top: 40px;
+  width: 100%;
 }
 
 .outils-surtitre {
