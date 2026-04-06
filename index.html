@@ -498,12 +498,7 @@
                   <span data-lang="fr">Nom complet *</span>
                   <span data-lang="en">Full name *</span>
                 </label>
-                <span data-lang="fr">
-                  <input type="text" id="champ-nom" name="nom" required placeholder="Votre nom">
-                </span>
-                <span data-lang="en">
-                  <input type="text" name="nom" required placeholder="Your name">
-                </span>
+                <input type="text" id="champ-nom" name="nom" required data-placeholder-fr="Votre nom" data-placeholder-en="Your name" placeholder="Votre nom">
               </div>
 
               <!-- Courriel -->
@@ -512,12 +507,7 @@
                   <span data-lang="fr">Courriel *</span>
                   <span data-lang="en">Email *</span>
                 </label>
-                <span data-lang="fr">
-                  <input type="email" id="champ-courriel" name="courriel" required placeholder="votre@courriel.com">
-                </span>
-                <span data-lang="en">
-                  <input type="email" name="courriel" required placeholder="your@email.com">
-                </span>
+                <input type="email" id="champ-courriel" name="courriel" required data-placeholder-fr="votre@courriel.com" data-placeholder-en="your@email.com" placeholder="votre@courriel.com">
               </div>
 
               <!-- Téléphone (optionnel) -->
@@ -535,12 +525,7 @@
                   <span data-lang="fr">Entreprise</span>
                   <span data-lang="en">Company</span>
                 </label>
-                <span data-lang="fr">
-                  <input type="text" id="champ-entreprise" name="entreprise" placeholder="Nom de votre entreprise (facultatif)">
-                </span>
-                <span data-lang="en">
-                  <input type="text" name="entreprise" placeholder="Your company name (optional)">
-                </span>
+                <input type="text" id="champ-entreprise" name="entreprise" data-placeholder-fr="Nom de votre entreprise (facultatif)" data-placeholder-en="Your company name (optional)" placeholder="Nom de votre entreprise (facultatif)">
               </div>
 
               <!-- Service concerné (optionnel) — deux select bilingues -->
@@ -549,7 +534,7 @@
                   <span data-lang="fr">Service concerné</span>
                   <span data-lang="en">Service of interest</span>
                 </label>
-                <select name="service" data-lang="fr">
+                <select name="service" id="select-service-fr" data-lang="fr">
                   <option value="" disabled selected>Sélectionner un service</option>
                   <option value="Planification fiscale">Planification fiscale</option>
                   <option value="Audit et certification">Audit et certification</option>
@@ -557,7 +542,7 @@
                   <option value="Tenue de livres et comptabilité">Tenue de livres et comptabilité</option>
                   <option value="Autre">Autre</option>
                 </select>
-                <select name="service" data-lang="en">
+                <select name="service-en" id="select-service-en" data-lang="en">
                   <option value="" disabled selected>Select a service</option>
                   <option value="Tax planning">Tax planning</option>
                   <option value="Audit & assurance">Audit &amp; assurance</option>
@@ -573,12 +558,7 @@
                   <span data-lang="fr">Message *</span>
                   <span data-lang="en">Message *</span>
                 </label>
-                <span data-lang="fr">
-                  <textarea id="champ-message" name="message" rows="5" required placeholder="Décrivez votre besoin ou posez votre question"></textarea>
-                </span>
-                <span data-lang="en">
-                  <textarea name="message" rows="5" required placeholder="Describe your need or ask your question"></textarea>
-                </span>
+                <textarea id="champ-message" name="message" rows="5" required data-placeholder-fr="Décrivez votre besoin ou posez votre question" data-placeholder-en="Describe your need or ask your question" placeholder="Décrivez votre besoin ou posez votre question"></textarea>
               </div>
 
               <!-- Case de consentement (Loi 25 — obligatoire) -->
@@ -603,6 +583,9 @@
                 <span data-lang="fr">* Champs obligatoires</span>
                 <span data-lang="en">* Required fields</span>
               </p>
+
+              <!-- Message de confirmation / erreur -->
+              <div id="form-message" class="form-message" aria-live="polite"></div>
 
             </form>
           </div>

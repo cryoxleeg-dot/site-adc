@@ -164,6 +164,26 @@
       if (section) section.setAttribute('aria-label', labelsSection[sectionId]);
     }
 
+    // Mettre à jour les placeholders bilingues des champs du formulaire
+    var champsPlaceholder = document.querySelectorAll('[data-placeholder-fr]');
+    for (var k = 0; k < champsPlaceholder.length; k++) {
+      var ph = champsPlaceholder[k].getAttribute('data-placeholder-' + langue);
+      if (ph) champsPlaceholder[k].setAttribute('placeholder', ph);
+    }
+
+    // Gérer le name du select EN pour éviter les doublons à l'envoi
+    var selectFr = document.getElementById('select-service-fr');
+    var selectEn = document.getElementById('select-service-en');
+    if (selectFr && selectEn) {
+      if (langue === 'fr') {
+        selectFr.setAttribute('name', 'service');
+        selectEn.setAttribute('name', '');
+      } else {
+        selectEn.setAttribute('name', 'service');
+        selectFr.setAttribute('name', '');
+      }
+    }
+
     // Sauvegarder le choix dans localStorage
     try {
       localStorage.setItem('langue-adc', langue);
@@ -387,6 +407,9 @@
 
     // --- Modale : politique de confidentialité ---
     initialiserModale();
+
+    // --- Soumission AJAX du formulaire de contact ---
+    initialiserFormulaire();
   });
 
   /* ------------------------------------------
@@ -426,7 +449,66 @@
   }
 
   /* ------------------------------------------
-     7. MODALE — Politique de confidentialité
+     7. FORMULAIRE DE CONTACT — Soumission AJAX
+     ------------------------------------------ */
+
+  var messagesFormulaire = {
+    fr: {
+      succes: 'Votre message a été envoyé avec succès. Nous vous répondrons dans les 24 prochaines heures.',
+      erreur: 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous écrire directement à conseils@affairedechiffres.com.',
+      envoi: 'Envoi en cours...'
+    },
+    en: {
+      succes: 'Your message was sent successfully. We will get back to you within 24 hours.',
+      erreur: 'An error occurred while sending. Please try again or email us directly at conseils@affairedechiffres.com.',
+      envoi: 'Sending...'
+    }
+  };
+
+  function initialiserFormulaire() {
+    var formulaire = document.getElementById('formulaire-contact');
+    if (!formulaire) return;
+
+    formulaire.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var msgDiv = document.getElementById('form-message');
+      var btnEnvoyer = formulaire.querySelector('.btn-envoyer');
+      var msgs = messagesFormulaire[langueActive] || messagesFormulaire.fr;
+
+      // Afficher état d'envoi
+      msgDiv.textContent = msgs.envoi;
+      msgDiv.className = 'form-message form-message-envoi';
+      btnEnvoyer.disabled = true;
+
+      var formData = new FormData(formulaire);
+
+      fetch(formulaire.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (response) {
+        if (response.ok) {
+          msgDiv.textContent = msgs.succes;
+          msgDiv.className = 'form-message form-message-succes';
+          formulaire.reset();
+        } else {
+          msgDiv.textContent = msgs.erreur;
+          msgDiv.className = 'form-message form-message-erreur';
+        }
+        btnEnvoyer.disabled = false;
+      })
+      .catch(function () {
+        msgDiv.textContent = msgs.erreur;
+        msgDiv.className = 'form-message form-message-erreur';
+        btnEnvoyer.disabled = false;
+      });
+    });
+  }
+
+  /* ------------------------------------------
+     8. MODALE — Politique de confidentialité
      ------------------------------------------ */
 
   /**
