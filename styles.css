@@ -1166,6 +1166,12 @@ p {
   .services-grille {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+    justify-items: center;
+  }
+
+  .services-grille .carte-service:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 12px);
   }
 
   .carte-service {
