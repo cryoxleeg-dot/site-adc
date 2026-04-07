@@ -1164,14 +1164,14 @@ p {
   }
 
   .services-grille {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
   }
 
-  .services-grille .carte-service:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    max-width: calc(50% - 12px);
-    margin-inline: auto;
+  .services-grille .carte-service {
+    width: calc(50% - 12px);
   }
 
   .carte-service {
