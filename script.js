@@ -21,20 +21,20 @@
 
   // Titres de page selon la langue
   var titresPage = {
-    fr: 'Affaire de Chiffres | CPA Montréal — Fiscalité, Audit, Comptabilité',
-    en: 'Affaire de Chiffres | CPA Montréal — Tax Planning, Audit, Bookkeeping'
+    fr: 'Affaire de Chiffres | CPA Montréal — Fiscalité, Comptabilité',
+    en: 'Affaire de Chiffres | CPA Montréal — Tax Planning, Bookkeeping'
   };
 
   // Meta descriptions selon la langue
   var metaDescriptions = {
-    fr: 'Cabinet CPA à Montréal offrant des services de planification fiscale, audit et certification, intégration technologique et tenue de livres pour particuliers, travailleurs autonomes et PME. Fondé en 2017.',
-    en: 'Montréal-based CPA firm offering tax planning, audit and assurance, technology integration and bookkeeping services for individuals, self-employed workers and SMBs. Founded in 2017.'
+    fr: 'Cabinet CPA à Montréal offrant des services de planification fiscale, intégration technologique et tenue de livres pour particuliers, travailleurs autonomes et PME. Fondé en 2017.',
+    en: 'Montréal-based CPA firm offering tax planning, technology integration and bookkeeping services for individuals, self-employed workers and SMBs. Founded in 2017.'
   };
 
   // Meta keywords selon la langue
   var metaKeywords = {
-    fr: 'CPA Montréal, comptable Montréal, fiscalité, audit, tenue de livres, planification fiscale, intégration technologique, cabinet comptable Montérégie, Affaire de Chiffres',
-    en: 'CPA Montreal, accountant Montreal, tax planning, audit, bookkeeping, technology integration, accounting firm, Affaire de Chiffres'
+    fr: 'CPA Montréal, comptable Montréal, fiscalité, tenue de livres, planification fiscale, intégration technologique, cabinet comptable Montérégie, Affaire de Chiffres',
+    en: 'CPA Montreal, accountant Montreal, tax planning, bookkeeping, technology integration, accounting firm, Affaire de Chiffres'
   };
 
   // OG locales

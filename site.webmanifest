@@ -1,7 +1,7 @@
 {
   "name": "Affaire de Chiffres",
   "short_name": "ADC",
-  "description": "Cabinet CPA — Fiscalité, Audit, Comptabilité",
+  "description": "Cabinet CPA — Fiscalité, Comptabilité",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1A1A1A",
