@@ -55,8 +55,8 @@
 
   // Aria-labels des sections selon la langue
   var ariaLabelsSections = {
-    fr: { accueil: 'Accueil', 'chiffres-cles': 'Chiffres clés', services: 'Services', outils: 'Outils', temoignages: 'Témoignages', 'a-propos': 'À propos', contact: 'Contact' },
-    en: { accueil: 'Home', 'chiffres-cles': 'Key figures', services: 'Services', outils: 'Tools', temoignages: 'Testimonials', 'a-propos': 'About', contact: 'Contact' }
+    fr: { accueil: 'Accueil', 'chiffres-cles': 'Chiffres clés', services: 'Services', outils: 'Outils', 'a-propos': 'À propos', contact: 'Contact' },
+    en: { accueil: 'Home', 'chiffres-cles': 'Key figures', services: 'Services', outils: 'Tools', 'a-propos': 'About', contact: 'Contact' }
   };
 
   // Aria-labels des liens de navigation selon la langue
