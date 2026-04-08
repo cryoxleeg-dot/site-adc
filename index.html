@@ -41,10 +41,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="images/Logo_Carré_blanc_v1.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <!-- Google Fonts — Inter (300, 400, 500, 600, 700) -->
+  <!-- Google Fonts — Inter (body) + Sora (display headings) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -124,31 +124,60 @@
 
     <!-- Section Accueil — Hero plein écran -->
     <section id="accueil" class="section section-accueil" aria-label="Accueil">
+
+      <!-- SVG réseau/nodes en arrière-plan -->
+      <svg class="hero-network-bg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g class="hero-network-group">
+          <!-- Nodes -->
+          <circle cx="150" cy="120" r="3" fill="#E8943A"/>
+          <circle cx="350" cy="250" r="2.5" fill="#F5C16C"/>
+          <circle cx="550" cy="100" r="3.5" fill="#E8943A"/>
+          <circle cx="750" cy="300" r="2" fill="#F5C16C"/>
+          <circle cx="950" cy="150" r="3" fill="#E8943A"/>
+          <circle cx="1050" cy="400" r="2.5" fill="#F5C16C"/>
+          <circle cx="250" cy="500" r="2" fill="#E8943A"/>
+          <circle cx="500" cy="600" r="3" fill="#F5C16C"/>
+          <circle cx="800" cy="550" r="2.5" fill="#E8943A"/>
+          <circle cx="1100" cy="650" r="2" fill="#F5C16C"/>
+          <circle cx="100" cy="700" r="3" fill="#E8943A"/>
+          <circle cx="650" cy="400" r="2" fill="#F5C16C"/>
+          <!-- Connections -->
+          <line x1="150" y1="120" x2="350" y2="250" stroke="#E8943A" stroke-width="0.5"/>
+          <line x1="350" y1="250" x2="550" y2="100" stroke="#F5C16C" stroke-width="0.4"/>
+          <line x1="550" y1="100" x2="750" y2="300" stroke="#E8943A" stroke-width="0.5"/>
+          <line x1="750" y1="300" x2="950" y2="150" stroke="#F5C16C" stroke-width="0.4"/>
+          <line x1="950" y1="150" x2="1050" y2="400" stroke="#E8943A" stroke-width="0.5"/>
+          <line x1="250" y1="500" x2="500" y2="600" stroke="#F5C16C" stroke-width="0.4"/>
+          <line x1="500" y1="600" x2="800" y2="550" stroke="#E8943A" stroke-width="0.5"/>
+          <line x1="800" y1="550" x2="1100" y2="650" stroke="#F5C16C" stroke-width="0.4"/>
+          <line x1="100" y1="700" x2="250" y2="500" stroke="#E8943A" stroke-width="0.5"/>
+          <line x1="350" y1="250" x2="650" y2="400" stroke="#F5C16C" stroke-width="0.4"/>
+          <line x1="650" y1="400" x2="750" y2="300" stroke="#E8943A" stroke-width="0.5"/>
+          <line x1="650" y1="400" x2="800" y2="550" stroke="#F5C16C" stroke-width="0.4"/>
+          <line x1="1050" y1="400" x2="1100" y2="650" stroke="#E8943A" stroke-width="0.5"/>
+          <line x1="150" y1="120" x2="550" y2="100" stroke="#F5C16C" stroke-width="0.3"/>
+        </g>
+      </svg>
+
       <div class="section-contenu hero-contenu">
 
         <!-- Titre principal (h1 unique pour le SEO) -->
         <h1 class="hero-titre hero-anim" style="animation-delay: 0.2s;">
-          <span data-lang="fr">Expertise comptable & conseil</span>
-          <span data-lang="en">Accounting expertise & advisory</span>
+          <span data-lang="fr">La comptabilité, propulsée par la technologie</span>
+          <span data-lang="en">Accounting, powered by technology</span>
         </h1>
 
         <!-- Sous-titre -->
         <p class="hero-sous-titre hero-anim" style="animation-delay: 0.4s;">
-          <span data-lang="fr">Votre allié pour une gestion financière éclairée</span>
-          <span data-lang="en">Your partner for informed financial management</span>
-        </p>
-
-        <!-- Paragraphe descriptif -->
-        <p class="hero-description hero-anim" style="animation-delay: 0.6s;">
-          <span data-lang="fr">Cabinet CPA basé à Montréal, Affaire de Chiffres accompagne les particuliers, travailleurs autonomes et PME en fiscalité, intégration technologique et comptabilité depuis 2017.</span>
-          <span data-lang="en">A Montréal-based CPA firm, Affaire de Chiffres has been supporting individuals, self-employed workers and SMBs with tax planning, technology integration and bookkeeping since 2017.</span>
+          <span data-lang="fr">Cabinet CPA à Montréal spécialisé en fiscalité et en automatisation des processus comptables pour les particuliers, travailleurs autonomes et PME depuis 2017.</span>
+          <span data-lang="en">Montréal-based CPA firm specializing in tax planning and accounting process automation for individuals, self-employed workers and SMBs since 2017.</span>
         </p>
 
         <!-- Boutons d'action -->
-        <div class="hero-boutons hero-anim" style="animation-delay: 0.8s;">
+        <div class="hero-boutons hero-anim" style="animation-delay: 0.6s;">
           <a href="#contact" class="btn btn-primaire">
-            <span data-lang="fr">Prendre rendez-vous</span>
-            <span data-lang="en">Book a consultation</span>
+            <span data-lang="fr">Parlons de votre projet</span>
+            <span data-lang="en">Let's talk about your project</span>
           </a>
           <a href="#services" class="btn btn-secondaire">
             <span data-lang="fr">Découvrir nos services</span>
@@ -157,7 +186,7 @@
         </div>
 
         <!-- Outils technologiques — carrousel intégré au hero -->
-        <div class="outils-contenu hero-anim" style="animation-delay: 1s;">
+        <div class="outils-contenu hero-anim" style="animation-delay: 0.8s;">
 
           <p class="outils-surtitre">
             <span data-lang="fr">Des outils que nous maîtrisons</span>
@@ -197,10 +226,72 @@
       </div>
 
       <!-- Indicateur de scroll (chevron animé) -->
-      <a href="#outils" class="hero-scroll-indicateur" aria-label="Défiler vers les outils">
+      <a href="#chiffres-cles" class="hero-scroll-indicateur" aria-label="Défiler vers les chiffres clés">
         <span class="hero-chevron"></span>
       </a>
 
+    </section>
+
+    <!-- ============================================
+         BANDEAU DE CHIFFRES CLÉS
+         ============================================ -->
+    <section id="chiffres-cles" class="section section-chiffres" aria-label="Chiffres clés">
+      <div class="section-contenu chiffres-contenu">
+        <div class="chiffres-grille">
+
+          <!-- Depuis 2017 -->
+          <div class="chiffre-item scroll-reveal">
+            <svg class="chiffre-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <span class="chiffre-valeur" data-cible="2017">0</span>
+            <span class="chiffre-label">
+              <span data-lang="fr">Depuis 2017</span>
+              <span data-lang="en">Since 2017</span>
+            </span>
+          </div>
+
+          <!-- +20 ans d'expérience -->
+          <div class="chiffre-item scroll-reveal">
+            <svg class="chiffre-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 15l-2 5l9-11h-5l2-5L7 15z"/>
+            </svg>
+            <span class="chiffre-valeur" data-cible="20" data-prefixe="+"><span class="chiffre-prefixe">+</span>0</span>
+            <span class="chiffre-label">
+              <span data-lang="fr">ans d'expérience</span>
+              <span data-lang="en">years of experience</span>
+            </span>
+          </div>
+
+          <!-- Montréal & Montérégie -->
+          <div class="chiffre-item scroll-reveal">
+            <svg class="chiffre-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span class="chiffre-valeur chiffre-texte">
+              <span data-lang="fr">Montréal &amp; Montérégie</span>
+              <span data-lang="en">Montréal &amp; Montérégie</span>
+            </span>
+            <span class="chiffre-label">
+              <span data-lang="fr">Zone desservie</span>
+              <span data-lang="en">Service area</span>
+            </span>
+          </div>
+
+          <!-- 100 % infonuagique -->
+          <div class="chiffre-item scroll-reveal">
+            <svg class="chiffre-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/>
+            </svg>
+            <span class="chiffre-valeur" data-cible="100" data-suffixe=" %">0<span class="chiffre-suffixe"> %</span></span>
+            <span class="chiffre-label">
+              <span data-lang="fr">Infonuagique</span>
+              <span data-lang="en">Cloud-based</span>
+            </span>
+          </div>
+
+        </div>
+      </div>
     </section>
 
     <!-- Section Services — fond blanc -->
@@ -216,7 +307,7 @@
           <span data-lang="en">Solutions tailored to your accounting and financial needs</span>
         </p>
 
-        <!-- Grille des 4 cartes de services -->
+        <!-- Grille des 3 cartes de services -->
         <div class="services-grille">
 
           <!-- Carte 1 — Planification fiscale -->
@@ -229,6 +320,20 @@
               <span data-lang="fr">Nous accompagnons les particuliers et les entreprises dans l'optimisation de leur situation fiscale, en conformité avec les lois et règlements en vigueur.</span>
               <span data-lang="en">We help individuals and businesses optimize their tax situation in compliance with applicable laws and regulations.</span>
             </p>
+            <ul class="carte-cas-usage">
+              <li>
+                <span data-lang="fr">Optimisation de la rémunération mixte (salaire/dividendes)</span>
+                <span data-lang="en">Mixed compensation optimization (salary/dividends)</span>
+              </li>
+              <li>
+                <span data-lang="fr">Planification de fin d'année fiscale</span>
+                <span data-lang="en">Year-end tax planning</span>
+              </li>
+              <li>
+                <span data-lang="fr">Réorganisation corporative</span>
+                <span data-lang="en">Corporate reorganization</span>
+              </li>
+            </ul>
             <div class="carte-tarif">
               <p class="tarif-sur-demande">
                 <span data-lang="fr">Chaque situation est unique</span>
@@ -236,8 +341,8 @@
               </p>
             </div>
             <a href="#contact" class="btn btn-carte-outline">
-              <span data-lang="fr">Demander un estimé gratuit</span>
-              <span data-lang="en">Request a free estimate</span>
+              <span data-lang="fr">Obtenir mon estimé gratuit</span>
+              <span data-lang="en">Get my free estimate</span>
             </a>
           </article>
 
@@ -251,6 +356,20 @@
               <span data-lang="fr">Nous aidons nos clients à sélectionner et à implanter des outils technologiques pour moderniser leurs processus comptables et financiers.</span>
               <span data-lang="en">We help our clients select and implement technology solutions to modernize their accounting and financial processes.</span>
             </p>
+            <ul class="carte-cas-usage">
+              <li>
+                <span data-lang="fr">Implantation Dext et QuickBooks</span>
+                <span data-lang="en">Dext and QuickBooks implementation</span>
+              </li>
+              <li>
+                <span data-lang="fr">Automatisation de la saisie de factures</span>
+                <span data-lang="en">Invoice entry automation</span>
+              </li>
+              <li>
+                <span data-lang="fr">Tableaux de bord financiers avec KNIME</span>
+                <span data-lang="en">Financial dashboards with KNIME</span>
+              </li>
+            </ul>
             <div class="carte-tarif">
               <p class="tarif-sur-demande">
                 <span data-lang="fr">Chaque situation est unique</span>
@@ -258,8 +377,8 @@
               </p>
             </div>
             <a href="#contact" class="btn btn-carte-outline">
-              <span data-lang="fr">Demander un estimé gratuit</span>
-              <span data-lang="en">Request a free estimate</span>
+              <span data-lang="fr">Obtenir mon estimé gratuit</span>
+              <span data-lang="en">Get my free estimate</span>
             </a>
           </article>
 
@@ -273,6 +392,20 @@
               <span data-lang="fr">Prise en charge complète ou partielle de votre comptabilité : saisie des transactions, conciliations bancaires, production d'états financiers et rapports périodiques.</span>
               <span data-lang="en">Full or partial management of your bookkeeping: transaction entry, bank reconciliations, financial statement preparation and periodic reporting.</span>
             </p>
+            <ul class="carte-cas-usage">
+              <li>
+                <span data-lang="fr">Conciliation bancaire automatisée</span>
+                <span data-lang="en">Automated bank reconciliation</span>
+              </li>
+              <li>
+                <span data-lang="fr">États financiers mensuels</span>
+                <span data-lang="en">Monthly financial statements</span>
+              </li>
+              <li>
+                <span data-lang="fr">Gestion des comptes fournisseurs et clients</span>
+                <span data-lang="en">Accounts payable and receivable management</span>
+              </li>
+            </ul>
             <div class="carte-tarif">
               <p class="tarif-sur-demande">
                 <span data-lang="fr">Voir nos forfaits ci-dessous</span>
@@ -330,8 +463,8 @@
               </li>
             </ul>
             <a href="#contact" class="btn btn-carte-outline">
-              <span data-lang="fr">Demander une soumission</span>
-              <span data-lang="en">Request a quote</span>
+              <span data-lang="fr">Obtenir ma soumission</span>
+              <span data-lang="en">Get my quote</span>
             </a>
           </article>
 
@@ -372,8 +505,8 @@
               </li>
             </ul>
             <a href="#contact" class="btn btn-primaire btn-carte-plein">
-              <span data-lang="fr">Demander une soumission</span>
-              <span data-lang="en">Request a quote</span>
+              <span data-lang="fr">Obtenir ma soumission</span>
+              <span data-lang="en">Get my quote</span>
             </a>
           </article>
 
@@ -407,8 +540,8 @@
               </li>
             </ul>
             <a href="#contact" class="btn btn-carte-outline">
-              <span data-lang="fr">Demander une soumission</span>
-              <span data-lang="en">Request a quote</span>
+              <span data-lang="fr">Obtenir ma soumission</span>
+              <span data-lang="en">Get my quote</span>
             </a>
           </article>
 
@@ -446,6 +579,10 @@
               <span data-lang="fr">Automatisez la collecte et le traitement de vos factures et reçus. Dext extrait les données de vos documents comptables et les transmet directement à votre logiciel de comptabilité, éliminant la saisie manuelle et réduisant les erreurs.</span>
               <span data-lang="en">Automate the collection and processing of your invoices and receipts. Dext extracts data from your accounting documents and sends it directly to your accounting software, eliminating manual entry and reducing errors.</span>
             </p>
+            <div class="outil-benefice">
+              <span data-lang="fr">Réduction jusqu'à 80 % du temps de saisie manuelle des factures et reçus.</span>
+              <span data-lang="en">Up to 80% reduction in manual invoice and receipt entry time.</span>
+            </div>
             <a href="#contact" class="btn btn-primaire btn-outil">
               <span data-lang="fr">En savoir plus</span>
               <span data-lang="en">Learn more</span>
@@ -459,10 +596,74 @@
               <span data-lang="fr">Analysez et transformez vos données financières grâce à une plateforme visuelle et intuitive. KNIME permet d'automatiser les flux de données, de créer des rapports personnalisés et de connecter vos différentes sources d'information sans programmation complexe.</span>
               <span data-lang="en">Analyze and transform your financial data with a visual, intuitive platform. KNIME automates data workflows, creates custom reports and connects your various data sources without complex programming.</span>
             </p>
+            <div class="outil-benefice outil-benefice-knime">
+              <span data-lang="fr">Des rapports financiers personnalisés générés en quelques clics plutôt qu'en quelques heures.</span>
+              <span data-lang="en">Custom financial reports generated in clicks, not hours.</span>
+            </div>
             <a href="#contact" class="btn btn-primaire btn-outil">
               <span data-lang="fr">En savoir plus</span>
               <span data-lang="en">Learn more</span>
             </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION TÉMOIGNAGES
+         ============================================ -->
+    <section id="temoignages" class="section section-temoignages" aria-label="Témoignages">
+      <div class="section-contenu temoignages-contenu">
+
+        <h2 class="scroll-reveal">
+          <span data-lang="fr">Ce que nos clients en disent</span>
+          <span data-lang="en">What our clients say</span>
+        </h2>
+
+        <div class="temoignages-grille">
+
+          <!-- Témoignage 1 -->
+          <article class="carte-temoignage scroll-reveal">
+            <span class="temoignage-guillemet" aria-hidden="true">&ldquo;</span>
+            <p class="temoignage-texte">
+              <span data-lang="fr">Témoignage à venir — Nous recueillons les commentaires de nos clients.</span>
+              <span data-lang="en">Testimonial coming soon — We are collecting client feedback.</span>
+            </p>
+            <div class="temoignage-auteur">
+              <p class="temoignage-nom">---</p>
+              <p class="temoignage-titre-poste">---</p>
+              <div class="temoignage-logo-placeholder" aria-label="Logo entreprise"></div>
+            </div>
+          </article>
+
+          <!-- Témoignage 2 -->
+          <article class="carte-temoignage scroll-reveal">
+            <span class="temoignage-guillemet" aria-hidden="true">&ldquo;</span>
+            <p class="temoignage-texte">
+              <span data-lang="fr">Témoignage à venir — Nous recueillons les commentaires de nos clients.</span>
+              <span data-lang="en">Testimonial coming soon — We are collecting client feedback.</span>
+            </p>
+            <div class="temoignage-auteur">
+              <p class="temoignage-nom">---</p>
+              <p class="temoignage-titre-poste">---</p>
+              <div class="temoignage-logo-placeholder" aria-label="Logo entreprise"></div>
+            </div>
+          </article>
+
+          <!-- Témoignage 3 -->
+          <article class="carte-temoignage scroll-reveal">
+            <span class="temoignage-guillemet" aria-hidden="true">&ldquo;</span>
+            <p class="temoignage-texte">
+              <span data-lang="fr">Témoignage à venir — Nous recueillons les commentaires de nos clients.</span>
+              <span data-lang="en">Testimonial coming soon — We are collecting client feedback.</span>
+            </p>
+            <div class="temoignage-auteur">
+              <p class="temoignage-nom">---</p>
+              <p class="temoignage-titre-poste">---</p>
+              <div class="temoignage-logo-placeholder" aria-label="Logo entreprise"></div>
+            </div>
           </article>
 
         </div>
@@ -509,18 +710,28 @@
 
             <!-- Carte Profil — Luc Pilon -->
             <article class="carte-profil">
-              <img src="images/Luc%20Pilon%20profile.jfif" alt="Luc Pilon, CA, CPA — Fondateur d'Affaire de Chiffres" class="photo-profil" width="240" height="240" loading="lazy">
+              <div class="photo-profil-wrapper">
+                <img src="images/Luc%20Pilon%20profile.jfif" alt="Luc Pilon, CA, CPA — Fondateur d'Affaire de Chiffres" class="photo-profil" width="240" height="240" loading="lazy">
+                <div class="photo-overlay">
+                  <a href="mailto:conseils@affairedechiffres.com" class="overlay-lien">conseils@affairedechiffres.com</a>
+                </div>
+              </div>
               <h3 class="profil-nom">Luc Pilon, CA, CPA</h3>
               <p class="profil-role">
                 <span data-lang="fr">Fondateur</span>
                 <span data-lang="en">Founder</span>
               </p>
               <p class="profil-description">
-                <span data-lang="fr">Plus de 20 ans d'expérience en comptabilité et en gestion financière. Vice-président finances chez Wolftec Inc. Luc apporte à Affaire de Chiffres une expertise approfondie acquise dans des environnements corporatifs exigeants.</span>
-                <span data-lang="en">Over 20 years of experience in accounting and financial management. VP Finance at Wolftec Inc. Luc brings to Affaire de Chiffres deep expertise gained in demanding corporate environments.</span>
+                <span data-lang="fr">Vice-président finances chez Wolftec Inc. · CPA depuis plus de 20 ans · Passionné d'intégration technologique</span>
+                <span data-lang="en">VP Finance at Wolftec Inc. · CPA for over 20 years · Passionate about technology integration</span>
               </p>
+              <a href="#" class="profil-linkedin" aria-label="LinkedIn de Luc Pilon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                LinkedIn
+              </a>
             </article>
-
 
           </div><!-- /.equipe-grille -->
         </div>
@@ -581,13 +792,6 @@
                COLONNE DROITE — Formulaire de contact
                ============================================ -->
           <div class="contact-formulaire scroll-reveal">
-            <!-- ============================================= -->
-            <!-- FORMSPREE : Remplacer VOTRE_ID ci-dessous     -->
-            <!-- par votre identifiant Formspree.               -->
-            <!-- Créez un compte gratuit sur formspree.io,      -->
-            <!-- créez un nouveau formulaire, et copiez l'ID    -->
-            <!-- (ex: "xaabbccdd") dans l'URL action.           -->
-            <!-- ============================================= -->
             <form action="https://formspree.io/f/mvzvlpql" method="POST" id="formulaire-contact">
               <input type="hidden" name="_next" value="#contact">
               <input type="hidden" name="_gotcha" style="display:none">
@@ -770,16 +974,46 @@
        ============================================ -->
   <footer class="footer" role="contentinfo">
     <div class="footer-inner">
-      <p>
-        <span data-lang="fr">&copy; 2026 Affaire de Chiffres. Tous droits réservés.</span>
-        <span data-lang="en">&copy; 2026 Affaire de Chiffres. All rights reserved.</span>
-      </p>
-      <p class="footer-politique">
-        <a href="#" class="lien-politique" data-ouvrir-politique>
-          <span data-lang="fr">Politique de confidentialité</span>
-          <span data-lang="en">Privacy policy</span>
+
+      <!-- Rangée 1 : Logo + réseaux sociaux + badge CPA -->
+      <div class="footer-top">
+
+        <div class="footer-social">
+          <a href="#" class="footer-social-lien" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-cpa-badge">
+          <img src="images/cpa-badge-placeholder.png" alt="Membre de l'Ordre des CPA du Québec / Member of the Quebec CPA Order" class="footer-cpa-img" width="80" height="80" loading="lazy"
+               onerror="this.style.display='none'">
+        </div>
+
+      </div>
+
+      <!-- Rangée 2 : Copyright + politique + retour en haut -->
+      <div class="footer-bottom">
+        <p>
+          <span data-lang="fr">&copy; 2026 Affaire de Chiffres. Tous droits réservés.</span>
+          <span data-lang="en">&copy; 2026 Affaire de Chiffres. All rights reserved.</span>
+        </p>
+        <p class="footer-politique">
+          <a href="#" class="lien-politique" data-ouvrir-politique>
+            <span data-lang="fr">Politique de confidentialité</span>
+            <span data-lang="en">Privacy policy</span>
+          </a>
+        </p>
+        <a href="#accueil" class="footer-retour-haut">
+          <span data-lang="fr">Retour en haut</span>
+          <span data-lang="en">Back to top</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
         </a>
-      </p>
+      </div>
+
     </div>
   </footer>
 

@@ -2,11 +2,15 @@
    SCRIPT PRINCIPAL — Affaire de Chiffres
    ============================================
    Ce fichier gère :
-   1. La bascule bilingue FR / EN
+   1. La bascule bilingue FR / EN (avec transition douce)
    2. Le menu hamburger mobile
    3. L'ombre de la navigation au scroll
    4. La mise en évidence du lien de la section visible
    5. L'accessibilité (focus trap, aria-labels)
+   6. Les animations au défilement (scroll reveal)
+   7. Les compteurs animés (chiffres clés)
+   8. Le formulaire de contact AJAX
+   9. La modale politique de confidentialité
    ============================================ */
 
 (function () {
@@ -51,14 +55,14 @@
 
   // Aria-labels des sections selon la langue
   var ariaLabelsSections = {
-    fr: { accueil: 'Accueil', services: 'Services', 'a-propos': 'À propos', contact: 'Contact' },
-    en: { accueil: 'Home', services: 'Services', 'a-propos': 'About', contact: 'Contact' }
+    fr: { accueil: 'Accueil', 'chiffres-cles': 'Chiffres clés', services: 'Services', outils: 'Outils', temoignages: 'Témoignages', 'a-propos': 'À propos', contact: 'Contact' },
+    en: { accueil: 'Home', 'chiffres-cles': 'Key figures', services: 'Services', outils: 'Tools', temoignages: 'Testimonials', 'a-propos': 'About', contact: 'Contact' }
   };
 
   // Aria-labels des liens de navigation selon la langue
   var ariaLabels = {
-    fr: { '#accueil': 'Accueil', '#services': 'Services', '#a-propos': 'À propos', '#contact': 'Contact' },
-    en: { '#accueil': 'Home', '#services': 'Services', '#a-propos': 'About', '#contact': 'Contact' }
+    fr: { '#accueil': 'Accueil', '#services': 'Services', '#outils': 'Outils', '#a-propos': 'À propos', '#contact': 'Contact' },
+    en: { '#accueil': 'Home', '#services': 'Services', '#outils': 'Tools', '#a-propos': 'About', '#contact': 'Contact' }
   };
 
   // Aria-labels du bouton hamburger selon la langue et l'état
@@ -72,10 +76,25 @@
      ------------------------------------------ */
 
   /**
-   * Applique la langue choisie à toute la page.
+   * Applique la langue choisie à toute la page avec transition douce.
    * @param {string} langue — 'fr' ou 'en'
+   * @param {boolean} avecTransition — true pour animer le changement
    */
-  function appliquerLangue(langue) {
+  function appliquerLangue(langue, avecTransition) {
+    var main = document.getElementById('contenu-principal');
+
+    if (avecTransition && main) {
+      main.style.opacity = '0';
+      setTimeout(function () {
+        effectuerChangementLangue(langue);
+        main.style.opacity = '1';
+      }, 200);
+    } else {
+      effectuerChangementLangue(langue);
+    }
+  }
+
+  function effectuerChangementLangue(langue) {
     langueActive = langue;
 
     // Afficher/masquer les éléments data-lang
@@ -209,37 +228,25 @@
      2. MENU HAMBURGER MOBILE
      ------------------------------------------ */
 
-  /**
-   * Ouvre ou ferme le menu mobile.
-   */
   function toggleMenu() {
     var hamburger = document.getElementById('hamburger');
     var navLinks = document.getElementById('nav-links');
     var estOuvert = hamburger.classList.toggle('ouvert');
 
-    // Ajouter/retirer la classe qui affiche le menu
     navLinks.classList.toggle('menu-ouvert', estOuvert);
-
-    // Mettre à jour aria-expanded
     hamburger.setAttribute('aria-expanded', estOuvert ? 'true' : 'false');
 
-    // Mettre à jour le aria-label selon l'état et la langue
     var etat = estOuvert ? 'ouvert' : 'ferme';
     hamburger.setAttribute('aria-label', ariaHamburger[langueActive][etat]);
 
-    // Empêcher le scroll du body quand le menu est ouvert
     document.body.style.overflow = estOuvert ? 'hidden' : '';
 
-    // Si le menu vient de s'ouvrir, placer le focus sur le premier lien
     if (estOuvert) {
       var premierLien = navLinks.querySelector('a');
       if (premierLien) premierLien.focus();
     }
   }
 
-  /**
-   * Ferme le menu mobile (si ouvert).
-   */
   function fermerMenu() {
     var hamburger = document.getElementById('hamburger');
     var navLinks = document.getElementById('nav-links');
@@ -252,15 +259,10 @@
     }
   }
 
-  /**
-   * Piège le focus à l'intérieur du menu mobile quand il est ouvert.
-   * Quand on appuie Tab sur le dernier élément, le focus revient au premier (et inversement avec Shift+Tab).
-   */
   function gererFocusTrap(event) {
     var hamburger = document.getElementById('hamburger');
     if (!hamburger.classList.contains('ouvert')) return;
 
-    // Éléments focusables dans le menu et la zone nav
     var navLinks = document.getElementById('nav-links');
     var focusables = navLinks.querySelectorAll('a');
     if (focusables.length === 0) return;
@@ -270,18 +272,15 @@
 
     if (event.key === 'Tab') {
       if (event.shiftKey) {
-        // Shift+Tab sur le premier → aller au hamburger
         if (document.activeElement === premier) {
           event.preventDefault();
           hamburger.focus();
         }
       } else {
-        // Tab sur le dernier lien → aller au hamburger
         if (document.activeElement === dernier) {
           event.preventDefault();
           hamburger.focus();
         }
-        // Tab sur le hamburger → aller au premier lien
         if (document.activeElement === hamburger) {
           event.preventDefault();
           premier.focus();
@@ -289,7 +288,6 @@
       }
     }
 
-    // Échap ferme le menu
     if (event.key === 'Escape') {
       fermerMenu();
       hamburger.focus();
@@ -300,9 +298,6 @@
      3. OMBRE DE LA NAVIGATION AU SCROLL
      ------------------------------------------ */
 
-  /**
-   * Ajoute ou retire la classe .nav-scrolled selon la position de scroll.
-   */
   function gererOmbreNav() {
     var header = document.getElementById('nav-header');
     if (window.scrollY > 50) {
@@ -316,15 +311,10 @@
      4. LIEN DE NAVIGATION ACTIF (Intersection Observer)
      ------------------------------------------ */
 
-  /**
-   * Observe les sections et met en évidence le lien correspondant
-   * à la section actuellement visible dans le viewport.
-   */
   function initialiserObserverSections() {
     var sections = document.querySelectorAll('.section');
     var liensNav = document.querySelectorAll('.nav-links a');
 
-    // Options de l'observer : on déclenche quand 40% de la section est visible
     var options = {
       root: null,
       rootMargin: '-' + getComputedStyle(document.documentElement).getPropertyValue('--hauteur-nav').trim() + ' 0px 0px 0px',
@@ -336,13 +326,11 @@
         if (entry.isIntersecting) {
           var idSection = entry.target.getAttribute('id');
 
-          // Retirer la classe active et aria-current de tous les liens
           liensNav.forEach(function (lien) {
             lien.classList.remove('nav-lien-actif');
             lien.removeAttribute('aria-current');
           });
 
-          // Ajouter la classe active au lien correspondant
           var lienActif = document.querySelector('.nav-links a[href="#' + idSection + '"]');
           if (lienActif) {
             lienActif.classList.add('nav-lien-actif');
@@ -352,7 +340,6 @@
       });
     }, options);
 
-    // Observer chaque section
     sections.forEach(function (section) {
       observer.observe(section);
     });
@@ -367,23 +354,22 @@
     // --- JS actif : activer les animations scroll-reveal ---
     document.body.classList.add('js-enabled');
 
-    // --- Langue ---
+    // --- Langue (sans transition au chargement initial) ---
     var langueInitiale = getLangueSauvegardee();
-    appliquerLangue(langueInitiale);
+    appliquerLangue(langueInitiale, false);
 
-    // Boutons FR / EN
+    // Boutons FR / EN (avec transition douce)
     document.getElementById('btn-fr').addEventListener('click', function () {
-      appliquerLangue('fr');
+      appliquerLangue('fr', true);
     });
     document.getElementById('btn-en').addEventListener('click', function () {
-      appliquerLangue('en');
+      appliquerLangue('en', true);
     });
 
     // --- Menu hamburger ---
     var hamburger = document.getElementById('hamburger');
     hamburger.addEventListener('click', toggleMenu);
 
-    // Fermer le menu quand on clique sur un lien de navigation
     var liensNav = document.querySelectorAll('.nav-links a');
     liensNav.forEach(function (lien) {
       lien.addEventListener('click', function () {
@@ -391,19 +377,20 @@
       });
     });
 
-    // Focus trap pour le menu mobile
     document.addEventListener('keydown', gererFocusTrap);
 
     // --- Ombre au scroll ---
     window.addEventListener('scroll', gererOmbreNav, { passive: true });
-    // Vérifier l'état initial (au cas où la page est déjà scrollée)
     gererOmbreNav();
 
     // --- Observer les sections pour le lien actif ---
     initialiserObserverSections();
 
-    // --- Animations scroll reveal (Intersection Observer) ---
+    // --- Animations scroll reveal ---
     initialiserScrollReveal();
+
+    // --- Compteurs animés ---
+    initialiserCompteurs();
 
     // --- Modale : politique de confidentialité ---
     initialiserModale();
@@ -416,12 +403,7 @@
      6. ANIMATIONS AU DÉFILEMENT (Scroll Reveal)
      ------------------------------------------ */
 
-  /**
-   * Observe les éléments .scroll-reveal et leur ajoute la classe .visible
-   * quand ils entrent dans le viewport. Respecte prefers-reduced-motion.
-   */
   function initialiserScrollReveal() {
-    // Si l'utilisateur préfère réduire les animations, tout rendre visible immédiatement
     var prefereReduction = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefereReduction) return;
 
@@ -449,7 +431,70 @@
   }
 
   /* ------------------------------------------
-     7. FORMULAIRE DE CONTACT — Soumission AJAX
+     7. COMPTEURS ANIMÉS (Chiffres clés)
+     ------------------------------------------ */
+
+  function initialiserCompteurs() {
+    var prefereReduction = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var compteurs = document.querySelectorAll('.chiffre-valeur[data-cible]');
+    if (compteurs.length === 0) return;
+
+    if (prefereReduction) {
+      // Afficher les valeurs finales immédiatement
+      compteurs.forEach(function (el) {
+        var cible = parseInt(el.getAttribute('data-cible'), 10);
+        var suffixe = el.getAttribute('data-suffixe') || '';
+        var prefixeAttr = el.getAttribute('data-prefixe') || '';
+        el.textContent = prefixeAttr + cible + suffixe;
+      });
+      return;
+    }
+
+    var animes = new Set();
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !animes.has(entry.target)) {
+          animes.add(entry.target);
+          animerCompteur(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    compteurs.forEach(function (el) {
+      observer.observe(el);
+    });
+  }
+
+  function animerCompteur(element) {
+    var cible = parseInt(element.getAttribute('data-cible'), 10);
+    var suffixe = element.getAttribute('data-suffixe') || '';
+    var prefixeAttr = element.getAttribute('data-prefixe') || '';
+    var duree = 1500; // ms
+    var debut = null;
+
+    // Pour les grands nombres (ex: 2017), on démarre de plus près
+    var depart = cible > 100 ? cible - 30 : 0;
+
+    function step(timestamp) {
+      if (!debut) debut = timestamp;
+      var progression = Math.min((timestamp - debut) / duree, 1);
+      // Easing: ease-out quad
+      var eased = 1 - (1 - progression) * (1 - progression);
+      var valeur = Math.round(depart + (cible - depart) * eased);
+      element.textContent = prefixeAttr + valeur + suffixe;
+
+      if (progression < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  /* ------------------------------------------
+     8. FORMULAIRE DE CONTACT — Soumission AJAX
      ------------------------------------------ */
 
   var messagesFormulaire = {
@@ -473,15 +518,8 @@
     }
   };
 
-  // Regex pour valider le format courriel
   var regexCourriel = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-  /**
-   * Affiche ou efface une erreur inline sur un champ.
-   * @param {HTMLElement} champ — l'input
-   * @param {string} idErreur — l'id du span d'erreur
-   * @param {string|null} message — le message d'erreur, ou null pour effacer
-   */
   function afficherErreurChamp(champ, idErreur, message) {
     var span = document.getElementById(idErreur);
     if (message) {
@@ -495,9 +533,6 @@
     }
   }
 
-  /**
-   * Valide le champ nom. Retourne true si valide.
-   */
   function validerNom() {
     var champ = document.getElementById('champ-nom');
     var msgs = messagesFormulaire[langueActive] || messagesFormulaire.fr;
@@ -509,9 +544,6 @@
     return true;
   }
 
-  /**
-   * Valide le champ courriel. Retourne true si valide.
-   */
   function validerCourriel() {
     var champ = document.getElementById('champ-courriel');
     var msgs = messagesFormulaire[langueActive] || messagesFormulaire.fr;
@@ -535,11 +567,9 @@
     var champNom = document.getElementById('champ-nom');
     var champCourriel = document.getElementById('champ-courriel');
 
-    // Validation en temps réel au blur (quand l'utilisateur quitte le champ)
     champNom.addEventListener('blur', validerNom);
     champCourriel.addEventListener('blur', validerCourriel);
 
-    // Effacer l'erreur dès que l'utilisateur corrige
     champNom.addEventListener('input', function () {
       if (champNom.value.trim() !== '') {
         afficherErreurChamp(champNom, 'erreur-nom', null);
@@ -559,20 +589,17 @@
       var btnEnvoyer = formulaire.querySelector('.btn-envoyer');
       var msgs = messagesFormulaire[langueActive] || messagesFormulaire.fr;
 
-      // Valider avant envoi
       var nomValide = validerNom();
       var courrielValide = validerCourriel();
 
       if (!nomValide || !courrielValide) {
         msgDiv.textContent = msgs.validation;
         msgDiv.className = 'form-message form-message-erreur';
-        // Focus sur le premier champ en erreur
         if (!nomValide) champNom.focus();
         else champCourriel.focus();
         return;
       }
 
-      // Afficher état d'envoi
       msgDiv.textContent = msgs.envoi;
       msgDiv.className = 'form-message form-message-envoi';
       btnEnvoyer.disabled = true;
@@ -589,7 +616,6 @@
           msgDiv.textContent = msgs.succes;
           msgDiv.className = 'form-message form-message-succes';
           formulaire.reset();
-          // Effacer les erreurs inline après reset
           afficherErreurChamp(champNom, 'erreur-nom', null);
           afficherErreurChamp(champCourriel, 'erreur-courriel', null);
         } else {
@@ -607,18 +633,13 @@
   }
 
   /* ------------------------------------------
-     8. MODALE — Politique de confidentialité
+     9. MODALE — Politique de confidentialité
      ------------------------------------------ */
 
-  /**
-   * Gère l'ouverture et la fermeture de la modale.
-   * Tous les liens avec l'attribut data-ouvrir-politique ouvrent la modale.
-   */
   function initialiserModale() {
     var modale = document.getElementById('modale-politique');
     var btnFermer = document.getElementById('modale-fermer');
 
-    // Ouvrir la modale au clic sur tout lien [data-ouvrir-politique]
     var liens = document.querySelectorAll('[data-ouvrir-politique]');
     liens.forEach(function (lien) {
       lien.addEventListener('click', function (e) {
@@ -627,17 +648,14 @@
       });
     });
 
-    // Fermer au clic sur le bouton X
     btnFermer.addEventListener('click', fermerModale);
 
-    // Fermer au clic sur l'overlay (en dehors du contenu)
     modale.addEventListener('click', function (e) {
       if (e.target === modale) {
         fermerModale();
       }
     });
 
-    // Fermer avec Échap
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && modale.classList.contains('modale-visible')) {
         fermerModale();
@@ -645,17 +663,14 @@
     });
   }
 
-  /** Ouvre la modale et piège le focus */
   function ouvrirModale() {
     var modale = document.getElementById('modale-politique');
     modale.classList.add('modale-visible');
     modale.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    // Placer le focus sur le bouton fermer
     document.getElementById('modale-fermer').focus();
   }
 
-  /** Ferme la modale et restaure le scroll */
   function fermerModale() {
     var modale = document.getElementById('modale-politique');
     modale.classList.remove('modale-visible');
