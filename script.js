@@ -448,6 +448,19 @@
       setTimeout(function () { enCours = false; }, delai);
     }
 
+    // Le bas de la section est-il visible (ou presque) dans le viewport ?
+    function basSectionVisible(section) {
+      var basSection = section.offsetTop + section.offsetHeight;
+      var basViewport = window.scrollY + window.innerHeight;
+      return basViewport >= basSection - 5;
+    }
+
+    // Le haut de la section est-il visible (ou presque) dans le viewport ?
+    function hautSectionVisible(section) {
+      var hautSection = section.offsetTop;
+      return window.scrollY <= hautSection - hauteurNav + 5;
+    }
+
     // Écouter le wheel pour snapper à la section suivante/précédente
     var accumulateur = 0;
     var seuilDelta = 50; // seuil pour déclencher un snap (filtre les petits scrolls trackpad)
@@ -464,14 +477,25 @@
         return;
       }
 
+      var direction = e.deltaY > 0 ? 1 : -1;
+      var courante = getSectionCourante();
+
+      // Si la section est plus grande que le viewport, laisser le scroll natif
+      // jusqu'à ce que l'utilisateur atteigne le bord de la section.
+      if (direction > 0 && !basSectionVisible(courante)) {
+        accumulateur = 0;
+        return;
+      }
+      if (direction < 0 && !hautSectionVisible(courante)) {
+        accumulateur = 0;
+        return;
+      }
+
       accumulateur += e.deltaY;
 
       if (Math.abs(accumulateur) < seuilDelta) return;
-
-      var direction = accumulateur > 0 ? 1 : -1;
       accumulateur = 0;
 
-      var courante = getSectionCourante();
       var indexCourant = getIndexSection(courante);
       var indexCible = indexCourant + direction;
 
@@ -494,6 +518,11 @@
       if (direction === 0) return;
 
       var courante = getSectionCourante();
+
+      // Même logique : respecter le contenu plus grand que le viewport
+      if (direction > 0 && !basSectionVisible(courante)) return;
+      if (direction < 0 && !hautSectionVisible(courante)) return;
+
       var indexCourant = getIndexSection(courante);
       var indexCible = indexCourant + direction;
 

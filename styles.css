@@ -15,8 +15,8 @@
   /* Hauteur de la barre de navigation (utilisée pour le décalage des sections) */
   --hauteur-nav: 64px;
 
-  /* Padding vertical des sections (responsive — augmenté pour plus d'air) */
-  --section-py: clamp(80px, 10vw, 130px);
+  /* Padding vertical des sections (responsive) */
+  --section-py: clamp(60px, 7vw, 90px);
 }
 
 /* ============================================
@@ -189,6 +189,14 @@ p {
 
 .nav-links a.nav-lien-actif {
   color: var(--couleur-ambre);
+}
+
+/* Séparateur entre les liens internes et le lien externe (Articles) */
+.nav-separateur {
+  width: 40px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  list-style: none;
 }
 
 /* Groupe droite : langue + hamburger */
@@ -654,7 +662,7 @@ p {
 .services-sous-titre {
   color: var(--couleur-gris);
   font-size: 1.05rem;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 /* Grille des cartes — mobile : 1 colonne */
@@ -762,7 +770,7 @@ p {
 .forfaits-sous-titre {
   color: var(--couleur-gris);
   font-size: 1.05rem;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .forfaits-grille {
@@ -898,7 +906,7 @@ p {
   width: 56px;
   height: 3px;
   background-color: var(--couleur-ambre);
-  margin: 44px auto;
+  margin: 28px auto;
   border-radius: 2px;
 }
 
@@ -1702,6 +1710,12 @@ p {
     font-size: 0.95rem;
     font-weight: 500;
     min-height: 0;
+  }
+
+  .nav-separateur {
+    width: 1px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.25);
   }
 
   .btn-langue {
