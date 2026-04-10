@@ -1586,6 +1586,80 @@ p {
 .js-enabled .chiffre-item:nth-child(4) { transition-delay: 0.3s; }
 
 /* ============================================
+   FLÈCHES DE NAVIGATION ENTRE SECTIONS
+   ============================================ */
+.section-fleche-suivante {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(232, 148, 58, 0.15);
+  border: 1px solid rgba(232, 148, 58, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.section-fleche-suivante:hover {
+  background: rgba(232, 148, 58, 0.3);
+  transform: translateX(-50%) translateY(2px);
+}
+
+.fleche-chevron {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid var(--couleur-ambre);
+  border-bottom: 2px solid var(--couleur-ambre);
+  transform: rotate(45deg);
+  margin-top: -4px;
+  animation: fleche-rebond 2s ease-in-out infinite;
+}
+
+.section-fleche-claire .fleche-chevron {
+  border-color: var(--couleur-blanc);
+}
+
+.section-fleche-claire {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.section-fleche-claire:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fleche-rebond {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(4px); }
+}
+
+/* Les sections qui ont des flèches doivent être en position relative */
+.section-chiffres,
+.section-services,
+.section-forfaits,
+.section-outils-detail,
+.section-a-propos {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .section-chiffres,
+  .section-services,
+  .section-forfaits,
+  .section-outils-detail,
+  .section-a-propos {
+    padding-bottom: 80px;
+  }
+}
+
+/* ============================================
    SCROLLBAR PERSONNALISÉE (WebKit)
    ============================================ */
 ::-webkit-scrollbar {
@@ -1672,6 +1746,10 @@ p {
    RESPONSIVE — Tablette paysage / petit desktop (>= 768px)
    ============================================ */
 @media (min-width: 768px) {
+
+  .section-fleche-suivante {
+    display: flex;
+  }
 
   html {
     font-size: 19px;

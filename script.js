@@ -7,10 +7,11 @@
    3. L'ombre de la navigation au scroll
    4. La mise en évidence du lien de la section visible
    5. L'accessibilité (focus trap, aria-labels)
-   6. Les animations au défilement (scroll reveal)
-   7. Les compteurs animés (chiffres clés)
-   8. Le formulaire de contact AJAX
-   9. La modale politique de confidentialité
+   6. Le défilement par section (snap scroll fluide)
+   7. Les animations au défilement (scroll reveal)
+   8. Les compteurs animés (chiffres clés)
+   9. Le formulaire de contact AJAX
+  10. La modale politique de confidentialité
    ============================================ */
 
 (function () {
@@ -386,6 +387,9 @@
     // --- Observer les sections pour le lien actif ---
     initialiserObserverSections();
 
+    // --- Défilement par section (snap scroll fluide) ---
+    initialiserSnapScroll();
+
     // --- Animations scroll reveal ---
     initialiserScrollReveal();
 
@@ -400,7 +404,109 @@
   });
 
   /* ------------------------------------------
-     6. ANIMATIONS AU DÉFILEMENT (Scroll Reveal)
+     6. DÉFILEMENT PAR SECTION (Snap Scroll fluide)
+     ------------------------------------------ */
+
+  function initialiserSnapScroll() {
+    var prefereReduction = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefereReduction) return;
+
+    // Ne pas activer sur mobile (écrans < 768px) — le snap peut gêner
+    if (window.innerWidth < 768) return;
+
+    var sections = document.querySelectorAll('.section');
+    if (sections.length === 0) return;
+
+    var enCours = false;
+    var delai = 800; // cooldown en ms entre deux snaps
+    var hauteurNav = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hauteur-nav'), 10) || 64;
+
+    // Déterminer la section courante
+    function getSectionCourante() {
+      var milieu = window.innerHeight / 2 + window.scrollY;
+      var courante = sections[0];
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].offsetTop <= milieu) {
+          courante = sections[i];
+        }
+      }
+      return courante;
+    }
+
+    function getIndexSection(section) {
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i] === section) return i;
+      }
+      return 0;
+    }
+
+    function scrollVersSection(index) {
+      if (index < 0 || index >= sections.length) return;
+      enCours = true;
+      var cible = sections[index];
+      var top = cible.offsetTop - hauteurNav;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+      setTimeout(function () { enCours = false; }, delai);
+    }
+
+    // Écouter le wheel pour snapper à la section suivante/précédente
+    var accumulateur = 0;
+    var seuilDelta = 50; // seuil pour déclencher un snap (filtre les petits scrolls trackpad)
+
+    window.addEventListener('wheel', function (e) {
+      // Ne pas interférer avec la modale ou le menu ouvert
+      var modale = document.getElementById('modale-politique');
+      if (modale && modale.classList.contains('modale-visible')) return;
+      var hamburger = document.getElementById('hamburger');
+      if (hamburger && hamburger.classList.contains('ouvert')) return;
+
+      if (enCours) {
+        e.preventDefault();
+        return;
+      }
+
+      accumulateur += e.deltaY;
+
+      if (Math.abs(accumulateur) < seuilDelta) return;
+
+      var direction = accumulateur > 0 ? 1 : -1;
+      accumulateur = 0;
+
+      var courante = getSectionCourante();
+      var indexCourant = getIndexSection(courante);
+      var indexCible = indexCourant + direction;
+
+      if (indexCible >= 0 && indexCible < sections.length) {
+        e.preventDefault();
+        scrollVersSection(indexCible);
+      }
+    }, { passive: false });
+
+    // Aussi écouter les touches clavier flèches pour naviguer entre sections
+    document.addEventListener('keydown', function (e) {
+      if (enCours) return;
+      // Ne pas interférer si le focus est dans un champ de formulaire
+      var tag = document.activeElement.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+
+      var direction = 0;
+      if (e.key === 'ArrowDown' || e.key === 'PageDown') direction = 1;
+      if (e.key === 'ArrowUp' || e.key === 'PageUp') direction = -1;
+      if (direction === 0) return;
+
+      var courante = getSectionCourante();
+      var indexCourant = getIndexSection(courante);
+      var indexCible = indexCourant + direction;
+
+      if (indexCible >= 0 && indexCible < sections.length) {
+        e.preventDefault();
+        scrollVersSection(indexCible);
+      }
+    });
+  }
+
+  /* ------------------------------------------
+     7. ANIMATIONS AU DÉFILEMENT (Scroll Reveal) [was 6]
      ------------------------------------------ */
 
   function initialiserScrollReveal() {
