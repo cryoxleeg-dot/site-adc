@@ -421,16 +421,15 @@
     var delai = 800; // cooldown en ms entre deux snaps
     var hauteurNav = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hauteur-nav'), 10) || 64;
 
-    // Déterminer la section courante
+    // Déterminer la section courante (basé sur le haut du viewport, pas le milieu)
     function getSectionCourante() {
-      var milieu = window.innerHeight / 2 + window.scrollY;
-      var courante = sections[0];
-      for (var i = 0; i < sections.length; i++) {
-        if (sections[i].offsetTop <= milieu) {
-          courante = sections[i];
+      var scrollTop = window.scrollY + hauteurNav + 10;
+      for (var i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].offsetTop <= scrollTop) {
+          return sections[i];
         }
       }
-      return courante;
+      return sections[0];
     }
 
     function getIndexSection(section) {
