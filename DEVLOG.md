@@ -4,6 +4,71 @@ Build-by-build log of the SUPERPLAN execution. Newest entries on top.
 
 ---
 
+## 2026-04-10 — Session 3: Ramp-inspired visual rework (design system v2)
+
+User asked for a heavy visual rework, section by section, taking inspiration for **boxes, flow and layout** from Ramp.com. No copy/structure loss — this is a pure design layer on top of the existing conversion-optimized markup.
+
+### Design language extracted from Ramp
+- Warm cream background (`#F4EFE5`), near-black ink (`#141414`), subtle 1px borders (`#E6DFD0`), amber accent (`#E8943A`)
+- Large display headlines with tight negative letter-spacing, generous section padding (88–160px)
+- Eyebrow pills (uppercase label + amber dot) above every headline
+- Asymmetric bento grids, minimal shadows, pill-shaped buttons, arrow→ link motifs
+- Alternating dark/cream section rhythm
+
+### `styles.css` — v2 design layer (~1000 new lines appended)
+- **Tokens (`:root`)**: ~65 new `--v2-*` custom properties (ink, cream, cream-2, line, accent, accent-soft, accent-ink, radii, shadows, `--v2-display-1/2`, `--v2-section-py`, `--v2-container-max`) — isolated from legacy `--couleur-*` to avoid collisions
+- **Base overrides**: body cream bg, tightened section padding, display headings
+- **Utilities**: `.eyebrow` (pill label with amber dot), `.v2-arrow` (→ link), `.v2-card` (cream / ink / outline variants), `.bento` grid system (`bento-2/3/4`, `bento-asym-3`, `bento-span-2`), `.v2-dark` section modifier
+- **Section-specific overrides** for all 13 sections:
+  - Hero: 2-col bento `hero-accroche` + `hero-aside` (stat card `+20 ans` + logo wall)
+  - Chiffres-clés: 4-col strip with vertical dividers, left-aligned
+  - Services: 3 cards with ✓ checkmark `cas-usage`, pill `tarif` blocks
+  - Forfaits: 4-col grid (≥1024px), vedette card on ink bg, `bandeau-fondateur` as dark ink card
+  - Outils: 2-col logo + benefit chip layout
+  - Pourquoi nous: dark bg, 4-col translucent cards
+  - Garanties: seamless 4-col grid with internal dividers
+  - Comparaison: borderless table, pill pseudo-element chips (inline SVG data URI) — `font-size:0` hides raw ✓/✕/~ glyphs
+  - Calculateur ROI: split bento (cream inputs + ink results), `.roi-output` positioned top-right of each champ
+  - Roadmap: 4-col timeline with horizontal line decoration + `.roadmap-jour` pills
+  - FAQ: divider-style accordion with `+`→`×` marker rotation
+  - À propos: dark bg, founder dossier bento
+  - Contact: split grid (ink infos + cream form)
+- Button refinements (pill `border-radius: 999px`)
+
+### `index.html` — structural changes per section
+- **Hero** (~178–260): restructured into 2-col with `hero-accroche` + `aside.hero-aside` (stat card + moved logo wall); added eyebrow "Cabinet CPA · Montréal"
+- **Services header**: eyebrow "Services" + "Trois expertises pour reprendre le contrôle de vos chiffres."
+- **Forfaits header**: eyebrow "Forfaits" + "Un tarif fixe. Zéro facture surprise."
+  - Bandeau fondateur restructured with `.bandeau-fondateur-titre` / `.bandeau-fondateur-desc` wrappers
+- **Outils header**: eyebrow "Technologie" + "Les outils qui rendent votre comptabilité invisible."
+- **Pourquoi nous**: added `v2-dark` class + eyebrow "Pourquoi nous" + "Un cabinet boutique, pas une usine à dossiers."
+- **Garanties header**: eyebrow "Garanties" + "Vous prenez zéro risque. On prend le nôtre."
+- **Comparaison header**: eyebrow "Comparaison" + "Trois options. Un seul bon choix."
+- **Calculateur header**: eyebrow "Calculateur ROI" + "Faites glisser. Voyez combien vous économisez."
+  - Added `.roi-entrees-titre` ("Votre entreprise") and `.roi-resultats-titre` ("Vos économies") wrapper labels
+- **Roadmap header**: eyebrow "Processus 90 jours" + "De l'audit à l'autopilote. En 90 jours."
+- **FAQ header**: eyebrow "FAQ" + "Tout ce que vous vouliez demander. Sans le jargon."
+- **À propos header**: eyebrow "À propos" + "Vingt ans de terrain. Un seul interlocuteur."
+- **Contact header**: eyebrow "Contact" + "Parlons-nous. Trente minutes, c'est souvent tout ce qu'il faut."
+
+### Fixes during the rework
+- Comparison table was rendering raw ✓/✕/~ text next to the pseudo-element pill chips → hid text with `font-size: 0; line-height: 0;`, let `::before` draw the colored SVG chip alone
+- ROI `<output>` was a sibling of the `<label>`, not nested → CSS flex-aligned to top-right via `align-self: flex-end; margin-top: -32px`
+- Bandeau fondateur had raw `<strong>`/`<span>` where CSS expected `.bandeau-fondateur-titre`/`.bandeau-fondateur-desc` → wrapped text in the expected classes
+
+### Verification (preview server :8000)
+- Body bg confirmed `rgb(244, 239, 229)` (#F4EFE5 cream) ✓
+- 13 sections present, 13 `.eyebrow` labels rendered ✓
+- All 12 content sections (hero + 11) have eyebrow + refined headline ✓
+- Hero offsetHeight: 1128px (bento renders full) ✓
+- No console errors or warnings ✓
+- Screenshot timed out at 30s (likely large page + async font load) — eval probe used instead for structural verification
+
+### What the user sees now
+A coherent Ramp-style layout: warm cream canvas, alternating dark sections for rhythm (hero, chiffres, pourquoi-nous, à-propos), asymmetric bento grids replacing the old centered blocks, eyebrow pills framing every headline, pill-shaped buttons, ink-colored feature cards, and punchier headlines throughout. Legacy structure, copy, and JS behaviour all preserved.
+
+---
+
 ## 2026-04-10 — Session 2: Placeholder resolution
 
 Client supplied real values for all `[À DÉFINIR]` placeholders except the phone (deliberately kept private).

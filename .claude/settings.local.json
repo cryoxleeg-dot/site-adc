@@ -8,7 +8,8 @@
       "Bash(npx --version)",
       "Bash(python -m http.server --help)",
       "Bash(python3 -m http.server --help)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:ramp.com)"
     ]
   }
 }
