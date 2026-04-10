@@ -15,6 +15,11 @@
   <!-- DOMAINE : Remplacer l'URL ci-dessous par votre nom de domaine final -->
   <link rel="canonical" href="https://affairedechiffres.com/">
 
+  <!-- Hreflang — site bilingue FR-CA / EN-CA -->
+  <link rel="alternate" hreflang="fr-ca" href="https://affairedechiffres.com/">
+  <link rel="alternate" hreflang="en-ca" href="https://affairedechiffres.com/">
+  <link rel="alternate" hreflang="x-default" href="https://affairedechiffres.com/">
+
   <!-- Open Graph (partage réseaux sociaux) — mis à jour par script.js -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Affaire de Chiffres">
@@ -69,18 +74,23 @@
       <!-- Liens de navigation au centre (menu mobile en overlay sur petits écrans) -->
       <ul class="nav-links" id="nav-links" role="menubar">
         <li role="none">
-          <a href="#accueil" role="menuitem" aria-label="Accueil">
-            <span data-lang="fr">Accueil</span><span data-lang="en">Home</span>
-          </a>
-        </li>
-        <li role="none">
           <a href="#services" role="menuitem" aria-label="Services">
             <span data-lang="fr">Services</span><span data-lang="en">Services</span>
           </a>
         </li>
         <li role="none">
-          <a href="#outils" role="menuitem" aria-label="Outils">
-            <span data-lang="fr">Outils</span><span data-lang="en">Tools</span>
+          <a href="#forfaits" role="menuitem" aria-label="Forfaits">
+            <span data-lang="fr">Forfaits</span><span data-lang="en">Pricing</span>
+          </a>
+        </li>
+        <li role="none">
+          <a href="#pourquoi-nous" role="menuitem" aria-label="Pourquoi nous">
+            <span data-lang="fr">Pourquoi nous</span><span data-lang="en">Why us</span>
+          </a>
+        </li>
+        <li role="none">
+          <a href="#faq" role="menuitem" aria-label="FAQ">
+            <span data-lang="fr">FAQ</span><span data-lang="en">FAQ</span>
           </a>
         </li>
         <li role="none">
@@ -179,17 +189,22 @@
           <span data-lang="en">Montréal-based CPA firm specializing in tax planning and accounting process automation for individuals, self-employed workers and SMBs since 2017.</span>
         </p>
 
-        <!-- Boutons d'action -->
+        <!-- Boutons d'action — CTA principal = réservation 30 min, secondaire = services -->
         <div class="hero-boutons hero-anim" style="animation-delay: 0.6s;">
-          <a href="#contact" class="btn btn-primaire">
-            <span data-lang="fr">Parlons de votre projet</span>
-            <span data-lang="en">Let's talk about your project</span>
+          <a href="https://outlook.office.com/book/ConsultationGratuite30Minutes@affairedechiffres.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-primaire">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true" style="margin-right:8px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-lang="fr">Réserver 30 min gratuites</span>
+            <span data-lang="en">Book a free 30 min call</span>
           </a>
           <a href="#services" class="btn btn-secondaire">
             <span data-lang="fr">Découvrir nos services</span>
             <span data-lang="en">Discover our services</span>
           </a>
         </div>
+        <p class="hero-rassurance hero-anim" style="animation-delay: 0.7s;">
+          <span data-lang="fr">Sans engagement · Réponse en 24 h · Premier mois satisfait ou remboursé</span>
+          <span data-lang="en">No commitment · 24h response · First month money-back guarantee</span>
+        </p>
 
         <!-- Outils technologiques — carrousel intégré au hero -->
         <div class="outils-contenu hero-anim" style="animation-delay: 0.8s;">
@@ -343,12 +358,16 @@
               </li>
             </ul>
             <div class="carte-tarif">
-              <p class="tarif-sur-demande">
-                <span data-lang="fr">Chaque situation est unique</span>
-                <span data-lang="en">Every situation is unique</span>
+              <p class="tarif-a-partir">
+                <span data-lang="fr"><strong>350&nbsp;$</strong> <span class="tarif-suffixe">/ heure</span></span>
+                <span data-lang="en"><strong>$350</strong> <span class="tarif-suffixe">/ hour</span></span>
+              </p>
+              <p class="tarif-detail">
+                <span data-lang="fr">Mandat ponctuel ou forfait annuel · Soumission gratuite en 24 h</span>
+                <span data-lang="en">One-time engagement or annual plan · Free 24h quote</span>
               </p>
             </div>
-            <a href="#contact" class="btn btn-carte-outline">
+            <a href="#contact?service=fiscalite" class="btn btn-carte-outline">
               <span data-lang="fr">Obtenir mon estimé gratuit</span>
               <span data-lang="en">Get my free estimate</span>
             </a>
@@ -379,12 +398,16 @@
               </li>
             </ul>
             <div class="carte-tarif">
-              <p class="tarif-sur-demande">
-                <span data-lang="fr">Chaque situation est unique</span>
-                <span data-lang="en">Every situation is unique</span>
+              <p class="tarif-a-partir">
+                <span data-lang="fr"><strong>250&nbsp;$</strong> <span class="tarif-suffixe">/ heure</span> <span class="tarif-suffixe">(hors forfait)</span></span>
+                <span data-lang="en"><strong>$250</strong> <span class="tarif-suffixe">/ hour</span> <span class="tarif-suffixe">(standalone)</span></span>
+              </p>
+              <p class="tarif-detail">
+                <span data-lang="fr">Inclus sans frais additionnels dans les forfaits Complet et Premium</span>
+                <span data-lang="en">Included at no extra cost in the Complete and Premium packages</span>
               </p>
             </div>
-            <a href="#contact" class="btn btn-carte-outline">
+            <a href="#contact?service=technologie" class="btn btn-carte-outline">
               <span data-lang="fr">Obtenir mon estimé gratuit</span>
               <span data-lang="en">Get my free estimate</span>
             </a>
@@ -415,9 +438,13 @@
               </li>
             </ul>
             <div class="carte-tarif">
-              <p class="tarif-sur-demande">
-                <span data-lang="fr">Voir nos forfaits ci-dessous</span>
-                <span data-lang="en">See our packages below</span>
+              <p class="tarif-a-partir">
+                <span data-lang="fr">À partir de <strong>450&nbsp;$</strong> <span class="tarif-suffixe">/ mois</span></span>
+                <span data-lang="en">From <strong>$450</strong> <span class="tarif-suffixe">/ month</span></span>
+              </p>
+              <p class="tarif-detail">
+                <span data-lang="fr">3 forfaits mensuels · sans engagement</span>
+                <span data-lang="en">3 monthly plans · no commitment</span>
               </p>
             </div>
             <a href="#forfaits" class="btn btn-carte-outline">
@@ -443,7 +470,66 @@
           <span data-lang="en">Plans tailored to your business size and needs</span>
         </p>
 
+        <!-- Bannière Membre Fondateur — convertit le manque de clients en avantage -->
+        <div class="bandeau-fondateur scroll-reveal" role="note">
+          <div class="bandeau-fondateur-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/>
+            </svg>
+          </div>
+          <div class="bandeau-fondateur-texte">
+            <strong data-lang="fr">Programme Membre Fondateur — 20 places seulement</strong>
+            <strong data-lang="en">Founding Member Program — Only 20 spots</strong>
+            <span data-lang="fr">Tarif gelé à vie · Accès direct au fondateur · Sans frais d'installation. Une fois les 20 places occupées, le programme se ferme définitivement.</span>
+            <span data-lang="en">Rate locked for life · Direct access to the founder · No setup fees. Once the 20 spots are filled, the program closes permanently.</span>
+          </div>
+          <div class="bandeau-fondateur-compteur">
+            <span class="compteur-valeur">12</span>
+            <span class="compteur-label" data-lang="fr">places restantes</span>
+            <span class="compteur-label" data-lang="en">spots left</span>
+          </div>
+        </div>
+
         <div class="forfaits-grille">
+
+          <!-- Forfait Démarrage — nouveau, point d'entrée bas -->
+          <article class="carte-forfait scroll-reveal">
+            <div class="forfait-entete">
+              <h3 class="forfait-nom">
+                <span data-lang="fr">Démarrage</span><span data-lang="en">Starter</span>
+              </h3>
+              <p class="forfait-prix">
+                <span data-lang="fr">À partir de 750&nbsp;$<span class="forfait-prix-suffixe"> / unique</span></span>
+                <span data-lang="en">From $750<span class="forfait-prix-suffixe"> / one-time</span></span>
+              </p>
+              <p class="forfait-prix-detail">
+                <span data-lang="fr">Idéal pour PME en démarrage ou pour rattrapage comptable</span>
+                <span data-lang="en">Ideal for early-stage SMEs or bookkeeping cleanup</span>
+              </p>
+            </div>
+            <ul class="forfait-liste">
+              <li>
+                <span data-lang="fr">Rattrapage comptable jusqu'à 12 mois</span>
+                <span data-lang="en">Bookkeeping cleanup up to 12 months</span>
+              </li>
+              <li>
+                <span data-lang="fr">Mise en place QuickBooks ou Xero</span>
+                <span data-lang="en">QuickBooks or Xero setup</span>
+              </li>
+              <li>
+                <span data-lang="fr">Premier mois de tenue de livres inclus</span>
+                <span data-lang="en">First month of bookkeeping included</span>
+              </li>
+              <li>
+                <span data-lang="fr">Plan d'action sur 90 jours</span>
+                <span data-lang="en">90-day action plan</span>
+              </li>
+            </ul>
+            <a href="#contact?service=demarrage" class="btn btn-carte-outline">
+              <span data-lang="fr">Obtenir ma soumission</span>
+              <span data-lang="en">Get my quote</span>
+            </a>
+          </article>
 
           <!-- Forfait Essentiel -->
           <article class="carte-forfait scroll-reveal">
@@ -452,8 +538,12 @@
                 <span data-lang="fr">Essentiel</span><span data-lang="en">Standard</span>
               </h3>
               <p class="forfait-prix">
-                <span data-lang="fr">450 — 600&nbsp;$/mois</span>
-                <span data-lang="en">$450 — $600/month</span>
+                <span data-lang="fr">450 — 600&nbsp;$<span class="forfait-prix-suffixe"> / mois</span></span>
+                <span data-lang="en">$450 — $600<span class="forfait-prix-suffixe"> / month</span></span>
+              </p>
+              <p class="forfait-prix-detail">
+                <span data-lang="fr">≈ 530 — 700 $/mois tout inclus avec logiciels</span>
+                <span data-lang="en">≈ $530 — $700/mo all-in (incl. software)</span>
               </p>
             </div>
             <ul class="forfait-liste">
@@ -469,8 +559,12 @@
                 <span data-lang="fr">États financiers annuels</span>
                 <span data-lang="en">Annual financial statements</span>
               </li>
+              <li>
+                <span data-lang="fr">Réponse en 24 h ouvrables, garanti</span>
+                <span data-lang="en">24h business response, guaranteed</span>
+              </li>
             </ul>
-            <a href="#contact" class="btn btn-carte-outline">
+            <a href="#contact?service=essentiel" class="btn btn-carte-outline">
               <span data-lang="fr">Obtenir ma soumission</span>
               <span data-lang="en">Get my quote</span>
             </a>
@@ -486,8 +580,12 @@
                 <span data-lang="fr">Complet</span><span data-lang="en">Complete</span>
               </h3>
               <p class="forfait-prix">
-                <span data-lang="fr">650 — 900&nbsp;$/mois</span>
-                <span data-lang="en">$650 — $900/month</span>
+                <span data-lang="fr">650 — 900&nbsp;$<span class="forfait-prix-suffixe"> / mois</span></span>
+                <span data-lang="en">$650 — $900<span class="forfait-prix-suffixe"> / month</span></span>
+              </p>
+              <p class="forfait-prix-detail">
+                <span data-lang="fr">≈ 730 — 1 000 $/mois tout inclus avec logiciels</span>
+                <span data-lang="en">≈ $730 — $1,000/mo all-in (incl. software)</span>
               </p>
             </div>
             <ul class="forfait-liste">
@@ -508,11 +606,15 @@
                 <span data-lang="en">GST/QST filings</span>
               </li>
               <li>
-                <span data-lang="fr">États financiers</span>
-                <span data-lang="en">Financial statements</span>
+                <span data-lang="fr">États financiers complets</span>
+                <span data-lang="en">Complete financial statements</span>
+              </li>
+              <li>
+                <span data-lang="fr">Premier mois satisfait ou remboursé</span>
+                <span data-lang="en">First month money-back guarantee</span>
               </li>
             </ul>
-            <a href="#contact" class="btn btn-primaire btn-carte-plein">
+            <a href="#contact?service=complet" class="btn btn-primaire btn-carte-plein">
               <span data-lang="fr">Obtenir ma soumission</span>
               <span data-lang="en">Get my quote</span>
             </a>
@@ -525,8 +627,12 @@
                 <span data-lang="fr">Premium</span><span data-lang="en">Premium</span>
               </h3>
               <p class="forfait-prix">
-                <span data-lang="fr">900&nbsp;$+ /mois</span>
-                <span data-lang="en">$900+ /month</span>
+                <span data-lang="fr">900&nbsp;$+<span class="forfait-prix-suffixe"> / mois</span></span>
+                <span data-lang="en">$900+<span class="forfait-prix-suffixe"> / month</span></span>
+              </p>
+              <p class="forfait-prix-detail">
+                <span data-lang="fr">≈ 1 000 $+ /mois tout inclus avec logiciels</span>
+                <span data-lang="en">≈ $1,000+/mo all-in (incl. software)</span>
               </p>
             </div>
             <ul class="forfait-liste">
@@ -546,8 +652,12 @@
                 <span data-lang="fr">Production de rapports complexes et personnalisés</span>
                 <span data-lang="en">Complex and custom report production</span>
               </li>
+              <li>
+                <span data-lang="fr">Accès direct au fondateur · Réunion mensuelle</span>
+                <span data-lang="en">Direct founder access · Monthly review meeting</span>
+              </li>
             </ul>
-            <a href="#contact" class="btn btn-carte-outline">
+            <a href="#contact?service=premium" class="btn btn-carte-outline">
               <span data-lang="fr">Obtenir ma soumission</span>
               <span data-lang="en">Get my quote</span>
             </a>
@@ -619,6 +729,603 @@
       </div>
     </section>
 
+    <!-- ============================================
+         SECTION POURQUOI NOUS — 4 différenciateurs
+         ============================================ -->
+    <section id="pourquoi-nous" class="section section-pourquoi" aria-label="Pourquoi nous choisir">
+      <div class="section-contenu pourquoi-contenu">
+        <h2 class="scroll-reveal">
+          <span data-lang="fr">Pourquoi Affaire de Chiffres</span>
+          <span data-lang="en">Why Affaire de Chiffres</span>
+        </h2>
+        <p class="pourquoi-sous-titre scroll-reveal">
+          <span data-lang="fr">Un cabinet boutique pensé pour les PME québécoises qui en ont assez des intermédiaires</span>
+          <span data-lang="en">A boutique firm built for Quebec SMEs who are tired of intermediaries</span>
+        </p>
+
+        <div class="pourquoi-grille">
+
+          <article class="pourquoi-carte scroll-reveal">
+            <div class="pourquoi-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11l-3-3m0 0l-3 3m3-3v8"/></svg>
+            </div>
+            <h3 class="pourquoi-titre">
+              <span data-lang="fr">Mené par un CPA senior</span>
+              <span data-lang="en">Led by a senior CPA</span>
+            </h3>
+            <p class="pourquoi-texte">
+              <span data-lang="fr">Pas d'assistant junior, pas de roulement de personnel. Vous parlez directement à Luc Pilon, CPA, qui cumule plus de 20 ans en finance corporative.</span>
+              <span data-lang="en">No junior assistant, no staff turnover. You speak directly with Luc Pilon, CPA, with 20+ years of corporate finance experience.</span>
+            </p>
+          </article>
+
+          <article class="pourquoi-carte scroll-reveal">
+            <div class="pourquoi-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="pourquoi-titre">
+              <span data-lang="fr">Tech-first depuis 2017</span>
+              <span data-lang="en">Tech-first since 2017</span>
+            </h3>
+            <p class="pourquoi-texte">
+              <span data-lang="fr">Dext, KNIME, QuickBooks, Xero, Acomba, Microsoft Dynamics 365, Ramp. Vous gagnez en moyenne 10 à 15 heures par mois sur la saisie manuelle.</span>
+              <span data-lang="en">Dext, KNIME, QuickBooks, Xero, Acomba, Microsoft Dynamics 365, Ramp. You save 10–15 hours of manual entry per month on average.</span>
+            </p>
+          </article>
+
+          <article class="pourquoi-carte scroll-reveal">
+            <div class="pourquoi-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="pourquoi-titre">
+              <span data-lang="fr">Bilingue, ancré au Québec</span>
+              <span data-lang="en">Bilingual, rooted in Quebec</span>
+            </h3>
+            <p class="pourquoi-texte">
+              <span data-lang="fr">Spécialistes des déclarations T2 et CO-17, TPS/TVQ, Loi 25 et des particularités fiscales québécoises. Votre comptable parle votre langue — littéralement.</span>
+              <span data-lang="en">Specialists in T2 and CO-17 filings, GST/QST, Law 25 and Quebec-specific tax rules. Your accountant speaks your language — literally.</span>
+            </p>
+          </article>
+
+          <article class="pourquoi-carte scroll-reveal">
+            <div class="pourquoi-icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="pourquoi-titre">
+              <span data-lang="fr">Forfaits fixes, sans surprise</span>
+              <span data-lang="en">Fixed pricing, no surprises</span>
+            </h3>
+            <p class="pourquoi-texte">
+              <span data-lang="fr">Tarifs publiés. Sans frais d'installation. Sans engagement long terme. Vous savez exactement ce que vous payez chaque mois — coût des logiciels inclus.</span>
+              <span data-lang="en">Published pricing. No setup fees. No long-term commitment. You know exactly what you pay each month — software costs included.</span>
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION GARANTIES — Réversion du risque
+         ============================================ -->
+    <section id="garanties" class="section section-garanties" aria-label="Nos garanties">
+      <div class="section-contenu garanties-contenu">
+        <h2 class="scroll-reveal">
+          <span data-lang="fr">Nos garanties</span>
+          <span data-lang="en">Our guarantees</span>
+        </h2>
+        <p class="garanties-sous-titre scroll-reveal">
+          <span data-lang="fr">Vous prenez zéro risque. C'est nous qui prenons le nôtre.</span>
+          <span data-lang="en">You take zero risk. We take ours.</span>
+        </p>
+
+        <div class="garanties-grille">
+
+          <div class="garantie-item scroll-reveal">
+            <div class="garantie-numero">01</div>
+            <h3 class="garantie-titre">
+              <span data-lang="fr">Réponse en 24 h ouvrables, garantie</span>
+              <span data-lang="en">24h business response, guaranteed</span>
+            </h3>
+            <p class="garantie-texte">
+              <span data-lang="fr">Toute demande reçue durant nos heures d'ouverture (lun – ven, 9 h – 17 h HE) reçoit une réponse humaine en moins de 24 h. Pas de chatbot, pas de file d'attente.</span>
+              <span data-lang="en">Every request received during business hours (Mon – Fri, 9 am – 5 pm ET) gets a human response within 24 hours. No chatbot, no queue.</span>
+            </p>
+          </div>
+
+          <div class="garantie-item scroll-reveal">
+            <div class="garantie-numero">02</div>
+            <h3 class="garantie-titre">
+              <span data-lang="fr">Premier mois satisfait ou remboursé</span>
+              <span data-lang="en">First month money-back guarantee</span>
+            </h3>
+            <p class="garantie-texte">
+              <span data-lang="fr">Si après 30 jours vous n'êtes pas convaincu, on vous rembourse intégralement votre premier mois et on vous remet vos données proprement organisées.</span>
+              <span data-lang="en">If after 30 days you're not convinced, we refund your first month in full and hand back your data cleanly organized.</span>
+            </p>
+          </div>
+
+          <div class="garantie-item scroll-reveal">
+            <div class="garantie-numero">03</div>
+            <h3 class="garantie-titre">
+              <span data-lang="fr">Sans frais d'installation, sans engagement</span>
+              <span data-lang="en">No setup fees, no commitment</span>
+            </h3>
+            <p class="garantie-texte">
+              <span data-lang="fr">Aucun frais caché, aucun contrat annuel. Mois par mois, avec 30 jours d'avis pour résilier. Vous restez libre.</span>
+              <span data-lang="en">No hidden fees, no annual contract. Month-to-month, with 30 days notice to cancel. You stay free.</span>
+            </p>
+          </div>
+
+          <div class="garantie-item scroll-reveal">
+            <div class="garantie-numero">04</div>
+            <h3 class="garantie-titre">
+              <span data-lang="fr">Conformité Loi 25 et données au Canada</span>
+              <span data-lang="en">Law 25 compliant, Canadian data hosting</span>
+            </h3>
+            <p class="garantie-texte">
+              <span data-lang="fr">Vos données financières sont chiffrées de bout en bout, hébergées au Canada, et nous respectons intégralement la Loi 25 du Québec. 2FA activée sur tous les systèmes.</span>
+              <span data-lang="en">Your financial data is end-to-end encrypted, hosted in Canada, and we fully comply with Quebec's Law 25. 2FA enabled on all systems.</span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION COMPARAISON — DIY vs indépendant vs ADC
+         ============================================ -->
+    <section id="comparaison" class="section section-comparaison" aria-label="Comparaison des options">
+      <div class="section-contenu comparaison-contenu">
+        <h2 class="scroll-reveal">
+          <span data-lang="fr">Comment nous nous comparons</span>
+          <span data-lang="en">How we compare</span>
+        </h2>
+        <p class="comparaison-sous-titre scroll-reveal">
+          <span data-lang="fr">Trois options s'offrent à votre PME. Voici les chiffres réels.</span>
+          <span data-lang="en">Three options for your SME. Here are the real numbers.</span>
+        </p>
+
+        <div class="comparaison-tableau-wrap scroll-reveal">
+          <table class="comparaison-tableau">
+            <thead>
+              <tr>
+                <th class="comparaison-th-feature"></th>
+                <th>
+                  <span data-lang="fr">Faire soi-même<br><small>(QuickBooks + Excel)</small></span>
+                  <span data-lang="en">DIY<br><small>(QuickBooks + Excel)</small></span>
+                </th>
+                <th>
+                  <span data-lang="fr">Teneur de livres indépendant</span>
+                  <span data-lang="en">Freelance bookkeeper</span>
+                </th>
+                <th class="comparaison-th-mise-en-avant">
+                  <span data-lang="fr">Affaire de Chiffres</span>
+                  <span data-lang="en">Affaire de Chiffres</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><span data-lang="fr">Coût mensuel typique</span><span data-lang="en">Typical monthly cost</span></th>
+                <td>200 – 400 $</td>
+                <td>400 – 700 $</td>
+                <td class="td-mise-en-avant">450 – 900 $</td>
+              </tr>
+              <tr>
+                <th scope="row"><span data-lang="fr">Supervision CPA</span><span data-lang="en">CPA oversight</span></th>
+                <td class="td-non">✕</td>
+                <td class="td-non">✕</td>
+                <td class="td-oui td-mise-en-avant">✓</td>
+              </tr>
+              <tr>
+                <th scope="row"><span data-lang="fr">Planification fiscale incluse</span><span data-lang="en">Tax planning included</span></th>
+                <td class="td-non">✕</td>
+                <td class="td-non">✕</td>
+                <td class="td-oui td-mise-en-avant">✓</td>
+              </tr>
+              <tr>
+                <th scope="row"><span data-lang="fr">Déclarations T2 et CO-17</span><span data-lang="en">T2 and CO-17 filings</span></th>
+                <td class="td-non">✕</td>
+                <td class="td-non">✕</td>
+                <td class="td-oui td-mise-en-avant">✓</td>
+              </tr>
+              <tr>
+                <th scope="row"><span data-lang="fr">Automatisation Dext + KNIME</span><span data-lang="en">Dext + KNIME automation</span></th>
+                <td class="td-non">✕</td>
+                <td class="td-partiel">~</td>
+                <td class="td-oui td-mise-en-avant">✓</td>
+              </tr>
+              <tr>
+                <th scope="row"><span data-lang="fr">Risque d'erreur</span><span data-lang="en">Risk of error</span></th>
+                <td><span data-lang="fr">Élevé</span><span data-lang="en">High</span></td>
+                <td><span data-lang="fr">Moyen</span><span data-lang="en">Medium</span></td>
+                <td class="td-mise-en-avant"><span data-lang="fr">Très faible</span><span data-lang="en">Very low</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span data-lang="fr">Temps que vous y consacrez</span><span data-lang="en">Time you spend on it</span></th>
+                <td>15 – 25 h/mois</td>
+                <td>3 – 5 h/mois</td>
+                <td class="td-mise-en-avant">&lt; 1 h/mois</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION CALCULATEUR ROI
+         ============================================ -->
+    <section id="calculateur" class="section section-roi" aria-label="Calculateur d'économies">
+      <div class="section-contenu roi-contenu">
+        <h2 class="scroll-reveal">
+          <span data-lang="fr">Combien vous économisez</span>
+          <span data-lang="en">How much you save</span>
+        </h2>
+        <p class="roi-sous-titre scroll-reveal">
+          <span data-lang="fr">Indiquez la taille de votre PME, on calcule l'économie réelle.</span>
+          <span data-lang="en">Tell us the size of your SME, we calculate the real saving.</span>
+        </p>
+
+        <div id="roi-calculateur" class="roi-grille scroll-reveal">
+
+          <div class="roi-entrees">
+            <div class="roi-champ">
+              <label for="roi-transactions">
+                <span data-lang="fr">Transactions par mois</span>
+                <span data-lang="en">Transactions per month</span>
+              </label>
+              <input type="range" id="roi-transactions" min="20" max="500" value="120" step="10">
+              <output id="roi-transactions-affichage" class="roi-output"></output>
+            </div>
+
+            <div class="roi-champ">
+              <label for="roi-revenu">
+                <span data-lang="fr">Chiffre d'affaires annuel ($)</span>
+                <span data-lang="en">Annual revenue ($)</span>
+              </label>
+              <input type="range" id="roi-revenu" min="100000" max="5000000" value="750000" step="50000">
+              <output id="roi-revenu-affichage" class="roi-output"></output>
+            </div>
+          </div>
+
+          <div class="roi-resultats">
+            <div class="roi-resultat-item">
+              <span class="roi-resultat-valeur" id="roi-sortie-heures">0 h</span>
+              <span class="roi-resultat-label">
+                <span data-lang="fr">économisées par mois</span>
+                <span data-lang="en">saved per month</span>
+              </span>
+            </div>
+            <div class="roi-resultat-item">
+              <span class="roi-resultat-valeur" id="roi-sortie-economies">0 $</span>
+              <span class="roi-resultat-label">
+                <span data-lang="fr">de saisie évitée par mois</span>
+                <span data-lang="en">of entry cost avoided per month</span>
+              </span>
+            </div>
+            <div class="roi-resultat-item roi-resultat-mise-en-avant">
+              <span class="roi-resultat-valeur" id="roi-sortie-equivalent">0 $</span>
+              <span class="roi-resultat-label">
+                <span data-lang="fr">économie annuelle vs<br>embauche junior in-house</span>
+                <span data-lang="en">annual saving vs<br>hiring a junior in-house</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="roi-disclaimer scroll-reveal">
+          <span data-lang="fr">Estimation basée sur 2 min/transaction sans automatisation, 80 % de réduction avec Dext, 35 $/h pour un teneur de livres junior et un coût annuel in-house ≈ 52 000 $. Vos résultats réels seront partagés à la première rencontre.</span>
+          <span data-lang="en">Estimate based on 2 min/transaction without automation, 80% reduction with Dext, $35/h for a junior bookkeeper, and an in-house annual cost of ~$52,000. Your actual results will be shared at the first meeting.</span>
+        </p>
+
+        <div class="roi-cta scroll-reveal">
+          <a href="https://outlook.office.com/book/ConsultationGratuite30Minutes@affairedechiffres.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-primaire">
+            <span data-lang="fr">Discuter de votre cas — 30 min gratuites</span>
+            <span data-lang="en">Discuss your case — free 30 min</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION ROADMAP 90 JOURS
+         ============================================ -->
+    <section id="roadmap" class="section section-roadmap" aria-label="Notre processus en 90 jours">
+      <div class="section-contenu roadmap-contenu">
+        <h2 class="scroll-reveal">
+          <span data-lang="fr">Vos 90 premiers jours avec nous</span>
+          <span data-lang="en">Your first 90 days with us</span>
+        </h2>
+        <p class="roadmap-sous-titre scroll-reveal">
+          <span data-lang="fr">Un processus rodé pour que vous voyiez de vrais résultats dès le 30<sup>e</sup> jour.</span>
+          <span data-lang="en">A proven process so you see real results by day 30.</span>
+        </p>
+
+        <ol class="roadmap-etapes">
+
+          <li class="roadmap-etape scroll-reveal">
+            <div class="roadmap-jour">
+              <span data-lang="fr">Jour 1 – 7</span>
+              <span data-lang="en">Day 1 – 7</span>
+            </div>
+            <h3 class="roadmap-titre">
+              <span data-lang="fr">Audit éclair et prise en main</span>
+              <span data-lang="en">Quick audit and onboarding</span>
+            </h3>
+            <p class="roadmap-texte">
+              <span data-lang="fr">Audit gratuit de votre situation actuelle, accès sécurisés aux logiciels existants, plan d'action personnalisé livré sous 7 jours.</span>
+              <span data-lang="en">Free audit of your current situation, secure access to existing software, personalized action plan delivered within 7 days.</span>
+            </p>
+          </li>
+
+          <li class="roadmap-etape scroll-reveal">
+            <div class="roadmap-jour">
+              <span data-lang="fr">Jour 8 – 30</span>
+              <span data-lang="en">Day 8 – 30</span>
+            </div>
+            <h3 class="roadmap-titre">
+              <span data-lang="fr">Mise en place et automatisation</span>
+              <span data-lang="en">Setup and automation</span>
+            </h3>
+            <p class="roadmap-texte">
+              <span data-lang="fr">Implantation Dext, conciliations bancaires automatisées, rattrapage comptable au besoin, premier rapport financier livré.</span>
+              <span data-lang="en">Dext setup, automated bank reconciliations, bookkeeping cleanup if needed, first financial report delivered.</span>
+            </p>
+          </li>
+
+          <li class="roadmap-etape scroll-reveal">
+            <div class="roadmap-jour">
+              <span data-lang="fr">Jour 31 – 60</span>
+              <span data-lang="en">Day 31 – 60</span>
+            </div>
+            <h3 class="roadmap-titre">
+              <span data-lang="fr">Stabilisation et tableaux de bord</span>
+              <span data-lang="en">Stabilization and dashboards</span>
+            </h3>
+            <p class="roadmap-texte">
+              <span data-lang="fr">Tableaux de bord KNIME pour suivre votre rentabilité, première rencontre stratégique mensuelle, recommandations fiscales préliminaires.</span>
+              <span data-lang="en">KNIME dashboards to track your profitability, first monthly strategy meeting, preliminary tax recommendations.</span>
+            </p>
+          </li>
+
+          <li class="roadmap-etape scroll-reveal">
+            <div class="roadmap-jour">
+              <span data-lang="fr">Jour 61 – 90</span>
+              <span data-lang="en">Day 61 – 90</span>
+            </div>
+            <h3 class="roadmap-titre">
+              <span data-lang="fr">Optimisation fiscale et croissance</span>
+              <span data-lang="en">Tax optimization and growth</span>
+            </h3>
+            <p class="roadmap-texte">
+              <span data-lang="fr">Plan d'optimisation fiscale annuel (rémunération mixte, fin d'année, T2/CO-17), revue des KPIs et recommandations pour les 6 prochains mois.</span>
+              <span data-lang="en">Annual tax optimization plan (mixed compensation, year-end, T2/CO-17), KPI review and recommendations for the next 6 months.</span>
+            </p>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION FAQ — 15 questions clés
+         ============================================ -->
+    <section id="faq" class="section section-faq" aria-label="Foire aux questions">
+      <div class="section-contenu faq-contenu">
+        <h2 class="scroll-reveal">
+          <span data-lang="fr">Foire aux questions</span>
+          <span data-lang="en">Frequently asked questions</span>
+        </h2>
+        <p class="faq-sous-titre scroll-reveal">
+          <span data-lang="fr">Les questions les plus posées par les propriétaires de PME québécoises.</span>
+          <span data-lang="en">The most common questions from Quebec SME owners.</span>
+        </p>
+
+        <div class="faq-liste scroll-reveal">
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Combien de temps prend l'implantation ?</span>
+              <span data-lang="en">How long does onboarding take?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Le plan d'action est livré sous 7 jours. La mise en place complète (Dext, conciliations, premier rapport) se fait dans les 30 premiers jours. Vous voyez une vraie différence dès le premier mois.</span>
+                <span data-lang="en">The action plan is delivered within 7 days. Full setup (Dext, reconciliations, first report) is completed within the first 30 days. You see a real difference from month one.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Puis-je changer de forfait à tout moment ?</span>
+              <span data-lang="en">Can I change packages at any time?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Oui. Tous nos forfaits sont mois par mois, avec 30 jours d'avis pour changer ou résilier. Aucune pénalité, aucun frais caché.</span>
+                <span data-lang="en">Yes. All our packages are month-to-month, with 30 days notice to change or cancel. No penalty, no hidden fees.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Faites-vous les déclarations T2 (fédéral) et CO-17 (Québec) ?</span>
+              <span data-lang="en">Do you file T2 (federal) and CO-17 (Quebec) tax returns?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Oui. Les déclarations T2 et CO-17 sont incluses dans les forfaits Complet et Premium. Pour les autres, c'est disponible en mandat ponctuel.</span>
+                <span data-lang="en">Yes. T2 and CO-17 returns are included in the Complete and Premium packages. They are also available as one-time engagements for other clients.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Vous occupez-vous de la TPS et de la TVQ ?</span>
+              <span data-lang="en">Do you handle GST and QST filings?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Oui, les déclarations TPS/TVQ (mensuelles, trimestrielles ou annuelles selon votre situation) sont incluses dans les forfaits Complet et Premium.</span>
+                <span data-lang="en">Yes, GST/QST filings (monthly, quarterly, or annual depending on your situation) are included in the Complete and Premium packages.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Que se passe-t-il si je suis vérifié par Revenu Québec ou l'ARC ?</span>
+              <span data-lang="en">What happens if I'm audited by Revenu Québec or the CRA?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Nous vous accompagnons gratuitement dans la préparation des documents demandés et nous assurons la liaison avec les autorités fiscales pour les périodes que nous avons traitées. Vous n'êtes jamais seul devant un avis de cotisation.</span>
+                <span data-lang="en">We support you free of charge in preparing the requested documents and act as your liaison with tax authorities for the periods we handled. You're never alone facing a notice of assessment.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Mes données sont-elles hébergées au Canada ?</span>
+              <span data-lang="en">Is my data hosted in Canada?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Oui. Toutes vos données financières sont chiffrées de bout en bout et hébergées sur des serveurs canadiens, conformément à la Loi 25 du Québec. L'authentification à deux facteurs (2FA) est activée par défaut.</span>
+                <span data-lang="en">Yes. All your financial data is end-to-end encrypted and hosted on Canadian servers, in accordance with Quebec's Law 25. Two-factor authentication (2FA) is enabled by default.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Que se passe-t-il si Luc est en vacances ou malade ?</span>
+              <span data-lang="en">What if Luc is on vacation or sick?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Nos systèmes sont automatisés (conciliations, rapports, alertes) ce qui garantit la continuité. Pour les périodes critiques (fin de mois, déclarations), une couverture est planifiée à l'avance. Votre garantie de réponse en 24 h reste en vigueur en tout temps.</span>
+                <span data-lang="en">Our systems are automated (reconciliations, reports, alerts) which guarantees continuity. For critical periods (month-end, filings), coverage is planned in advance. Your 24h response guarantee remains in effect at all times.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Quel est le coût réel des logiciels (Dext, QuickBooks, etc.) ?</span>
+              <span data-lang="en">What's the real cost of the software (Dext, QuickBooks, etc.)?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Comptez environ 80 à 150 $/mois selon la combinaison choisie. Nous négocions les meilleurs tarifs partenaires et vous indiquons toujours le coût total tout inclus avant signature. Aucune surprise.</span>
+                <span data-lang="en">Plan for approximately $80–$150/month depending on the combination chosen. We negotiate the best partner rates and always show you the all-in total cost before signing. No surprises.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Travaillez-vous avec mon industrie ?</span>
+              <span data-lang="en">Do you work with my industry?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Nous accompagnons des PME en e-commerce, restauration, services professionnels (avocats, ingénieurs, consultants), SaaS et commerce de détail. Notre approche tech-first s'adapte à toute structure de 1 à 25 employés.</span>
+                <span data-lang="en">We work with SMEs in e-commerce, restaurants, professional services (lawyers, engineers, consultants), SaaS and retail. Our tech-first approach adapts to any business with 1 to 25 employees.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Je suis travailleur autonome, est-ce trop gros pour moi ?</span>
+              <span data-lang="en">I'm self-employed, is this too much for me?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Pas du tout. Le forfait Démarrage (à partir de 750 $ unique) est conçu exactement pour ça : structurer votre comptabilité de travailleur autonome, optimiser vos déductions et préparer vos déclarations TP1/T1.</span>
+                <span data-lang="en">Not at all. The Starter Package (from $750 one-time) is built exactly for this: structuring your self-employment accounting, optimizing your deductions and preparing your TP1/T1 returns.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Je suis déjà chez un autre comptable. Comment migrer ?</span>
+              <span data-lang="en">I'm already with another accountant. How do I switch?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Nous gérons la transition de A à Z : récupération des dossiers, transfert des accès, lettre de courtoisie à votre ancien cabinet et continuité parfaite. Aucune interruption de vos déclarations en cours.</span>
+                <span data-lang="en">We handle the transition from A to Z: file retrieval, access transfer, courtesy letter to your former firm and seamless continuity. No interruption to your ongoing filings.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Est-ce que vous offrez des conseils en planification fiscale personnelle ?</span>
+              <span data-lang="en">Do you offer personal tax planning advice?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Oui. Optimisation rémunération salaire/dividendes, REER, CELI, gain en capital, transmission d'entreprise — tout est sur la table pour les propriétaires de PME et leurs proches.</span>
+                <span data-lang="en">Yes. Salary/dividend optimization, RRSP, TFSA, capital gains, business succession — everything is on the table for SME owners and their families.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Pourquoi un cabinet « boutique » et non un grand cabinet ?</span>
+              <span data-lang="en">Why a "boutique" firm rather than a large firm?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Dans un grand cabinet, votre dossier est confié à des stagiaires supervisés. Chez nous, vous parlez directement à un CPA senior cumulant 20 ans en finance corporative. Les coûts sont 30 à 50 % inférieurs et la qualité supérieure.</span>
+                <span data-lang="en">In a large firm, your file is handed to supervised interns. With us, you speak directly with a senior CPA with 20 years of corporate finance experience. Costs are 30–50% lower and quality is higher.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Combien de clients servez-vous présentement ?</span>
+              <span data-lang="en">How many clients do you currently serve?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Nous gardons délibérément un nombre limité de clients pour offrir un service direct et de haute qualité. Le programme Membre Fondateur est limité aux 20 premiers clients qui bénéficient d'un tarif gelé à vie. C'est un choix, pas une contrainte.</span>
+                <span data-lang="en">We deliberately keep a limited number of clients to deliver direct, high-quality service. The Founding Member Program is capped at the first 20 clients, who get a rate locked for life. It's a choice, not a constraint.</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-lang="fr">Comment savoir si on est compatibles ?</span>
+              <span data-lang="en">How do I know if we're a good fit?</span>
+            </summary>
+            <div class="faq-reponse">
+              <p>
+                <span data-lang="fr">Le plus simple : réservez 30 minutes gratuites avec Luc. C'est sans engagement, sans présentation commerciale, juste une discussion honnête sur votre situation et vos besoins. Si on n'est pas le bon fit, on vous dira vers qui vous tourner.</span>
+                <span data-lang="en">The easiest way: book a free 30 minutes with Luc. No commitment, no sales pitch — just an honest conversation about your situation and needs. If we're not the right fit, we'll point you to someone who is.</span>
+              </p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
     <!-- TODO: Réactiver la section Témoignages dans une mise à jour future
          (3 cartes placeholder avec guillemets stylisés, nom, titre, logo entreprise).
          Le CSS (.section-temoignages, .carte-temoignage, etc.) est déjà en place dans styles.css. -->
@@ -663,21 +1370,35 @@
             <!-- Carte Profil — Luc Pilon -->
             <article class="carte-profil">
               <div class="photo-profil-wrapper">
-                <img src="images/Luc%20Pilon%20profile.jfif" alt="Luc Pilon, CA, CPA — Fondateur d'Affaire de Chiffres" class="photo-profil" width="240" height="240" loading="lazy">
+                <img src="images/Luc%20Pilon%20profile.jfif" alt="Luc Pilon, CPA — Fondateur d'Affaire de Chiffres" class="photo-profil" width="240" height="240" loading="lazy">
                 <div class="photo-overlay">
                   <a href="mailto:conseils@affairedechiffres.com" class="overlay-lien">conseils@affairedechiffres.com</a>
                 </div>
               </div>
-              <h3 class="profil-nom">Luc Pilon, CA, CPA</h3>
+              <h3 class="profil-nom">Luc Pilon, CPA</h3>
               <p class="profil-role">
-                <span data-lang="fr">Fondateur</span>
-                <span data-lang="en">Founder</span>
+                <span data-lang="fr">Fondateur · CPA</span>
+                <span data-lang="en">Founder · CPA</span>
               </p>
               <p class="profil-description">
-                <span data-lang="fr">Vice-président finances chez Wolftec Inc. · CPA depuis plus de 20 ans · Passionné d'intégration technologique</span>
-                <span data-lang="en">VP Finance at Wolftec Inc. · CPA for over 20 years · Passionate about technology integration</span>
+                <span data-lang="fr">Vice-président finances chez Wolftec Inc. · Plus de 20 ans d'expérience comme CPA en environnement corporatif · Spécialiste de l'automatisation comptable et de l'intégration technologique pour PME québécoises.</span>
+                <span data-lang="en">VP Finance at Wolftec Inc. · 20+ years of CPA experience in corporate finance · Specialist in accounting automation and technology integration for Quebec SMEs.</span>
               </p>
-              <a href="https://www.linkedin.com/in/luc-pilon-cpa-ca?skipRedirect=true&miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAcB02cBGAUA25YeJhCGsaY4ZJioz1aqzks" target="_blank" rel="noopener noreferrer" class="profil-linkedin" aria-label="LinkedIn de Luc Pilon">
+              <ul class="profil-points">
+                <li>
+                  <span data-lang="fr">Direction financière d'une entreprise manufacturière de plus de 50 employés</span>
+                  <span data-lang="en">Finance leadership for a manufacturing company with 50+ employees</span>
+                </li>
+                <li>
+                  <span data-lang="fr">Implantations Dext, QuickBooks, KNIME et automatisation des flux comptables</span>
+                  <span data-lang="en">Dext, QuickBooks, KNIME deployments and accounting workflow automation</span>
+                </li>
+                <li>
+                  <span data-lang="fr">Membre en règle de l'Ordre des CPA du Québec</span>
+                  <span data-lang="en">Member in good standing of the Ordre des CPA du Québec</span>
+                </li>
+              </ul>
+              <a href="https://www.linkedin.com/in/affaire-de-chiffres-b327ab3b7/" target="_blank" rel="noopener noreferrer" class="profil-linkedin" aria-label="LinkedIn de Luc Pilon">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
@@ -718,26 +1439,48 @@
 
             <ul class="contact-liste">
               <li>
+                <span class="contact-icone" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </span>
                 <a href="mailto:conseils@affairedechiffres.com" class="contact-lien">conseils@affairedechiffres.com</a>
               </li>
               <li>
-                <span>
-                  <span data-lang="fr">Montréal, Québec</span>
-                  <span data-lang="en">Montréal, Quebec</span>
+                <span class="contact-icone" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 </span>
-              </li>
-              <li>
                 <span>
                   <span data-lang="fr">Montréal et Montérégie</span>
                   <span data-lang="en">Montréal and Montérégie</span>
                 </span>
               </li>
+              <li>
+                <span class="contact-icone" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <span>
+                  <span data-lang="fr">Lun – Ven, 9 h – 17 h (heure de l'Est)</span>
+                  <span data-lang="en">Mon – Fri, 9 am – 5 pm (Eastern Time)</span>
+                </span>
+              </li>
             </ul>
 
             <p class="contact-note">
-              <span data-lang="fr">Nous vous répondons en 24 heures, garanti.</span>
-              <span data-lang="en">We respond in 24 hours, guaranteed.</span>
+              <span data-lang="fr"><strong>Réponse garantie en 24 h ouvrables.</strong> Pas de chatbot, pas d'assistant junior. Vous parlez directement au fondateur.</span>
+              <span data-lang="en"><strong>Guaranteed response within 24 business hours.</strong> No chatbot, no junior assistant. You speak directly with the founder.</span>
             </p>
+
+            <!-- Bloc réservation rendez-vous (placeholder Calendly/Cal.com) -->
+            <div class="contact-rdv">
+              <p class="contact-rdv-titre">
+                <span data-lang="fr">Préférez un appel ?</span>
+                <span data-lang="en">Prefer a call?</span>
+              </p>
+              <a href="https://outlook.office.com/book/ConsultationGratuite30Minutes@affairedechiffres.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-primaire btn-rdv">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span data-lang="fr">Réserver 30 min gratuites</span>
+                <span data-lang="en">Book a free 30 min call</span>
+              </a>
+            </div>
           </div>
 
           <!-- ============================================
@@ -796,18 +1539,22 @@
                   <option value="" disabled selected>Sélectionner un service</option>
                   <option value="Planification fiscale">Planification fiscale</option>
                   <option value="Intégration technologique">Intégration technologique</option>
-                  <option value="Forfait Essentiel">Forfait Essentiel (450-600$/mois)</option>
-                  <option value="Forfait Complet">Forfait Complet (650-900$/mois)</option>
-                  <option value="Forfait Premium">Forfait Premium (900$+/mois)</option>
+                  <option value="Forfait Démarrage">Forfait Démarrage (à partir de 750 $)</option>
+                  <option value="Forfait Essentiel">Forfait Essentiel (450-600 $/mois)</option>
+                  <option value="Forfait Complet">Forfait Complet (650-900 $/mois)</option>
+                  <option value="Forfait Premium">Forfait Premium (900 $+/mois)</option>
+                  <option value="Programme Membre Fondateur">Programme Membre Fondateur</option>
                   <option value="Autre">Autre</option>
                 </select>
                 <select name="service-en" id="select-service-en" data-lang="en">
                   <option value="" disabled selected>Select a service</option>
                   <option value="Tax planning">Tax planning</option>
                   <option value="Technology integration">Technology integration</option>
+                  <option value="Starter Package">Starter Package (from $750)</option>
                   <option value="Standard Package">Standard Package ($450-$600/mo)</option>
                   <option value="Complete Package">Complete Package ($650-$900/mo)</option>
                   <option value="Premium Package">Premium Package ($900+/mo)</option>
+                  <option value="Founding Member Program">Founding Member Program</option>
                   <option value="Other">Other</option>
                 </select>
               </div>
@@ -856,6 +1603,22 @@
     </section>
 
   </main>
+
+  <!-- ============================================
+       BARRE CTA STICKY (visible au scroll, masquée tout en haut)
+       ============================================ -->
+  <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+    <div class="sticky-cta-texte">
+      <strong data-lang="fr">Prêt à reprendre le contrôle de vos chiffres&nbsp;?</strong>
+      <strong data-lang="en">Ready to take back control of your numbers?</strong>
+      <span data-lang="fr">30 min gratuites avec un CPA senior — sans engagement.</span>
+      <span data-lang="en">30 free minutes with a senior CPA — no commitment.</span>
+    </div>
+    <a href="https://outlook.office.com/book/ConsultationGratuite30Minutes@affairedechiffres.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-primaire sticky-cta-btn">
+      <span data-lang="fr">Réserver maintenant</span>
+      <span data-lang="en">Book now</span>
+    </a>
+  </div>
 
   <!-- ============================================
        MODALE — Politique de confidentialité (Loi 25)
@@ -931,17 +1694,24 @@
       <div class="footer-top">
 
         <div class="footer-social">
-          <a href="#" class="footer-social-lien" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/affaire-de-chiffres-b327ab3b7/" class="footer-social-lien" aria-label="LinkedIn de Luc Pilon, CPA" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
           </a>
         </div>
 
-        <div class="footer-cpa-badge">
-          <img src="images/cpa-badge-placeholder.png" alt="Membre de l'Ordre des CPA du Québec / Member of the Quebec CPA Order" class="footer-cpa-img" width="80" height="80" loading="lazy"
-               onerror="this.style.display='none'">
-        </div>
+        <!-- Membre Ordre des CPA du Québec — bloc texte (remplace l'ancienne image placeholder cassée) -->
+        <a href="https://cpaquebec.ca/fr/membres-cpa/trouver-un-cpa/" target="_blank" rel="noopener noreferrer" class="footer-cpa-lien" aria-label="Vérifier l'inscription au tableau de l'Ordre des CPA du Québec">
+          <svg class="footer-cpa-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 12l2 2 4-4"/>
+            <path d="M21 12c0 5-3.5 7.5-8.5 9C7.5 19.5 4 17 4 12V5l8.5-3L21 5v7z"/>
+          </svg>
+          <span class="footer-cpa-texte">
+            <span data-lang="fr">Membre en règle<br><strong>Ordre des CPA du Québec</strong><br><span class="footer-cpa-num">N° de membre : A116527</span></span>
+            <span data-lang="en">Member in good standing<br><strong>Ordre des CPA du Québec</strong><br><span class="footer-cpa-num">Member #: A116527</span></span>
+          </span>
+        </a>
 
       </div>
 
@@ -976,27 +1746,100 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AccountingService",
+    "@type": ["AccountingService", "LocalBusiness"],
     "name": "Affaire de Chiffres",
-    "description": "Cabinet CPA à Montréal offrant des services de planification fiscale, intégration technologique et tenue de livres.",
+    "description": "Cabinet CPA à Montréal offrant des services de planification fiscale, intégration technologique et tenue de livres pour PME québécoises.",
     "url": "https://affairedechiffres.com",
     "email": "conseils@affairedechiffres.com",
     "foundingDate": "2017",
+    "founder": {
+      "@type": "Person",
+      "name": "Luc Pilon",
+      "jobTitle": "CPA, Fondateur",
+      "sameAs": "https://www.linkedin.com/in/affaire-de-chiffres-b327ab3b7/"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/affaire-de-chiffres-b327ab3b7/"
+    ],
     "areaServed": [
       { "@type": "City", "name": "Montréal" },
       { "@type": "AdministrativeArea", "name": "Montérégie" }
     ],
-    "serviceType": ["Tax Planning", "Technology Integration", "Bookkeeping"],
+    "serviceType": ["Tax Planning", "Technology Integration", "Bookkeeping", "Financial Statement Preparation", "Tax Advisory"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Montréal",
       "addressRegion": "QC",
       "addressCountry": "CA"
     },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
     "image": "https://affairedechiffres.com/images/Logo_Rectangle_blanc_v1.png",
     "logo": "https://affairedechiffres.com/images/Logo_Carré_blanc_v1.png",
     "priceRange": "$$",
     "inLanguage": ["fr-CA", "en-CA"]
+  }
+  </script>
+
+  <!-- Schema.org FAQPage — boost SEO + rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Combien de temps prend l'implantation ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le plan d'action est livré sous 7 jours. La mise en place complète (Dext, conciliations, premier rapport) se fait dans les 30 premiers jours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Puis-je changer de forfait à tout moment ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Tous nos forfaits sont mois par mois, avec 30 jours d'avis pour changer ou résilier. Aucune pénalité, aucun frais caché."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faites-vous les déclarations T2 et CO-17 ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Les déclarations T2 (fédéral) et CO-17 (Québec) sont incluses dans les forfaits Complet et Premium."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vous occupez-vous de la TPS et de la TVQ ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, les déclarations TPS/TVQ sont incluses dans les forfaits Complet et Premium."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mes données sont-elles hébergées au Canada ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Toutes vos données sont chiffrées et hébergées sur des serveurs canadiens, conformément à la Loi 25 du Québec. 2FA activée par défaut."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Que se passe-t-il si Luc est en vacances ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nos systèmes automatisés (conciliations, rapports, alertes) garantissent la continuité. Pour les périodes critiques, une couverture est planifiée. La garantie de réponse en 24 h reste en vigueur."
+        }
+      }
+    ]
   }
   </script>
 

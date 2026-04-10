@@ -387,8 +387,20 @@
     // --- Observer les sections pour le lien actif ---
     initialiserObserverSections();
 
-    // --- Défilement par section (snap scroll fluide) ---
-    initialiserSnapScroll();
+    // --- Défilement par section : DÉSACTIVÉ (le wheel-hijack cassait l'UX trackpad sur desktop) ---
+    // initialiserSnapScroll();
+
+    // --- Pré-remplissage du select "Service concerné" via hash URL ---
+    initialiserPreRemplissageService();
+
+    // --- Calculateur d'économies (ROI) ---
+    initialiserCalculateurROI();
+
+    // --- FAQ accordéon ---
+    initialiserFAQ();
+
+    // --- Barre CTA sticky ---
+    initialiserStickyCTA();
 
     // --- Animations scroll reveal ---
     initialiserScrollReveal();
@@ -810,6 +822,180 @@
     modale.classList.remove('modale-visible');
     modale.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+  }
+
+  /* ------------------------------------------
+     10. PRÉ-REMPLISSAGE DU SELECT SERVICE
+     ------------------------------------------
+     Quand l'utilisateur clique "Obtenir mon estimé" sur une carte,
+     l'URL contient un hash type #contact?service=fiscalite. On lit le
+     paramètre et on présélectionne automatiquement le bon service.
+     ------------------------------------------ */
+
+  // Mapping clé URL → valeurs des <option> FR / EN
+  var mappingService = {
+    fiscalite:    { fr: 'Planification fiscale', en: 'Tax planning' },
+    technologie:  { fr: 'Intégration technologique', en: 'Technology integration' },
+    demarrage:    { fr: 'Forfait Démarrage', en: 'Starter Package' },
+    essentiel:    { fr: 'Forfait Essentiel', en: 'Standard Package' },
+    complet:      { fr: 'Forfait Complet', en: 'Complete Package' },
+    premium:      { fr: 'Forfait Premium', en: 'Premium Package' },
+    autre:        { fr: 'Autre', en: 'Other' }
+  };
+
+  function appliquerServiceDepuisHash() {
+    var hash = window.location.hash || '';
+    // hash type "#contact?service=fiscalite"
+    var match = hash.match(/service=([a-z\-]+)/i);
+    if (!match) return;
+    var cle = match[1].toLowerCase();
+    var couple = mappingService[cle];
+    if (!couple) return;
+
+    var selectFr = document.getElementById('select-service-fr');
+    var selectEn = document.getElementById('select-service-en');
+    if (selectFr) selectionnerOption(selectFr, couple.fr);
+    if (selectEn) selectionnerOption(selectEn, couple.en);
+  }
+
+  function selectionnerOption(select, valeurCible) {
+    for (var i = 0; i < select.options.length; i++) {
+      if (select.options[i].value === valeurCible) {
+        select.selectedIndex = i;
+        return;
+      }
+    }
+  }
+
+  function initialiserPreRemplissageService() {
+    // Au chargement de la page (deep-link)
+    appliquerServiceDepuisHash();
+
+    // Au clic sur n'importe quel CTA qui mène à #contact?service=…
+    var liens = document.querySelectorAll('a[href*="#contact?service="]');
+    liens.forEach(function (lien) {
+      lien.addEventListener('click', function () {
+        // léger délai pour laisser le navigateur poser le hash
+        setTimeout(appliquerServiceDepuisHash, 50);
+      });
+    });
+
+    // Si l'utilisateur change de langue après pré-remplissage,
+    // re-synchroniser l'autre select
+    window.addEventListener('hashchange', appliquerServiceDepuisHash);
+  }
+
+  /* ------------------------------------------
+     11. CALCULATEUR D'ÉCONOMIES (ROI)
+     ------------------------------------------ */
+
+  function initialiserCalculateurROI() {
+    var conteneur = document.getElementById('roi-calculateur');
+    if (!conteneur) return;
+
+    var inputTransactions = document.getElementById('roi-transactions');
+    var inputRevenu       = document.getElementById('roi-revenu');
+    var affichageTrans    = document.getElementById('roi-transactions-affichage');
+    var affichageRevenu   = document.getElementById('roi-revenu-affichage');
+    var sortieHeures      = document.getElementById('roi-sortie-heures');
+    var sortieEconomies   = document.getElementById('roi-sortie-economies');
+    var sortieEquivalent  = document.getElementById('roi-sortie-equivalent');
+
+    function formatterDevise(valeur) {
+      return Math.round(valeur).toLocaleString('fr-CA') + ' $';
+    }
+
+    function calculer() {
+      var transactions = parseInt(inputTransactions.value, 10) || 0;
+      var revenu       = parseInt(inputRevenu.value, 10) || 0;
+
+      // Hypothèses (benchmarks comptables PME) :
+      // - 2 min de saisie manuelle par transaction sans automatisation
+      // - Dext + automatisation réduit ce temps de 80 %
+      var heuresSansAutomatisation = (transactions * 2) / 60;
+      var heuresEconomisees        = heuresSansAutomatisation * 0.80;
+
+      // Coût horaire moyen d'un teneur de livres junior au QC ≈ 35 $/h
+      var economiesMois = heuresEconomisees * 35;
+
+      // Équivalent annuel d'un junior in-house : ~52 000 $/an pour une PME 1-25 employés
+      // Notre forfait Complet ≈ 9 000 $/an. Plus le revenu est élevé, plus le différentiel grandit.
+      var coutForfaitAnnuel = 9000;
+      var coutInHouseAnnuel = 52000 + Math.min(revenu / 100000 * 500, 8000);
+      var economieAnnuelleVsInHouse = Math.max(0, coutInHouseAnnuel - coutForfaitAnnuel);
+
+      // Affichage des sliders
+      affichageTrans.textContent  = transactions + ' transactions';
+      affichageRevenu.textContent = (revenu / 1000).toLocaleString('fr-CA') + ' k$';
+
+      sortieHeures.textContent     = Math.round(heuresEconomisees) + ' h';
+      sortieEconomies.textContent  = formatterDevise(economiesMois);
+      sortieEquivalent.textContent = formatterDevise(economieAnnuelleVsInHouse);
+    }
+
+    inputTransactions.addEventListener('input', calculer);
+    inputRevenu.addEventListener('input', calculer);
+    calculer();
+  }
+
+  /* ------------------------------------------
+     13. BARRE CTA STICKY
+     ------------------------------------------
+     Visible après ~600px de scroll (l'utilisateur est passé du hero),
+     masquée à nouveau dans le hero et dans la section contact.
+     ------------------------------------------ */
+
+  function initialiserStickyCTA() {
+    var sticky = document.getElementById('sticky-cta');
+    if (!sticky) return;
+
+    function maj() {
+      var hero    = document.getElementById('accueil');
+      var contact = document.getElementById('contact');
+      var scrollY = window.scrollY;
+      var hauteurHero = hero ? hero.offsetHeight : 600;
+
+      // Masquer dans le hero
+      var dansHero = scrollY < hauteurHero - 100;
+
+      // Masquer dans la section contact (déjà sous les yeux)
+      var dansContact = false;
+      if (contact) {
+        var rect = contact.getBoundingClientRect();
+        dansContact = rect.top < window.innerHeight && rect.bottom > 0;
+      }
+
+      if (dansHero || dansContact) {
+        sticky.classList.remove('sticky-cta-visible');
+        sticky.setAttribute('aria-hidden', 'true');
+      } else {
+        sticky.classList.add('sticky-cta-visible');
+        sticky.setAttribute('aria-hidden', 'false');
+      }
+    }
+
+    window.addEventListener('scroll', maj, { passive: true });
+    window.addEventListener('resize', maj);
+    maj();
+  }
+
+  /* ------------------------------------------
+     12. FAQ ACCORDÉON
+     ------------------------------------------ */
+
+  function initialiserFAQ() {
+    var items = document.querySelectorAll('.faq-item');
+    if (items.length === 0) return;
+
+    items.forEach(function (item) {
+      var bouton = item.querySelector('.faq-question');
+      if (!bouton) return;
+
+      bouton.addEventListener('click', function () {
+        var ouvert = item.classList.toggle('faq-ouvert');
+        bouton.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+      });
+    });
   }
 
 })();

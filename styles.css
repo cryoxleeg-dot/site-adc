@@ -2187,3 +2187,886 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   ============================================
+   PHASE 1-3 — CONVERSION OVERHAUL STYLES
+   (Pourquoi nous, Garanties, Comparaison, ROI,
+   Roadmap, FAQ, Sticky CTA, Forfaits upgrades)
+   ============================================
+   ============================================ */
+
+/* Section padding override — les nouvelles sections n'ont pas besoin de plein écran */
+.section-pourquoi,
+.section-garanties,
+.section-comparaison,
+.section-roi,
+.section-roadmap,
+.section-faq {
+  min-height: auto;
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+
+.section-pourquoi .section-contenu,
+.section-garanties .section-contenu,
+.section-comparaison .section-contenu,
+.section-roi .section-contenu,
+.section-roadmap .section-contenu,
+.section-faq .section-contenu {
+  max-width: 1100px;
+}
+
+/* h2 sur fond clair / fond foncé */
+.section-pourquoi h2,
+.section-comparaison h2,
+.section-roadmap h2,
+.section-faq h2 {
+  color: var(--couleur-charbon);
+}
+.section-garanties h2,
+.section-roi h2 {
+  color: var(--couleur-or-doux);
+}
+.section-pourquoi h2::after,
+.section-garanties h2::after,
+.section-comparaison h2::after,
+.section-roi h2::after,
+.section-roadmap h2::after,
+.section-faq h2::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  background-color: var(--couleur-ambre);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* ============================================
+   POURQUOI NOUS — fond blanc
+   ============================================ */
+.section-pourquoi {
+  background-color: var(--couleur-blanc);
+  color: var(--couleur-texte);
+}
+
+.pourquoi-sous-titre {
+  color: var(--couleur-gris);
+  font-size: 1.05rem;
+  margin: 16px auto 40px;
+  max-width: 640px;
+}
+
+.pourquoi-grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+  .pourquoi-grille { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .pourquoi-grille { grid-template-columns: repeat(4, 1fr); }
+}
+
+.pourquoi-carte {
+  background-color: var(--couleur-creme);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pourquoi-carte:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.pourquoi-icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background-color: rgba(232, 148, 58, 0.12);
+  color: var(--couleur-ambre);
+  margin-bottom: 16px;
+}
+
+.pourquoi-titre {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--couleur-charbon);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.pourquoi-texte {
+  font-size: 0.92rem;
+  color: var(--couleur-gris);
+  line-height: 1.6;
+}
+
+/* ============================================
+   GARANTIES — fond charbon
+   ============================================ */
+.section-garanties {
+  background-color: var(--couleur-charbon);
+  color: var(--couleur-blanc);
+}
+
+.garanties-sous-titre {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.05rem;
+  margin: 16px auto 40px;
+  max-width: 640px;
+}
+
+.garanties-grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  text-align: left;
+}
+
+@media (min-width: 720px) {
+  .garanties-grille { grid-template-columns: repeat(2, 1fr); }
+}
+
+.garantie-item {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(245, 193, 108, 0.18);
+  border-radius: 12px;
+  padding: 28px 24px;
+  position: relative;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.garantie-item:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: rgba(245, 193, 108, 0.35);
+}
+
+.garantie-numero {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--couleur-ambre);
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.garantie-titre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--couleur-or-doux);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.garantie-texte {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+/* ============================================
+   COMPARAISON — fond crème
+   ============================================ */
+.section-comparaison {
+  background-color: var(--couleur-creme);
+  color: var(--couleur-texte);
+}
+
+.comparaison-sous-titre {
+  color: var(--couleur-gris);
+  font-size: 1.05rem;
+  margin: 16px auto 40px;
+  max-width: 640px;
+}
+
+.comparaison-tableau-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  background-color: var(--couleur-blanc);
+}
+
+.comparaison-tableau {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  min-width: 640px;
+}
+
+.comparaison-tableau th,
+.comparaison-tableau td {
+  padding: 16px 14px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.comparaison-tableau thead th {
+  background-color: var(--couleur-charbon);
+  color: var(--couleur-blanc);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 18px 14px;
+}
+
+.comparaison-tableau thead th small {
+  display: block;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+.comparaison-th-feature {
+  background-color: var(--couleur-charbon) !important;
+}
+
+.comparaison-th-mise-en-avant {
+  background-color: var(--couleur-ambre) !important;
+  color: var(--couleur-charbon) !important;
+}
+
+.comparaison-tableau tbody th {
+  background-color: rgba(0, 0, 0, 0.02);
+  color: var(--couleur-charbon);
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.comparaison-tableau td {
+  color: var(--couleur-gris);
+}
+
+.comparaison-tableau .td-mise-en-avant {
+  background-color: rgba(232, 148, 58, 0.06);
+  color: var(--couleur-charbon);
+  font-weight: 600;
+}
+
+.comparaison-tableau .td-oui {
+  color: #2e7d32;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.comparaison-tableau .td-non {
+  color: #b71c1c;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.comparaison-tableau .td-partiel {
+  color: var(--couleur-ambre-fonce);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.comparaison-tableau tbody tr:last-child th,
+.comparaison-tableau tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ============================================
+   ROI / CALCULATEUR — fond charbon
+   ============================================ */
+.section-roi {
+  background-color: var(--couleur-charbon);
+  color: var(--couleur-blanc);
+  background-image: radial-gradient(ellipse at top, rgba(232, 148, 58, 0.06), transparent 60%);
+}
+
+.roi-sous-titre {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.05rem;
+  margin: 16px auto 40px;
+  max-width: 640px;
+}
+
+.roi-grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(245, 193, 108, 0.2);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .roi-grille { grid-template-columns: 1fr 1fr; align-items: center; }
+}
+
+.roi-entrees { display: flex; flex-direction: column; gap: 24px; }
+
+.roi-champ label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--couleur-or-doux);
+  margin-bottom: 8px;
+}
+
+.roi-champ input[type="range"] {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+  cursor: pointer;
+}
+
+.roi-champ input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--couleur-ambre);
+  cursor: pointer;
+  border: 3px solid var(--couleur-charbon);
+  box-shadow: 0 2px 8px rgba(232, 148, 58, 0.45);
+}
+
+.roi-champ input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--couleur-ambre);
+  cursor: pointer;
+  border: 3px solid var(--couleur-charbon);
+}
+
+.roi-output {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 6px;
+}
+
+.roi-resultats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.roi-resultat-item {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-left: 3px solid var(--couleur-ambre);
+  border-radius: 8px;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.roi-resultat-mise-en-avant {
+  background-color: rgba(232, 148, 58, 0.12);
+  border-left-color: var(--couleur-or-doux);
+}
+
+.roi-resultat-valeur {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--couleur-or-doux);
+  line-height: 1.1;
+}
+
+.roi-resultat-mise-en-avant .roi-resultat-valeur {
+  color: var(--couleur-ambre);
+  font-size: 2rem;
+}
+
+.roi-resultat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 4px;
+}
+
+.roi-disclaimer {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 24px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.roi-cta {
+  margin-top: 28px;
+}
+
+/* ============================================
+   ROADMAP 90 JOURS — fond blanc
+   ============================================ */
+.section-roadmap {
+  background-color: var(--couleur-blanc);
+  color: var(--couleur-texte);
+}
+
+.roadmap-sous-titre {
+  color: var(--couleur-gris);
+  font-size: 1.05rem;
+  margin: 16px auto 40px;
+  max-width: 640px;
+}
+
+.roadmap-etapes {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  text-align: left;
+  position: relative;
+  counter-reset: etape;
+}
+
+@media (min-width: 768px) {
+  .roadmap-etapes { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+@media (min-width: 1024px) {
+  .roadmap-etapes { grid-template-columns: repeat(4, 1fr); }
+}
+
+.roadmap-etape {
+  background-color: var(--couleur-creme);
+  border-top: 4px solid var(--couleur-ambre);
+  border-radius: 0 0 12px 12px;
+  padding: 24px 22px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.roadmap-etape:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.roadmap-jour {
+  display: inline-block;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--couleur-ambre);
+  background-color: rgba(232, 148, 58, 0.1);
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.roadmap-titre {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--couleur-charbon);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.roadmap-texte {
+  font-size: 0.88rem;
+  color: var(--couleur-gris);
+  line-height: 1.6;
+}
+
+/* ============================================
+   FAQ — fond crème, accordéon
+   ============================================ */
+.section-faq {
+  background-color: var(--couleur-creme);
+  color: var(--couleur-texte);
+}
+
+.faq-sous-titre {
+  color: var(--couleur-gris);
+  font-size: 1.05rem;
+  margin: 16px auto 40px;
+  max-width: 640px;
+}
+
+.faq-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  background-color: var(--couleur-blanc);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.faq-item[open],
+.faq-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-color: rgba(232, 148, 58, 0.4);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--couleur-charbon);
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  user-select: none;
+}
+
+.faq-question::-webkit-details-marker { display: none; }
+
+.faq-question::after {
+  content: '+';
+  font-family: 'Sora', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--couleur-ambre);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+
+.faq-item[open] .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-reponse {
+  padding: 0 22px 20px;
+  color: var(--couleur-gris);
+  font-size: 0.93rem;
+  line-height: 1.65;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  padding-top: 16px;
+}
+
+/* ============================================
+   FORFAITS — Bandeau Membre Fondateur + détails prix
+   ============================================ */
+.bandeau-fondateur {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, rgba(232, 148, 58, 0.12), rgba(245, 193, 108, 0.18));
+  border: 1px solid rgba(232, 148, 58, 0.35);
+  border-radius: 14px;
+  padding: 22px 26px;
+  margin-bottom: 32px;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.bandeau-fondateur-icone {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--couleur-ambre);
+  color: var(--couleur-charbon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bandeau-fondateur-texte {
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.92rem;
+  color: var(--couleur-charbon);
+}
+
+.bandeau-fondateur-texte strong {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.05rem;
+  color: var(--couleur-charbon);
+}
+
+.bandeau-fondateur-compteur {
+  flex-shrink: 0;
+  text-align: center;
+  background-color: var(--couleur-charbon);
+  color: var(--couleur-or-doux);
+  border-radius: 12px;
+  padding: 14px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bandeau-fondateur-compteur .compteur-valeur {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--couleur-ambre);
+}
+
+.bandeau-fondateur-compteur .compteur-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Suffixe et détail prix dans les forfaits */
+.forfait-prix-suffixe {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--couleur-gris);
+}
+
+.forfait-prix-detail {
+  font-size: 0.78rem;
+  color: var(--couleur-gris);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Forfaits — passer à 4 colonnes sur desktop large pour le nouveau Démarrage */
+@media (min-width: 1024px) {
+  .forfaits-grille {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .forfaits-grille .carte-forfait {
+    padding: 28px 20px;
+  }
+  .forfaits-grille .forfait-nom {
+    font-size: 1.2rem;
+  }
+  .forfaits-grille .forfait-prix {
+    font-size: 1.15rem;
+  }
+}
+
+/* Tarif "À partir de" sur les cartes services */
+.tarif-a-partir {
+  font-size: 1rem;
+  color: var(--couleur-charbon);
+  font-weight: 500;
+}
+.tarif-a-partir strong {
+  color: var(--couleur-ambre);
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: 'Sora', sans-serif;
+}
+.tarif-suffixe {
+  display: inline-block;
+  font-size: 0.82rem;
+  color: var(--couleur-gris);
+  font-weight: 400;
+}
+.tarif-detail {
+  font-size: 0.78rem;
+  color: var(--couleur-gris);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* ============================================
+   STICKY CTA BAR
+   ============================================ */
+.sticky-cta {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(150%);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background-color: var(--couleur-charbon);
+  border: 1px solid rgba(245, 193, 108, 0.3);
+  border-radius: 14px;
+  padding: 14px 18px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  max-width: 92vw;
+  width: 540px;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.sticky-cta-visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sticky-cta-texte {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: var(--couleur-blanc);
+  line-height: 1.3;
+  min-width: 0;
+}
+
+.sticky-cta-texte strong {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.92rem;
+  color: var(--couleur-or-doux);
+  font-weight: 600;
+}
+
+.sticky-cta-texte span {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+
+.sticky-cta-btn {
+  flex-shrink: 0;
+  padding: 10px 18px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 560px) {
+  .sticky-cta {
+    bottom: 12px;
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .sticky-cta-texte strong { font-size: 0.85rem; }
+  .sticky-cta-texte span { display: none; }
+  .sticky-cta-btn { padding: 9px 14px; font-size: 0.8rem; }
+}
+
+/* ============================================
+   PROFIL — Liste de points (founder dossier)
+   ============================================ */
+.profil-points {
+  list-style: none;
+  margin-top: 14px;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profil-points li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.85rem;
+  color: var(--couleur-gris);
+  line-height: 1.5;
+}
+
+.profil-points li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--couleur-ambre);
+  font-weight: 700;
+}
+
+/* ============================================
+   FOOTER — CPA Quebec block (replaces broken badge)
+   ============================================ */
+.footer-cpa-lien {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(245, 193, 108, 0.25);
+  border-radius: 10px;
+  padding: 12px 16px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-cpa-lien:hover {
+  border-color: rgba(245, 193, 108, 0.5);
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.footer-cpa-icone {
+  flex-shrink: 0;
+  color: var(--couleur-ambre);
+}
+
+.footer-cpa-texte {
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.footer-cpa-texte strong {
+  color: var(--couleur-or-doux);
+}
+
+.footer-cpa-num {
+  display: inline-block;
+  margin-top: 2px;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+/* ============================================
+   CONTACT — Icônes + bloc RDV
+   ============================================ */
+.contact-icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  color: var(--couleur-ambre);
+  vertical-align: middle;
+}
+
+.contact-rdv {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-rdv-titre {
+  font-size: 0.9rem;
+  color: var(--couleur-or-doux);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.btn-rdv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hero rassurance */
+.hero-rassurance {
+  margin-top: 16px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
