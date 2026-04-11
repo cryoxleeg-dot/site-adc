@@ -3995,15 +3995,16 @@ h2.v2-h2 {
   margin: 0;
 }
 .section-garanties .garanties-note {
-  margin-top: 40px;
-  padding: 22px 26px;
+  margin: 56px auto 0;
+  padding: 22px 28px;
   background: var(--v2-accent-soft);
   border: 1px solid rgba(200, 120, 32, 0.22);
   border-radius: var(--v2-radius-md, 14px);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.6;
   color: var(--v2-accent-ink);
-  max-width: 960px;
+  max-width: 880px;
+  text-align: center;
 }
 .section-garanties .garanties-note strong {
   color: var(--v2-accent-ink);
@@ -4064,11 +4065,14 @@ h2.v2-h2 {
   color: var(--v2-ink);
 }
 /* Glyphs in .td-oui / .td-non / .td-partiel become pill-shaped chips */
-.section-comparaison .td-oui,
-.section-comparaison .td-non,
-.section-comparaison .td-partiel {
-  font-size: 0;
-  line-height: 0;
+.section-comparaison .comparaison-tableau tbody td.td-oui,
+.section-comparaison .comparaison-tableau tbody td.td-non,
+.section-comparaison .comparaison-tableau tbody td.td-partiel {
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  text-align: center;
+  padding: 20px;
 }
 .section-comparaison .td-oui::before,
 .section-comparaison .td-non::before,
@@ -4100,6 +4104,15 @@ h2.v2-h2 {
   background: var(--v2-cream);
   color: var(--v2-ink);
   font-weight: 500;
+}
+.section-comparaison .comparaison-note {
+  margin: 24px auto 0;
+  max-width: 880px;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--v2-ink-3);
+  text-align: center;
+  font-style: italic;
 }
 
 /* ================================================================
@@ -4143,27 +4156,43 @@ h2.v2-h2 {
   color: var(--v2-ink-4);
   margin: 0 0 4px;
 }
-.section-roi .roi-champ { display: flex; flex-direction: column; gap: 10px; position: relative; }
+.section-roi .roi-champ {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+  row-gap: 14px;
+  align-items: baseline;
+  position: relative;
+}
 .section-roi .roi-champ label {
+  grid-column: 1;
+  grid-row: 1;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--v2-ink);
-  display: block;
   text-transform: none;
   letter-spacing: normal;
+  margin: 0;
 }
 .section-roi .roi-champ .roi-output {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
   font-family: 'Sora', sans-serif;
   color: var(--v2-accent-dark);
   font-weight: 600;
   font-size: 1.125rem;
-  align-self: flex-end;
-  margin-top: -32px;
   background: none;
   border: none;
   padding: 0;
+  margin: 0;
+  white-space: nowrap;
 }
 .section-roi .roi-champ input[type="range"] {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin-top: 4px;
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
