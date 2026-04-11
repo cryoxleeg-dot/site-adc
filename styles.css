@@ -4037,19 +4037,38 @@ h2.v2-h2 {
 }
 .section-comparaison .comparaison-tableau thead th {
   background: transparent;
-  color: var(--v2-ink-4);
+  color: var(--v2-ink);
   font-family: 'Sora', sans-serif;
-  font-size: 0.72rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  text-align: center;
+  padding: 22px 20px;
+  border-bottom: 2px solid var(--v2-ink);
+  vertical-align: bottom;
+  line-height: 1.25;
+}
+.section-comparaison .comparaison-tableau thead th small {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--v2-ink-3);
+  letter-spacing: normal;
+  margin-top: 4px;
+}
+.section-comparaison .comparaison-tableau .comparaison-th-feature {
+  color: var(--v2-ink);
+  font-weight: 600;
   text-align: left;
-  padding: 24px 20px;
-  border-bottom: 1px solid var(--v2-line);
+  width: 32%;
 }
 .section-comparaison .comparaison-tableau .comparaison-th-mise-en-avant {
   color: var(--v2-accent-dark);
   position: relative;
+}
+.section-comparaison .comparaison-tableau tbody td:not(:first-child) {
+  text-align: center;
 }
 .section-comparaison .comparaison-tableau tbody td {
   padding: 20px;
@@ -4124,7 +4143,24 @@ h2.v2-h2 {
   padding-bottom: var(--v2-section-py);
 }
 .section-roi .roi-contenu { max-width: var(--v2-container-max); text-align: left; }
-.section-roi h2 { color: var(--v2-ink); max-width: 20ch; }
+.section-roi h2 { color: var(--v2-ink); max-width: 20ch; text-align: left; margin-left: 0; margin-right: 0; }
+.section-roi .eyebrow { margin-left: 0; }
+.section-roi .roi-sous-titre {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 720px;
+  color: var(--v2-ink-3);
+}
+.section-roi .roi-disclaimer {
+  text-align: left;
+  margin: 32px 0 0;
+  max-width: none;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #5A5247;
+}
+.section-roi .roi-disclaimer strong { color: var(--v2-ink); }
 .section-roi .roi-grille {
   display: grid;
   grid-template-columns: 1fr;
@@ -4259,13 +4295,17 @@ h2.v2-h2 {
   line-height: 1;
 }
 .section-roi .roi-resultat-mise-en-avant .roi-resultat-valeur { color: var(--v2-accent); }
-.section-roi .roi-cta { margin-top: auto; }
+.section-roi .roi-cta {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
 .section-roi .roi-cta .btn {
   background: var(--v2-accent);
   border-color: var(--v2-accent);
   color: var(--v2-ink);
   border-radius: var(--v2-radius-pill);
-  padding: 14px 22px;
+  padding: 14px 28px;
 }
 
 /* ================================================================
