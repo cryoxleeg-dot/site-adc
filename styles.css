@@ -3748,15 +3748,18 @@ h2.v2-h2 {
 .section-forfaits .carte-forfait-vedette .forfait-liste li::before { color: var(--v2-accent); background: none; width: auto; height: auto; content: '✓'; font-weight: 700; top: 0; }
 .section-forfaits .carte-forfait-vedette .forfait-prix-detail { color: rgba(244, 239, 229, 0.55); }
 .section-forfaits .forfait-badge {
-  top: 20px;
-  left: 20px;
-  transform: none;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--v2-accent);
   color: var(--v2-ink);
   font-size: 0.68rem;
+  font-weight: 700;
   letter-spacing: 0.14em;
   border-radius: var(--v2-radius-pill);
-  padding: 5px 12px;
+  padding: 5px 14px;
+  z-index: 1;
+  white-space: nowrap;
 }
 .section-forfaits .forfait-entete { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--v2-line); }
 .section-forfaits .carte-forfait-vedette .forfait-entete { border-color: rgba(244, 239, 229, 0.12); }
