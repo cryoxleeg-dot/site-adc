@@ -4488,24 +4488,25 @@ h2.v2-h2 {
   justify-items: stretch;
 }
 .section-a-propos .equipe-grille .carte-profil {
-  max-width: none;
+  max-width: 780px;
+  margin: 0 auto;
   background: rgba(244, 239, 229, 0.03);
   border: 1px solid rgba(244, 239, 229, 0.1);
   border-radius: var(--v2-radius-lg);
-  padding: 48px;
+  padding: 32px;
   text-align: left;
   align-items: stretch;
   display: grid;
-  gap: 40px;
+  gap: 28px;
   grid-template-columns: 1fr;
   box-shadow: none;
 }
 @media (min-width: 840px) {
-  .section-a-propos .equipe-grille .carte-profil { grid-template-columns: 220px 1fr; align-items: start; }
+  .section-a-propos .equipe-grille .carte-profil { grid-template-columns: 160px 1fr; align-items: start; gap: 32px; }
 }
 .section-a-propos .photo-profil-wrapper {
-  width: 220px;
-  height: 260px;
+  width: 160px;
+  height: 190px;
   border-radius: var(--v2-radius);
   border: none;
   margin-bottom: 0;
@@ -4513,41 +4514,41 @@ h2.v2-h2 {
 }
 .section-a-propos .profil-nom {
   font-family: 'Sora', sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.35rem;
   color: #F4EFE5;
-  margin: 0 0 4px;
+  margin: 0 0 2px;
   letter-spacing: -0.02em;
   font-weight: 600;
 }
 .section-a-propos .profil-role {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: var(--v2-accent);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 .section-a-propos .profil-description {
   color: rgba(244, 239, 229, 0.7);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin-bottom: 12px;
 }
 .section-a-propos .profil-points {
-  margin: 24px 0;
+  margin: 12px 0;
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 10px;
+  gap: 6px;
 }
 .section-a-propos .profil-points li {
-  padding-left: 26px;
+  padding-left: 22px;
   color: rgba(244, 239, 229, 0.75);
-  font-size: 0.9rem;
-  line-height: 1.55;
+  font-size: 0.84rem;
+  line-height: 1.5;
   position: relative;
 }
 .section-a-propos .profil-points li::before {
@@ -4557,18 +4558,19 @@ h2.v2-h2 {
   top: 0;
   color: var(--v2-accent);
   font-weight: 700;
+  font-size: 0.84rem;
 }
 .section-a-propos .profil-linkedin {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 12px;
+  gap: 6px;
+  margin-top: 8px;
   color: var(--v2-accent);
   font-weight: 600;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   border: 1px solid rgba(232, 148, 58, 0.3);
-  padding: 10px 16px;
+  padding: 8px 14px;
   border-radius: var(--v2-radius-pill);
   transition: background 0.3s ease;
 }
