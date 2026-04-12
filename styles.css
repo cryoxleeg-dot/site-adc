@@ -4034,7 +4034,10 @@ h2.v2-h2 {
   border-spacing: 0;
   box-shadow: none;
   min-width: 640px;
+  table-layout: fixed;
 }
+.section-comparaison .comparaison-tableau col.col-feature { width: 28%; }
+.section-comparaison .comparaison-tableau col.col-option { width: 24%; }
 .section-comparaison .comparaison-tableau thead th {
   background: transparent;
   color: var(--v2-ink);
@@ -4058,13 +4061,14 @@ h2.v2-h2 {
   margin-top: 4px;
 }
 .section-comparaison .comparaison-tableau .comparaison-th-feature {
-  color: var(--v2-ink);
+  background: transparent !important;
+  color: var(--v2-ink) !important;
   font-weight: 600;
   text-align: left;
-  width: 32%;
 }
 .section-comparaison .comparaison-tableau .comparaison-th-mise-en-avant {
-  color: var(--v2-accent-dark);
+  background: transparent !important;
+  color: var(--v2-accent-dark) !important;
   position: relative;
 }
 .section-comparaison .comparaison-tableau tbody td:not(:first-child) {
@@ -4744,8 +4748,14 @@ h2.v2-h2 {
   background: var(--v2-ink);
   border: 1px solid rgba(232, 148, 58, 0.2);
   border-radius: var(--v2-radius-pill);
+  padding: 12px 16px;
+  gap: 14px;
+  width: 520px;
 }
-.sticky-cta-btn { border-radius: var(--v2-radius-pill); padding: 10px 18px; }
+.sticky-cta-texte { line-height: 1.35; }
+.sticky-cta-texte strong { font-size: 0.82rem; }
+.sticky-cta-texte span { font-size: 0.72rem; margin-top: 1px; }
+.sticky-cta-btn { border-radius: var(--v2-radius-pill); padding: 9px 16px; font-size: 0.78rem; }
 
 /* Navbar desktop refinement */
 @media (min-width: 900px) {
