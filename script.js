@@ -369,16 +369,18 @@
 
     // --- Menu hamburger ---
     var hamburger = document.getElementById('hamburger');
-    hamburger.addEventListener('click', toggleMenu);
+    if (hamburger) {
+      hamburger.addEventListener('click', toggleMenu);
 
-    var liensNav = document.querySelectorAll('.nav-links a');
-    liensNav.forEach(function (lien) {
-      lien.addEventListener('click', function () {
-        fermerMenu();
+      var liensNav = document.querySelectorAll('.nav-links a');
+      liensNav.forEach(function (lien) {
+        lien.addEventListener('click', function () {
+          fermerMenu();
+        });
       });
-    });
 
-    document.addEventListener('keydown', gererFocusTrap);
+      document.addEventListener('keydown', gererFocusTrap);
+    }
 
     // --- Ombre au scroll ---
     window.addEventListener('scroll', gererOmbreNav, { passive: true });

@@ -50,43 +50,22 @@
     .nav-links, .hamburger { display: none !important; }
     .nav-container { justify-content: space-between; }
 
-    /* ── Fade-in animation system ── */
+    /* ── Hero entrance animations (immediate on load) ── */
     @keyframes lpFadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    @keyframes lpFadeScale {
-      from { opacity: 0; transform: scale(0.92); }
-      to   { opacity: 1; transform: scale(1); }
-    }
-    @keyframes lpCountUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .lp-fade {
+    .lp-hero .lp-hero-anim {
       opacity: 0;
       transform: translateY(28px);
+      animation: lpFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
-    .lp-fade.lp-visible {
-      animation: lpFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    .lp-fade-scale {
-      opacity: 0;
-      transform: scale(0.92);
-    }
-    .lp-fade-scale.lp-visible {
-      animation: lpFadeScale 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    /* Stagger delays */
-    .lp-delay-1 { animation-delay: 0.1s !important; }
-    .lp-delay-2 { animation-delay: 0.2s !important; }
-    .lp-delay-3 { animation-delay: 0.3s !important; }
-    .lp-delay-4 { animation-delay: 0.4s !important; }
-    .lp-delay-5 { animation-delay: 0.5s !important; }
-    .lp-delay-6 { animation-delay: 0.6s !important; }
-
-    /* Hero elements animate immediately on load */
-    .lp-hero .lp-fade { animation: lpFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .lp-hero-d1 { animation-delay: 0.1s !important; }
+    .lp-hero-d2 { animation-delay: 0.2s !important; }
+    .lp-hero-d3 { animation-delay: 0.3s !important; }
+    .lp-hero-d4 { animation-delay: 0.4s !important; }
+    .lp-hero-d5 { animation-delay: 0.5s !important; }
+    .lp-hero-d6 { animation-delay: 0.6s !important; }
 
     /* ── Hero — dark with radial glow ── */
     .lp-hero {
@@ -189,7 +168,7 @@
       line-height: 1.3;
     }
 
-    /* ── Social proof strip ── */
+    /* ── Social proof carousel strip ── */
     .lp-social-proof {
       background: var(--v2-cream-2);
       border-top: 1px solid var(--v2-line);
@@ -197,28 +176,13 @@
       padding: 28px var(--v2-container-x);
       text-align: center;
     }
-    .lp-social-proof-label {
+    .lp-social-proof .outils-surtitre {
       font-size: var(--v2-text-xs);
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--v2-ink-4);
       margin-bottom: 16px;
-    }
-    .lp-logos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 28px 40px;
-    }
-    .lp-logo-item {
-      font-family: 'Sora', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--v2-ink-3);
-      opacity: 0.6;
-      letter-spacing: 0.01em;
     }
 
     /* ── Forfait detail — cream section ── */
@@ -544,8 +508,7 @@
 
     /* ── Reduce motion for accessibility ── */
     @media (prefers-reduced-motion: reduce) {
-      .lp-fade, .lp-fade-scale { opacity: 1; transform: none; animation: none !important; }
-      .lp-fade.lp-visible, .lp-fade-scale.lp-visible { animation: none !important; }
+      .lp-hero .lp-hero-anim { opacity: 1; transform: none; animation: none !important; }
     }
   </style>
 </head>
@@ -573,25 +536,25 @@
        HERO — Dark, centered, Ramp-inspired
        ============================================ -->
   <section class="lp-hero">
-    <span class="eyebrow lp-fade lp-delay-1">
-      <span data-lang="fr">Forfait Complet</span>
-      <span data-lang="en">Complete Package</span>
+    <span class="eyebrow lp-hero-anim lp-hero-d1">
+      <span data-lang="fr">Forfait Complet — Service tout-inclus</span>
+      <span data-lang="en">Complete Package — All-inclusive service</span>
     </span>
-    <h1 class="lp-fade lp-delay-2">
-      <span data-lang="fr">Votre comptabilité entre bonnes mains, <span class="lp-accent">à partir de 650&nbsp;$/mois</span></span>
-      <span data-lang="en">Your books in good hands, <span class="lp-accent">starting at $650/month</span></span>
+    <h1 class="lp-hero-anim lp-hero-d2">
+      <span data-lang="fr">Votre comptabilité et conformité fiscale,<br><span class="lp-accent">à partir de 650&nbsp;$/mois</span></span>
+      <span data-lang="en">Your accounting and tax compliance,<br><span class="lp-accent">starting at $650/month</span></span>
     </h1>
-    <p class="lp-subtitle lp-fade lp-delay-3">
-      <span data-lang="fr">Tenue de livres, déclarations fiscales, états financiers et accompagnement technologique — le tout géré par un CPA, CA senior avec plus de 20 ans d'expérience.</span>
-      <span data-lang="en">Bookkeeping, tax filings, financial statements and technology support — all managed by a senior CPA, CA with over 20 years of experience.</span>
+    <p class="lp-subtitle lp-hero-anim lp-hero-d3">
+      <span data-lang="fr">Un service clé en main : tenue de livres, déclarations T2, TPS/TVQ, états financiers et automatisation — tout est pris en charge par un CPA, CA senior. Concentrez-vous sur votre croissance, on s'occupe du reste.</span>
+      <span data-lang="en">A turnkey service: bookkeeping, T2 filings, GST/QST, financial statements and automation — all handled by a senior CPA, CA. Focus on growing your business, we handle the rest.</span>
     </p>
-    <div class="lp-fade lp-delay-4">
+    <div class="lp-hero-anim lp-hero-d4">
       <a href="#lp-booking" class="btn btn-primaire">
         <span data-lang="fr">Réserver ma consultation sans frais</span>
         <span data-lang="en">Book my free consultation</span>
       </a>
     </div>
-    <div class="lp-trust-pills lp-fade lp-delay-5">
+    <div class="lp-trust-pills lp-hero-anim lp-hero-d5">
       <span class="lp-trust-pill">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         <span data-lang="fr">Premier mois satisfait ou remboursé</span>
@@ -610,7 +573,7 @@
     </div>
 
     <!-- Stats bar — big numbers like Ramp -->
-    <div class="lp-stats-bar lp-fade lp-delay-6">
+    <div class="lp-stats-bar lp-hero-anim lp-hero-d6">
       <div class="lp-stat">
         <div class="lp-stat-number" data-count="20">20+</div>
         <div class="lp-stat-label">
@@ -635,19 +598,32 @@
     </div>
   </section>
 
-  <!-- ── Social proof strip ── -->
+  <!-- ── Social proof — tool carousel (identical to main site) ── -->
   <div class="lp-social-proof">
-    <div class="lp-social-proof-label lp-fade">
-      <span data-lang="fr">Outils que nous maîtrisons</span>
-      <span data-lang="en">Tools we master</span>
-    </div>
-    <div class="lp-logos lp-fade lp-delay-1">
-      <span class="lp-logo-item">QuickBooks</span>
-      <span class="lp-logo-item">Dext</span>
-      <span class="lp-logo-item">KNIME</span>
-      <span class="lp-logo-item">Caseware</span>
-      <span class="lp-logo-item">TaxCycle</span>
-      <span class="lp-logo-item">Acomba</span>
+    <div class="hero-outils-wall">
+      <p class="outils-surtitre">
+        <span data-lang="fr">Le stack technologique que nous maîtrisons</span>
+        <span data-lang="en">The tech stack we master</span>
+      </p>
+      <div class="carrousel-wrapper">
+        <div class="carrousel-piste">
+          <div class="carrousel-logo"><img src="images/Carrousel/Dext-greyscale.png" alt="Dext" loading="lazy"></div>
+          <div class="carrousel-logo"><img src="images/Carrousel/KNIME-greyscale.png" alt="KNIME" loading="lazy"></div>
+          <div class="carrousel-logo"><img src="images/Carrousel/Xero-greyscale.png" alt="Xero" loading="lazy"></div>
+          <div class="carrousel-logo"><img src="images/Carrousel/QuickBooks-greyscale.png" alt="QuickBooks" loading="lazy"></div>
+          <div class="carrousel-logo"><img src="images/Carrousel/Microsoft%20Dynamics%20365-greyscale.png" alt="Microsoft Dynamics 365" loading="lazy"></div>
+          <div class="carrousel-logo"><img src="images/Carrousel/Acomba-greyscale.png" alt="Acomba" loading="lazy"></div>
+          <div class="carrousel-logo"><img src="images/Carrousel/Ramp-greyscale.png" alt="Ramp" loading="lazy"></div>
+          <!-- Doublés pour boucle infinie -->
+          <div class="carrousel-logo" aria-hidden="true"><img src="images/Carrousel/Dext-greyscale.png" alt="" loading="lazy"></div>
+          <div class="carrousel-logo" aria-hidden="true"><img src="images/Carrousel/KNIME-greyscale.png" alt="" loading="lazy"></div>
+          <div class="carrousel-logo" aria-hidden="true"><img src="images/Carrousel/Xero-greyscale.png" alt="" loading="lazy"></div>
+          <div class="carrousel-logo" aria-hidden="true"><img src="images/Carrousel/QuickBooks-greyscale.png" alt="" loading="lazy"></div>
+          <div class="carrousel-logo" aria-hidden="true"><img src="images/Carrousel/Microsoft%20Dynamics%20365-greyscale.png" alt="" loading="lazy"></div>
+          <div class="carrousel-logo" aria-hidden="true"><img src="images/Carrousel/Acomba-greyscale.png" alt="" loading="lazy"></div>
+          <div class="carrousel-logo" aria-hidden="true"><img src="images/Carrousel/Ramp-greyscale.png" alt="" loading="lazy"></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -656,13 +632,17 @@
        ============================================ -->
   <section class="lp-details">
     <div class="lp-details-inner">
-      <h2 class="lp-fade">
-        <span data-lang="fr">Ce qui est inclus</span>
-        <span data-lang="en">What's included</span>
+      <h2 class="scroll-reveal">
+        <span data-lang="fr">Tout est inclus. Zéro surprise.</span>
+        <span data-lang="en">Everything's included. Zero surprises.</span>
       </h2>
+      <p class="scroll-reveal" style="text-align: center; max-width: 640px; margin: -20px auto 40px; font-size: var(--v2-text-base); color: var(--v2-ink-3); line-height: 1.6;">
+        <span data-lang="fr">Comptabilité, conformité fiscale et accompagnement technologique réunis dans un seul forfait mensuel. On devient votre partenaire de croissance en rendant vos opérations comptables lean et scalables.</span>
+        <span data-lang="en">Accounting, tax compliance and technology support bundled into one monthly plan. We become your growth partner by making your accounting operations lean and scalable.</span>
+      </p>
 
       <!-- Forfait card (reused from main site) -->
-      <div class="lp-forfait-center lp-fade-scale lp-delay-1">
+      <div class="lp-forfait-center scroll-reveal">
         <article class="carte-forfait carte-forfait-vedette">
           <div class="forfait-badge">
             <span data-lang="fr">Populaire</span><span data-lang="en">Popular</span>
@@ -697,50 +677,50 @@
 
       <!-- Feature breakdown grid -->
       <div class="lp-features-grid">
-        <div class="lp-feature-item lp-fade lp-delay-2">
+        <div class="lp-feature-item scroll-reveal">
           <div class="lp-feature-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
           </div>
           <div>
             <h4><span data-lang="fr">Tenue de livres complète</span><span data-lang="en">Complete bookkeeping</span></h4>
-            <p><span data-lang="fr">Saisie, classement, rapprochement bancaire et suivi des comptes — tout est pris en charge mensuellement.</span><span data-lang="en">Data entry, classification, bank reconciliation and account monitoring — everything handled monthly.</span></p>
+            <p><span data-lang="fr">Saisie, rapprochement bancaire, suivi des comptes — chaque dollar est comptabilisé pour que vous ayez toujours un portrait clair de vos finances.</span><span data-lang="en">Data entry, bank reconciliation, account monitoring — every dollar accounted for so you always have a clear financial picture.</span></p>
           </div>
         </div>
 
-        <div class="lp-feature-item lp-fade lp-delay-3">
+        <div class="lp-feature-item scroll-reveal">
           <div class="lp-feature-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <div>
-            <h4><span data-lang="fr">Intégration technologique</span><span data-lang="en">Technology integration</span></h4>
-            <p><span data-lang="fr">Mise en place de Dext, QuickBooks et automatisation de vos processus comptables pour gagner du temps.</span><span data-lang="en">Setup of Dext, QuickBooks and automation of your accounting processes to save time.</span></p>
+            <h4><span data-lang="fr">Automatisation et intégration</span><span data-lang="en">Automation and integration</span></h4>
+            <p><span data-lang="fr">On connecte Dext, QuickBooks et vos outils existants pour automatiser les tâches répétitives — vos opérations deviennent lean dès le premier mois.</span><span data-lang="en">We connect Dext, QuickBooks and your existing tools to automate repetitive tasks — your operations become lean from month one.</span></p>
           </div>
         </div>
 
-        <div class="lp-feature-item lp-fade lp-delay-4">
+        <div class="lp-feature-item scroll-reveal">
           <div class="lp-feature-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </div>
           <div>
-            <h4><span data-lang="fr">Déclarations T2 et TPS/TVQ</span><span data-lang="en">T2 and GST/QST filings</span></h4>
-            <p><span data-lang="fr">Préparation et production de vos déclarations d'impôt des sociétés et de taxes de ventes, dans les délais.</span><span data-lang="en">Preparation and filing of your corporate tax returns and sales tax returns, on time.</span></p>
+            <h4><span data-lang="fr">Conformité fiscale complète</span><span data-lang="en">Full tax compliance</span></h4>
+            <p><span data-lang="fr">T2, TPS/TVQ, acomptes provisionnels — toutes vos obligations fiscales sont gérées et produites à temps. Vous n'y pensez plus.</span><span data-lang="en">T2, GST/QST, installments — all your tax obligations managed and filed on time. One less thing to worry about.</span></p>
           </div>
         </div>
 
-        <div class="lp-feature-item lp-fade lp-delay-5">
+        <div class="lp-feature-item scroll-reveal">
           <div class="lp-feature-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
           </div>
           <div>
-            <h4><span data-lang="fr">États financiers complets</span><span data-lang="en">Complete financial statements</span></h4>
-            <p><span data-lang="fr">Bilan, état des résultats et flux de trésorerie — préparés selon les normes comptables canadiennes.</span><span data-lang="en">Balance sheet, income statement and cash flow — prepared according to Canadian accounting standards.</span></p>
+            <h4><span data-lang="fr">États financiers pour décider</span><span data-lang="en">Financial statements for decision-making</span></h4>
+            <p><span data-lang="fr">Bilan, résultats et flux de trésorerie — des états financiers clairs qui deviennent vos outils de pilotage pour scaler votre entreprise.</span><span data-lang="en">Balance sheet, income statement and cash flow — clear financial statements that become your steering tools to scale your business.</span></p>
           </div>
         </div>
       </div>
 
-      <p style="text-align: center; margin-top: 32px; font-size: var(--v2-text-sm); color: var(--v2-ink-3);">
-        <span data-lang="fr"><strong>Transparence totale :</strong> les frais de logiciels tiers sont refacturés au coût exact, sans mark-up.</span>
-        <span data-lang="en"><strong>Full transparency:</strong> third-party software fees are passed through at exact cost, with zero mark-up.</span>
+      <p class="scroll-reveal" style="text-align: center; margin-top: 32px; font-size: var(--v2-text-sm); color: var(--v2-ink-3);">
+        <span data-lang="fr"><strong>Transparence totale :</strong> les frais de logiciels tiers sont refacturés au coût exact, sans mark-up. Un seul forfait, aucune facture-surprise.</span>
+        <span data-lang="en"><strong>Full transparency:</strong> third-party software fees are passed through at exact cost, zero mark-up. One plan, no surprise invoices.</span>
       </p>
     </div>
   </section>
@@ -750,31 +730,31 @@
        ============================================ -->
   <section class="lp-garanties">
     <div class="lp-garanties-inner">
-      <h2 class="lp-fade">
-        <span data-lang="fr">Quatre engagements concrets</span>
-        <span data-lang="en">Four concrete commitments</span>
+      <h2 class="scroll-reveal">
+        <span data-lang="fr">Un partenaire, pas un fournisseur</span>
+        <span data-lang="en">A partner, not a vendor</span>
       </h2>
       <div class="lp-garanties-grid">
 
-        <div class="lp-garantie-card lp-fade lp-delay-1">
+        <div class="lp-garantie-card scroll-reveal">
           <div class="garantie-numero">01</div>
           <h3><span data-lang="fr">Réponse en 24 h ouvrables</span><span data-lang="en">24-hour business response</span></h3>
           <p><span data-lang="fr">Toute demande reçoit une réponse humaine en moins de 24 h. Pas de chatbot, pas de file d'attente.</span><span data-lang="en">Every request gets a human response within 24 hours. No chatbot, no queue.</span></p>
         </div>
 
-        <div class="lp-garantie-card lp-fade lp-delay-2">
+        <div class="lp-garantie-card scroll-reveal">
           <div class="garantie-numero">02</div>
           <h3><span data-lang="fr">Premier mois satisfait ou remboursé</span><span data-lang="en">First month money-back guarantee</span></h3>
           <p><span data-lang="fr">Si après 30 jours vous n'êtes pas convaincu, on vous rembourse intégralement et on remet vos données.</span><span data-lang="en">If after 30 days you're not convinced, we refund in full and hand back your data.</span></p>
         </div>
 
-        <div class="lp-garantie-card lp-fade lp-delay-3">
+        <div class="lp-garantie-card scroll-reveal">
           <div class="garantie-numero">03</div>
           <h3><span data-lang="fr">Sans frais d'installation</span><span data-lang="en">No setup fees</span></h3>
           <p><span data-lang="fr">Aucun frais caché, aucun contrat annuel. Mois par mois, avec 30 jours d'avis pour résilier.</span><span data-lang="en">No hidden fees, no annual contract. Month-to-month, 30 days notice to cancel.</span></p>
         </div>
 
-        <div class="lp-garantie-card lp-fade lp-delay-4">
+        <div class="lp-garantie-card scroll-reveal">
           <div class="garantie-numero">04</div>
           <h3><span data-lang="fr">Données au Canada, conforme Loi 25</span><span data-lang="en">Canadian data, Law 25 compliant</span></h3>
           <p><span data-lang="fr">Données chiffrées de bout en bout, hébergées au Canada. 2FA sur tous les systèmes.</span><span data-lang="en">End-to-end encrypted data, hosted in Canada. 2FA on all systems.</span></p>
@@ -786,15 +766,15 @@
 
   <!-- ── CTA Banner — amber gradient (Ramp-style interstitial) ── -->
   <section class="lp-cta-banner">
-    <h2 class="lp-fade">
-      <span data-lang="fr">Prêt à simplifier votre comptabilité?</span>
-      <span data-lang="en">Ready to simplify your accounting?</span>
+    <h2 class="scroll-reveal">
+      <span data-lang="fr">Prêt à scaler sans les tracas comptables?</span>
+      <span data-lang="en">Ready to scale without the accounting headaches?</span>
     </h2>
-    <p class="lp-fade lp-delay-1">
-      <span data-lang="fr">30 minutes sans frais. Sans engagement. On vous montre ce qu'on peut faire pour vous.</span>
-      <span data-lang="en">30 minutes at no charge. No commitment. We'll show you what we can do for you.</span>
+    <p class="scroll-reveal">
+      <span data-lang="fr">30 minutes sans frais pour découvrir comment on rend vos opérations comptables lean et scalables. Sans engagement.</span>
+      <span data-lang="en">30 minutes at no charge to discover how we make your accounting operations lean and scalable. No commitment.</span>
     </p>
-    <a href="#lp-booking" class="btn lp-fade lp-delay-2">
+    <a href="#lp-booking" class="btn scroll-reveal">
       <span data-lang="fr">Réserver ma consultation</span>
       <span data-lang="en">Book my consultation</span>
     </a>
@@ -805,14 +785,14 @@
        ============================================ -->
   <section id="lp-booking" class="lp-contact">
     <div class="lp-contact-inner">
-      <h2 class="lp-fade">
+      <h2 class="scroll-reveal">
         <span data-lang="fr">Parlons de votre entreprise</span>
         <span data-lang="en">Let's talk about your business</span>
       </h2>
       <div class="lp-contact-grid">
 
         <!-- Colonne 1 : Pré-booking (capture affiliate + redirect Outlook) -->
-        <div class="lp-prebooking-card lp-fade lp-delay-1">
+        <div class="lp-prebooking-card scroll-reveal">
           <h3>
             <span data-lang="fr">Réservez un appel-vidéo</span>
             <span data-lang="en">Book a video call</span>
@@ -835,7 +815,7 @@
         </div>
 
         <!-- Colonne 2 : Formulaire de contact complet -->
-        <div class="lp-form-card lp-fade lp-delay-2">
+        <div class="lp-form-card scroll-reveal">
           <h3>
             <span data-lang="fr">Ou envoyez-nous un message</span>
             <span data-lang="en">Or send us a message</span>
@@ -987,34 +967,5 @@
   <!-- Scripts -->
   <script src="script.js"></script>
   <script src="affiliate.js"></script>
-  <script>
-  /* ── Scroll-triggered fade-in animations ── */
-  (function () {
-    // Hero elements animate immediately (CSS handles them)
-    // All other .lp-fade / .lp-fade-scale elements animate on scroll
-    var heroEls = document.querySelectorAll('.lp-hero .lp-fade, .lp-hero .lp-fade-scale');
-    heroEls.forEach(function (el) { el.classList.add('lp-visible'); });
-
-    if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('lp-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
-      document.querySelectorAll('.lp-fade:not(.lp-visible), .lp-fade-scale:not(.lp-visible)').forEach(function (el) {
-        observer.observe(el);
-      });
-    } else {
-      // Fallback: show everything
-      document.querySelectorAll('.lp-fade, .lp-fade-scale').forEach(function (el) {
-        el.classList.add('lp-visible');
-      });
-    }
-  })();
-  </script>
 </body>
 </html>
