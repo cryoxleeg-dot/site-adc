@@ -1906,9 +1906,6 @@ p {
   animation: defilement 25s linear infinite;
 }
 
-.carrousel-wrapper:hover .carrousel-piste {
-  animation-play-state: paused;
-}
 
 .carrousel-logo {
   flex-shrink: 0;
