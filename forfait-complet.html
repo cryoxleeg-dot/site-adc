@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJ7J8CYD5E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VJ7J8CYD5E');
+  </script>
+
+  <title>Forfait Complet | Affaire de Chiffres — CPA Montréal</title>
+
+  <meta name="description" content="Forfait comptable complet dès 650 $/mois : tenue de livres, déclarations T2, TPS/TVQ, états financiers et intégration technologique. Premier mois satisfait ou remboursé.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Open Graph — pour partage social par les affiliés -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Affaire de Chiffres">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:title" content="Forfait Complet dès 650 $/mois | Affaire de Chiffres CPA">
+  <meta property="og:description" content="Comptabilité complète pour PME : tenue de livres, déclarations fiscales, états financiers et accompagnement technologique. Premier mois satisfait ou remboursé.">
+  <meta property="og:url" content="https://affairedechiffres.com/forfait-complet.html">
+  <meta property="og:image" content="https://affairedechiffres.com/images/Bannière_Linked_In_ADC.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Forfait Complet dès 650 $/mois | Affaire de Chiffres CPA">
+  <meta name="twitter:description" content="Comptabilité complète pour PME : tenue de livres, déclarations fiscales, états financiers. Premier mois satisfait ou remboursé.">
+  <meta name="twitter:image" content="https://affairedechiffres.com/images/Bannière_Linked_In_ADC.png">
+
+  <meta name="theme-color" content="#1A1A1A">
+
+  <link rel="icon" type="image/png" href="images/Logo_Carré_blanc_v1.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/Logo_Carré_blanc_v1.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ── Landing page overrides ── */
+
+    /* Hide main-site nav links & hamburger */
+    .nav-links, .hamburger { display: none !important; }
+    .nav-container { justify-content: space-between; }
+
+    /* ── Fade-in animation system ── */
+    @keyframes lpFadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes lpFadeScale {
+      from { opacity: 0; transform: scale(0.92); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes lpCountUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .lp-fade {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    .lp-fade.lp-visible {
+      animation: lpFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .lp-fade-scale {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+    .lp-fade-scale.lp-visible {
+      animation: lpFadeScale 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    /* Stagger delays */
+    .lp-delay-1 { animation-delay: 0.1s !important; }
+    .lp-delay-2 { animation-delay: 0.2s !important; }
+    .lp-delay-3 { animation-delay: 0.3s !important; }
+    .lp-delay-4 { animation-delay: 0.4s !important; }
+    .lp-delay-5 { animation-delay: 0.5s !important; }
+    .lp-delay-6 { animation-delay: 0.6s !important; }
+
+    /* Hero elements animate immediately on load */
+    .lp-hero .lp-fade { animation: lpFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    /* ── Hero — dark with radial glow ── */
+    .lp-hero {
+      background: var(--v2-ink);
+      color: #F4EFE5;
+      padding: clamp(120px, 15vw, 180px) var(--v2-container-x) clamp(48px, 6vw, 72px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle radial amber glow behind hero */
+    .lp-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(232, 148, 58, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .lp-hero > * { position: relative; z-index: 1; }
+    .lp-hero .eyebrow {
+      margin: 0 auto 20px;
+    }
+    .lp-hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      font-weight: 700;
+      line-height: 1.1;
+      max-width: 780px;
+      margin: 0 auto 16px;
+      letter-spacing: -0.02em;
+    }
+    .lp-hero h1 .lp-accent {
+      color: var(--v2-accent);
+    }
+    .lp-hero .lp-subtitle {
+      font-size: var(--v2-text-lg);
+      color: rgba(244, 239, 229, 0.7);
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.55;
+    }
+    .lp-hero .btn-primaire {
+      padding: 16px 36px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: var(--v2-radius-pill);
+      box-shadow: 0 0 32px rgba(232, 148, 58, 0.25);
+    }
+    .lp-hero .btn-primaire:hover {
+      box-shadow: 0 0 48px rgba(232, 148, 58, 0.4);
+    }
+    .lp-trust-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .lp-trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(244, 239, 229, 0.06);
+      border: 1px solid rgba(244, 239, 229, 0.12);
+      border-radius: var(--v2-radius-pill);
+      padding: 7px 16px;
+      font-size: var(--v2-text-xs);
+      color: rgba(244, 239, 229, 0.65);
+    }
+    .lp-trust-pill svg { flex-shrink: 0; color: var(--v2-accent); }
+
+    /* ── Hero stats bar (Ramp-style big numbers) ── */
+    .lp-stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: clamp(24px, 5vw, 64px);
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(244, 239, 229, 0.08);
+    }
+    .lp-stat {
+      text-align: center;
+    }
+    .lp-stat-number {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--v2-accent);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .lp-stat-label {
+      font-size: var(--v2-text-xs);
+      color: rgba(244, 239, 229, 0.5);
+      margin-top: 6px;
+      line-height: 1.3;
+    }
+
+    /* ── Social proof strip ── */
+    .lp-social-proof {
+      background: var(--v2-cream-2);
+      border-top: 1px solid var(--v2-line);
+      border-bottom: 1px solid var(--v2-line);
+      padding: 28px var(--v2-container-x);
+      text-align: center;
+    }
+    .lp-social-proof-label {
+      font-size: var(--v2-text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--v2-ink-4);
+      margin-bottom: 16px;
+    }
+    .lp-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px 40px;
+    }
+    .lp-logo-item {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--v2-ink-3);
+      opacity: 0.6;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Forfait detail — cream section ── */
+    .lp-details {
+      background: var(--v2-cream);
+      padding: clamp(64px, 8vw, 100px) var(--v2-container-x);
+    }
+    .lp-details-inner {
+      max-width: var(--v2-container-max);
+      margin: 0 auto;
+    }
+    .lp-details h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: var(--v2-display-3);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--v2-ink);
+    }
+    .lp-forfait-center {
+      max-width: 420px;
+      margin: 0 auto 56px;
+    }
+    /* Vedette card glow effect */
+    .lp-forfait-center .carte-forfait-vedette {
+      box-shadow: 0 8px 40px rgba(232, 148, 58, 0.12);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+    .lp-forfait-center .carte-forfait-vedette:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 56px rgba(232, 148, 58, 0.2);
+    }
+    .lp-features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    @media (min-width: 600px) {
+      .lp-features-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .lp-feature-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 20px;
+      border-radius: var(--v2-radius-sm);
+      background: var(--v2-surface);
+      border: 1px solid var(--v2-line);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .lp-feature-item:hover {
+      border-color: var(--v2-accent);
+      box-shadow: 0 4px 20px rgba(232, 148, 58, 0.08);
+    }
+    .lp-feature-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--v2-accent-soft);
+      border-radius: var(--v2-radius-xs);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--v2-accent-dark);
+    }
+    .lp-feature-item h4 {
+      font-size: var(--v2-text-base);
+      font-weight: 600;
+      color: var(--v2-ink);
+      margin: 0 0 4px;
+    }
+    .lp-feature-item p {
+      font-size: var(--v2-text-sm);
+      color: var(--v2-ink-3);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── Guarantees — dark ── */
+    .lp-garanties {
+      background: var(--v2-ink);
+      color: #F4EFE5;
+      padding: clamp(64px, 8vw, 100px) var(--v2-container-x);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle grid pattern */
+    .lp-garanties::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(244,239,229,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(244,239,229,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .lp-garanties > * { position: relative; z-index: 1; }
+    .lp-garanties-inner {
+      max-width: var(--v2-container-max);
+      margin: 0 auto;
+    }
+    .lp-garanties h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: var(--v2-display-3);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .lp-garanties-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    @media (min-width: 600px) {
+      .lp-garanties-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .lp-garantie-card {
+      background: rgba(244, 239, 229, 0.04);
+      border: 1px solid rgba(244, 239, 229, 0.08);
+      border-radius: var(--v2-radius);
+      padding: 28px 24px;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .lp-garantie-card:hover {
+      background: rgba(244, 239, 229, 0.07);
+      border-color: rgba(232, 148, 58, 0.3);
+    }
+    .lp-garantie-card .garantie-numero {
+      color: var(--v2-accent);
+      font-family: 'Sora', sans-serif;
+      font-size: var(--v2-text-sm);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .lp-garantie-card h3 {
+      font-size: var(--v2-text-base);
+      font-weight: 600;
+      margin: 0 0 8px;
+      color: #F4EFE5;
+    }
+    .lp-garantie-card p {
+      font-size: var(--v2-text-sm);
+      color: rgba(244, 239, 229, 0.6);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── CTA banner between sections ── */
+    .lp-cta-banner {
+      background: linear-gradient(135deg, var(--v2-accent) 0%, #D47A1A 100%);
+      color: var(--v2-ink);
+      text-align: center;
+      padding: clamp(40px, 5vw, 64px) var(--v2-container-x);
+    }
+    .lp-cta-banner h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: var(--v2-ink);
+    }
+    .lp-cta-banner p {
+      font-size: var(--v2-text-base);
+      margin: 0 0 24px;
+      opacity: 0.85;
+    }
+    .lp-cta-banner .btn {
+      background: var(--v2-ink);
+      color: #F4EFE5;
+      border: none;
+      border-radius: var(--v2-radius-pill);
+      padding: 14px 32px;
+      font-weight: 600;
+    }
+    .lp-cta-banner .btn:hover {
+      background: #2a2a2a;
+      transform: translateY(-1px);
+    }
+
+    /* ── Booking + Contact — cream ── */
+    .lp-contact {
+      background: var(--v2-cream);
+      padding: clamp(64px, 8vw, 100px) var(--v2-container-x);
+    }
+    .lp-contact-inner {
+      max-width: var(--v2-container-max);
+      margin: 0 auto;
+    }
+    .lp-contact h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: var(--v2-display-3);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+      color: var(--v2-ink);
+    }
+    .lp-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    @media (min-width: 700px) {
+      .lp-contact-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* Pre-booking card */
+    .lp-prebooking-card {
+      background: var(--v2-surface);
+      border: 2px solid var(--v2-accent);
+      border-radius: var(--v2-radius);
+      padding: 36px 28px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-self: start;
+      box-shadow: 0 8px 32px rgba(232, 148, 58, 0.1);
+    }
+    .lp-prebooking-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--v2-ink);
+      margin: 0;
+    }
+    .lp-prebooking-card p {
+      font-size: var(--v2-text-sm);
+      color: var(--v2-ink-3);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .lp-prebooking-card input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--v2-line);
+      border-radius: var(--v2-radius-xs);
+      font-family: inherit;
+      font-size: var(--v2-text-sm);
+      background: var(--v2-cream);
+      color: var(--v2-ink);
+      box-sizing: border-box;
+    }
+    .lp-prebooking-card input:focus {
+      outline: 2px solid var(--v2-accent);
+      outline-offset: 1px;
+      border-color: var(--v2-accent);
+    }
+    .lp-prebooking-card .btn { width: 100%; }
+    .lp-prebooking-success {
+      text-align: center;
+      color: var(--v2-success);
+      font-weight: 600;
+      padding: 20px 0;
+    }
+
+    /* Contact form card */
+    .lp-form-card {
+      background: var(--v2-surface);
+      border: 1px solid var(--v2-line);
+      border-radius: var(--v2-radius);
+      padding: 36px 28px;
+    }
+    .lp-form-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--v2-ink);
+      margin: 0 0 20px;
+    }
+    .lp-champ {
+      margin-bottom: 16px;
+    }
+    .lp-champ label {
+      display: block;
+      font-size: var(--v2-text-sm);
+      font-weight: 500;
+      color: var(--v2-ink-2);
+      margin-bottom: 4px;
+    }
+    .lp-champ input,
+    .lp-champ textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--v2-line);
+      border-radius: var(--v2-radius-xs);
+      font-family: inherit;
+      font-size: var(--v2-text-sm);
+      background: var(--v2-cream);
+      color: var(--v2-ink);
+      box-sizing: border-box;
+    }
+    .lp-champ input:focus,
+    .lp-champ textarea:focus {
+      outline: 2px solid var(--v2-accent);
+      outline-offset: 1px;
+      border-color: var(--v2-accent);
+    }
+    .lp-champ textarea { resize: vertical; }
+    .lp-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 16px 0;
+      font-size: var(--v2-text-xs);
+      color: var(--v2-ink-3);
+      line-height: 1.45;
+    }
+    .lp-consent input[type="checkbox"] {
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .lp-form-card .btn { width: 100%; margin-top: 8px; }
+
+    /* Footer override — minimal */
+    .lp-footer .footer-inner { max-width: var(--v2-container-max); }
+
+    /* ── Reduce motion for accessibility ── */
+    @media (prefers-reduced-motion: reduce) {
+      .lp-fade, .lp-fade-scale { opacity: 1; transform: none; animation: none !important; }
+      .lp-fade.lp-visible, .lp-fade-scale.lp-visible { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAV MINIMAL — Logo + FR/EN
+       ============================================ -->
+  <header class="nav-header" id="nav-header">
+    <nav class="nav-container" role="navigation" aria-label="Navigation">
+      <a href="index.html" class="nav-logo">
+        <img src="images/Logo_Rectangle_blanc_v1.png" alt="Logo Affaire de Chiffres" class="nav-logo-img" width="160" height="40">
+      </a>
+      <div class="nav-droite">
+        <div class="nav-langue">
+          <button type="button" class="btn-langue" id="btn-fr" data-langue="fr" aria-label="Passer en français">FR</button>
+          <span class="langue-separateur">|</span>
+          <button type="button" class="btn-langue" id="btn-en" data-langue="en" aria-label="Switch to English">EN</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================================
+       HERO — Dark, centered, Ramp-inspired
+       ============================================ -->
+  <section class="lp-hero">
+    <span class="eyebrow lp-fade lp-delay-1">
+      <span data-lang="fr">Forfait Complet</span>
+      <span data-lang="en">Complete Package</span>
+    </span>
+    <h1 class="lp-fade lp-delay-2">
+      <span data-lang="fr">Votre comptabilité entre bonnes mains, <span class="lp-accent">à partir de 650&nbsp;$/mois</span></span>
+      <span data-lang="en">Your books in good hands, <span class="lp-accent">starting at $650/month</span></span>
+    </h1>
+    <p class="lp-subtitle lp-fade lp-delay-3">
+      <span data-lang="fr">Tenue de livres, déclarations fiscales, états financiers et accompagnement technologique — le tout géré par un CPA, CA senior avec plus de 20 ans d'expérience.</span>
+      <span data-lang="en">Bookkeeping, tax filings, financial statements and technology support — all managed by a senior CPA, CA with over 20 years of experience.</span>
+    </p>
+    <div class="lp-fade lp-delay-4">
+      <a href="#lp-booking" class="btn btn-primaire">
+        <span data-lang="fr">Réserver ma consultation sans frais</span>
+        <span data-lang="en">Book my free consultation</span>
+      </a>
+    </div>
+    <div class="lp-trust-pills lp-fade lp-delay-5">
+      <span class="lp-trust-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span data-lang="fr">Premier mois satisfait ou remboursé</span>
+        <span data-lang="en">First month money-back guarantee</span>
+      </span>
+      <span class="lp-trust-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span data-lang="fr">Sans engagement</span>
+        <span data-lang="en">No commitment</span>
+      </span>
+      <span class="lp-trust-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span data-lang="fr">Sans frais d'installation</span>
+        <span data-lang="en">No setup fees</span>
+      </span>
+    </div>
+
+    <!-- Stats bar — big numbers like Ramp -->
+    <div class="lp-stats-bar lp-fade lp-delay-6">
+      <div class="lp-stat">
+        <div class="lp-stat-number" data-count="20">20+</div>
+        <div class="lp-stat-label">
+          <span data-lang="fr">Années d'expérience</span>
+          <span data-lang="en">Years of experience</span>
+        </div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat-number" data-count="30">30–50%</div>
+        <div class="lp-stat-label">
+          <span data-lang="fr">Moins cher qu'un<br>grand cabinet</span>
+          <span data-lang="en">Less expensive than<br>a large firm</span>
+        </div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat-number">24h</div>
+        <div class="lp-stat-label">
+          <span data-lang="fr">Temps de réponse<br>garanti</span>
+          <span data-lang="en">Guaranteed<br>response time</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Social proof strip ── -->
+  <div class="lp-social-proof">
+    <div class="lp-social-proof-label lp-fade">
+      <span data-lang="fr">Outils que nous maîtrisons</span>
+      <span data-lang="en">Tools we master</span>
+    </div>
+    <div class="lp-logos lp-fade lp-delay-1">
+      <span class="lp-logo-item">QuickBooks</span>
+      <span class="lp-logo-item">Dext</span>
+      <span class="lp-logo-item">KNIME</span>
+      <span class="lp-logo-item">Caseware</span>
+      <span class="lp-logo-item">TaxCycle</span>
+      <span class="lp-logo-item">Acomba</span>
+    </div>
+  </div>
+
+  <!-- ============================================
+       DÉTAILS DU FORFAIT — Cream
+       ============================================ -->
+  <section class="lp-details">
+    <div class="lp-details-inner">
+      <h2 class="lp-fade">
+        <span data-lang="fr">Ce qui est inclus</span>
+        <span data-lang="en">What's included</span>
+      </h2>
+
+      <!-- Forfait card (reused from main site) -->
+      <div class="lp-forfait-center lp-fade-scale lp-delay-1">
+        <article class="carte-forfait carte-forfait-vedette">
+          <div class="forfait-badge">
+            <span data-lang="fr">Populaire</span><span data-lang="en">Popular</span>
+          </div>
+          <div class="forfait-entete">
+            <h3 class="forfait-nom">
+              <span data-lang="fr">Complet</span><span data-lang="en">Complete</span>
+            </h3>
+            <p class="forfait-prix">
+              <span data-lang="fr">650 — 900&nbsp;$<span class="forfait-prix-suffixe"> / mois</span></span>
+              <span data-lang="en">$650 — $900<span class="forfait-prix-suffixe"> / month</span></span>
+            </p>
+            <p class="forfait-prix-detail">
+              <span data-lang="fr">≈ 730 — 1 000 $/mois tout inclus avec logiciels</span>
+              <span data-lang="en">≈ $730 — $1,000/mo all-in (incl. software)</span>
+            </p>
+          </div>
+          <ul class="forfait-liste">
+            <li><span data-lang="fr">Tenue de livres complète</span><span data-lang="en">Complete bookkeeping</span></li>
+            <li><span data-lang="fr">Intégration technologique et accompagnement</span><span data-lang="en">Technology onboarding and support</span></li>
+            <li><span data-lang="fr">Déclarations T2 (impôt des sociétés)</span><span data-lang="en">T2 corporate tax filings</span></li>
+            <li><span data-lang="fr">Déclarations TPS/TVQ</span><span data-lang="en">GST/QST filings</span></li>
+            <li><span data-lang="fr">États financiers complets</span><span data-lang="en">Complete financial statements</span></li>
+            <li><span data-lang="fr">Premier mois satisfait ou remboursé</span><span data-lang="en">First month money-back guarantee</span></li>
+          </ul>
+          <a href="#lp-booking" class="btn btn-primaire btn-carte-plein">
+            <span data-lang="fr">Réserver ma consultation</span>
+            <span data-lang="en">Book my consultation</span>
+          </a>
+        </article>
+      </div>
+
+      <!-- Feature breakdown grid -->
+      <div class="lp-features-grid">
+        <div class="lp-feature-item lp-fade lp-delay-2">
+          <div class="lp-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          </div>
+          <div>
+            <h4><span data-lang="fr">Tenue de livres complète</span><span data-lang="en">Complete bookkeeping</span></h4>
+            <p><span data-lang="fr">Saisie, classement, rapprochement bancaire et suivi des comptes — tout est pris en charge mensuellement.</span><span data-lang="en">Data entry, classification, bank reconciliation and account monitoring — everything handled monthly.</span></p>
+          </div>
+        </div>
+
+        <div class="lp-feature-item lp-fade lp-delay-3">
+          <div class="lp-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <h4><span data-lang="fr">Intégration technologique</span><span data-lang="en">Technology integration</span></h4>
+            <p><span data-lang="fr">Mise en place de Dext, QuickBooks et automatisation de vos processus comptables pour gagner du temps.</span><span data-lang="en">Setup of Dext, QuickBooks and automation of your accounting processes to save time.</span></p>
+          </div>
+        </div>
+
+        <div class="lp-feature-item lp-fade lp-delay-4">
+          <div class="lp-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <h4><span data-lang="fr">Déclarations T2 et TPS/TVQ</span><span data-lang="en">T2 and GST/QST filings</span></h4>
+            <p><span data-lang="fr">Préparation et production de vos déclarations d'impôt des sociétés et de taxes de ventes, dans les délais.</span><span data-lang="en">Preparation and filing of your corporate tax returns and sales tax returns, on time.</span></p>
+          </div>
+        </div>
+
+        <div class="lp-feature-item lp-fade lp-delay-5">
+          <div class="lp-feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <div>
+            <h4><span data-lang="fr">États financiers complets</span><span data-lang="en">Complete financial statements</span></h4>
+            <p><span data-lang="fr">Bilan, état des résultats et flux de trésorerie — préparés selon les normes comptables canadiennes.</span><span data-lang="en">Balance sheet, income statement and cash flow — prepared according to Canadian accounting standards.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align: center; margin-top: 32px; font-size: var(--v2-text-sm); color: var(--v2-ink-3);">
+        <span data-lang="fr"><strong>Transparence totale :</strong> les frais de logiciels tiers sont refacturés au coût exact, sans mark-up.</span>
+        <span data-lang="en"><strong>Full transparency:</strong> third-party software fees are passed through at exact cost, with zero mark-up.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       GARANTIES — Dark
+       ============================================ -->
+  <section class="lp-garanties">
+    <div class="lp-garanties-inner">
+      <h2 class="lp-fade">
+        <span data-lang="fr">Quatre engagements concrets</span>
+        <span data-lang="en">Four concrete commitments</span>
+      </h2>
+      <div class="lp-garanties-grid">
+
+        <div class="lp-garantie-card lp-fade lp-delay-1">
+          <div class="garantie-numero">01</div>
+          <h3><span data-lang="fr">Réponse en 24 h ouvrables</span><span data-lang="en">24-hour business response</span></h3>
+          <p><span data-lang="fr">Toute demande reçoit une réponse humaine en moins de 24 h. Pas de chatbot, pas de file d'attente.</span><span data-lang="en">Every request gets a human response within 24 hours. No chatbot, no queue.</span></p>
+        </div>
+
+        <div class="lp-garantie-card lp-fade lp-delay-2">
+          <div class="garantie-numero">02</div>
+          <h3><span data-lang="fr">Premier mois satisfait ou remboursé</span><span data-lang="en">First month money-back guarantee</span></h3>
+          <p><span data-lang="fr">Si après 30 jours vous n'êtes pas convaincu, on vous rembourse intégralement et on remet vos données.</span><span data-lang="en">If after 30 days you're not convinced, we refund in full and hand back your data.</span></p>
+        </div>
+
+        <div class="lp-garantie-card lp-fade lp-delay-3">
+          <div class="garantie-numero">03</div>
+          <h3><span data-lang="fr">Sans frais d'installation</span><span data-lang="en">No setup fees</span></h3>
+          <p><span data-lang="fr">Aucun frais caché, aucun contrat annuel. Mois par mois, avec 30 jours d'avis pour résilier.</span><span data-lang="en">No hidden fees, no annual contract. Month-to-month, 30 days notice to cancel.</span></p>
+        </div>
+
+        <div class="lp-garantie-card lp-fade lp-delay-4">
+          <div class="garantie-numero">04</div>
+          <h3><span data-lang="fr">Données au Canada, conforme Loi 25</span><span data-lang="en">Canadian data, Law 25 compliant</span></h3>
+          <p><span data-lang="fr">Données chiffrées de bout en bout, hébergées au Canada. 2FA sur tous les systèmes.</span><span data-lang="en">End-to-end encrypted data, hosted in Canada. 2FA on all systems.</span></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner — amber gradient (Ramp-style interstitial) ── -->
+  <section class="lp-cta-banner">
+    <h2 class="lp-fade">
+      <span data-lang="fr">Prêt à simplifier votre comptabilité?</span>
+      <span data-lang="en">Ready to simplify your accounting?</span>
+    </h2>
+    <p class="lp-fade lp-delay-1">
+      <span data-lang="fr">30 minutes sans frais. Sans engagement. On vous montre ce qu'on peut faire pour vous.</span>
+      <span data-lang="en">30 minutes at no charge. No commitment. We'll show you what we can do for you.</span>
+    </p>
+    <a href="#lp-booking" class="btn lp-fade lp-delay-2">
+      <span data-lang="fr">Réserver ma consultation</span>
+      <span data-lang="en">Book my consultation</span>
+    </a>
+  </section>
+
+  <!-- ============================================
+       BOOKING + CONTACT — Cream
+       ============================================ -->
+  <section id="lp-booking" class="lp-contact">
+    <div class="lp-contact-inner">
+      <h2 class="lp-fade">
+        <span data-lang="fr">Parlons de votre entreprise</span>
+        <span data-lang="en">Let's talk about your business</span>
+      </h2>
+      <div class="lp-contact-grid">
+
+        <!-- Colonne 1 : Pré-booking (capture affiliate + redirect Outlook) -->
+        <div class="lp-prebooking-card lp-fade lp-delay-1">
+          <h3>
+            <span data-lang="fr">Réservez un appel-vidéo</span>
+            <span data-lang="en">Book a video call</span>
+          </h3>
+          <p>
+            <span data-lang="fr">30 minutes sans frais avec notre équipe CPA. Sans engagement.</span>
+            <span data-lang="en">30 minutes at no charge with our CPA team. No commitment.</span>
+          </p>
+          <form id="form-prebooking" action="https://formspree.io/f/mvzvlpql" method="POST">
+            <input type="hidden" name="_form_type" value="booking_request">
+            <input type="hidden" name="_service" value="Forfait Complet">
+            <input type="hidden" name="_gotcha" style="display:none">
+            <input type="text" name="nom" required placeholder="Votre nom / Your name" aria-label="Nom">
+            <input type="email" name="courriel" required placeholder="Courriel / Email" aria-label="Courriel" style="margin-top: 10px;">
+            <button type="submit" class="btn btn-primaire" style="margin-top: 14px;">
+              <span data-lang="fr">Réserver et ouvrir le calendrier</span>
+              <span data-lang="en">Book and open calendar</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Colonne 2 : Formulaire de contact complet -->
+        <div class="lp-form-card lp-fade lp-delay-2">
+          <h3>
+            <span data-lang="fr">Ou envoyez-nous un message</span>
+            <span data-lang="en">Or send us a message</span>
+          </h3>
+          <form id="form-contact-lp" action="https://formspree.io/f/mvzvlpql" method="POST">
+            <input type="hidden" name="_form_type" value="landing_contact">
+            <input type="hidden" name="_service" value="Forfait Complet">
+            <input type="hidden" name="_gotcha" style="display:none">
+
+            <div class="lp-champ">
+              <label for="lp-nom">
+                <span data-lang="fr">Nom complet *</span>
+                <span data-lang="en">Full name *</span>
+              </label>
+              <input type="text" id="lp-nom" name="nom" required>
+            </div>
+
+            <div class="lp-champ">
+              <label for="lp-courriel">
+                <span data-lang="fr">Courriel *</span>
+                <span data-lang="en">Email *</span>
+              </label>
+              <input type="email" id="lp-courriel" name="courriel" required>
+            </div>
+
+            <div class="lp-champ">
+              <label for="lp-telephone">
+                <span data-lang="fr">Téléphone</span>
+                <span data-lang="en">Phone</span>
+              </label>
+              <input type="tel" id="lp-telephone" name="telephone">
+            </div>
+
+            <div class="lp-champ">
+              <label for="lp-entreprise">
+                <span data-lang="fr">Entreprise</span>
+                <span data-lang="en">Company</span>
+              </label>
+              <input type="text" id="lp-entreprise" name="entreprise">
+            </div>
+
+            <div class="lp-champ">
+              <label for="lp-message">
+                <span data-lang="fr">Message *</span>
+                <span data-lang="en">Message *</span>
+              </label>
+              <textarea id="lp-message" name="message" rows="4" required></textarea>
+            </div>
+
+            <div class="lp-consent">
+              <input type="checkbox" id="lp-consent" name="consentement" required>
+              <label for="lp-consent">
+                <span data-lang="fr">J'accepte que mes renseignements soient utilisés pour répondre à ma demande, conformément à la <a href="#" class="lien-politique" data-ouvrir-politique>politique de confidentialité</a>.</span>
+                <span data-lang="en">I agree that my information may be used to respond to my request, in accordance with the <a href="#" class="lien-politique" data-ouvrir-politique>privacy policy</a>.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primaire">
+              <span data-lang="fr">Envoyer</span>
+              <span data-lang="en">Send</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER MINIMAL
+       ============================================ -->
+  <footer class="footer lp-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/affaire-de-chiffres-b327ab3b7/" class="footer-social-lien" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="footer-cpa-lien" aria-label="Membre en règle de l'Ordre des CPA du Québec">
+          <span class="footer-cpa-texte">
+            <span data-lang="fr">Membre en règle<br><strong>Ordre des CPA du Québec</strong><br><span class="footer-cpa-num">N° de membre : A116527</span></span>
+            <span data-lang="en">Member in good standing<br><strong>Ordre des CPA du Québec</strong><br><span class="footer-cpa-num">Member #: A116527</span></span>
+          </span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          <span data-lang="fr">&copy; 2026 Affaire de Chiffres. Tous droits réservés.</span>
+          <span data-lang="en">&copy; 2026 Affaire de Chiffres. All rights reserved.</span>
+        </p>
+        <p class="footer-politique">
+          <a href="#" class="lien-politique" data-ouvrir-politique>
+            <span data-lang="fr">Politique de confidentialité</span>
+            <span data-lang="en">Privacy policy</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       MODALE — Politique de confidentialité (Loi 25)
+       ============================================ -->
+  <div class="modale-overlay" id="modale-politique" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modale-contenu">
+      <button type="button" class="modale-fermer" id="modale-fermer" aria-label="Fermer">&times;</button>
+      <div data-lang="fr" class="politique-texte">
+        <h2>Politique de confidentialité</h2>
+        <p class="politique-date">Dernière mise à jour : 5 avril 2026</p>
+        <h3>1. Responsable de la protection des renseignements personnels</h3>
+        <p>Affaire de Chiffres<br>Montréal, Québec<br>Courriel : <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a></p>
+        <h3>2. Renseignements collectés</h3>
+        <p>Par le biais du formulaire de contact de ce site, nous collectons les renseignements suivants : nom, adresse courriel, et le contenu de votre message. Vous pouvez également fournir, de manière facultative, votre numéro de téléphone, le nom de votre entreprise et le service qui vous intéresse.</p>
+        <h3>3. Finalité de la collecte</h3>
+        <p>Vos renseignements sont collectés dans le seul but de répondre à votre demande de renseignements, de soumission ou de prise de rendez-vous.</p>
+        <h3>4. Conservation</h3>
+        <p>Vos renseignements sont conservés uniquement pour la durée nécessaire au traitement de votre demande, puis sont supprimés de manière sécurisée.</p>
+        <h3>5. Partage</h3>
+        <p>Vos renseignements ne sont partagés avec aucun tiers, à l'exception de Formspree Inc., qui assure le traitement technique de la transmission du formulaire.</p>
+        <h3>6. Vos droits</h3>
+        <p>Conformément à la Loi sur la protection des renseignements personnels dans le secteur privé du Québec, vous avez le droit d'accéder à vos renseignements, de les faire rectifier ou supprimer. Contactez-nous à <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a>.</p>
+        <h3>7. Consentement</h3>
+        <p>En soumettant le formulaire de contact, vous consentez à la collecte et à l'utilisation de vos renseignements aux fins décrites ci-dessus.</p>
+      </div>
+      <div data-lang="en" class="politique-texte">
+        <h2>Privacy policy</h2>
+        <p class="politique-date">Last updated: April 5, 2026</p>
+        <h3>1. Person responsible for the protection of personal information</h3>
+        <p>Affaire de Chiffres<br>Montréal, Quebec<br>Email: <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a></p>
+        <h3>2. Information collected</h3>
+        <p>Through the contact form on this website, we collect the following information: name, email address, and the content of your message. You may also optionally provide your phone number, company name, and the service you are interested in.</p>
+        <h3>3. Purpose of collection</h3>
+        <p>Your information is collected solely to respond to your inquiry, quote request, or appointment booking.</p>
+        <h3>4. Retention</h3>
+        <p>Your information is retained only for the time necessary to process your request, then securely deleted.</p>
+        <h3>5. Sharing</h3>
+        <p>Your information is not shared with any third party, except Formspree Inc., which handles the technical processing of form submissions.</p>
+        <h3>6. Your rights</h3>
+        <p>In accordance with Quebec's Act respecting the protection of personal information in the private sector, you have the right to access, rectify, or delete your personal information. Contact us at <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a>.</p>
+        <h3>7. Consent</h3>
+        <p>By submitting the contact form, you consent to the collection and use of your information for the purposes described above.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="affiliate.js"></script>
+  <script>
+  /* ── Scroll-triggered fade-in animations ── */
+  (function () {
+    // Hero elements animate immediately (CSS handles them)
+    // All other .lp-fade / .lp-fade-scale elements animate on scroll
+    var heroEls = document.querySelectorAll('.lp-hero .lp-fade, .lp-hero .lp-fade-scale');
+    heroEls.forEach(function (el) { el.classList.add('lp-visible'); });
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('lp-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.lp-fade:not(.lp-visible), .lp-fade-scale:not(.lp-visible)').forEach(function (el) {
+        observer.observe(el);
+      });
+    } else {
+      // Fallback: show everything
+      document.querySelectorAll('.lp-fade, .lp-fade-scale').forEach(function (el) {
+        el.classList.add('lp-visible');
+      });
+    }
+  })();
+  </script>
+</body>
+</html>
