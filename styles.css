@@ -2947,8 +2947,8 @@ p {
 .sticky-cta {
   position: fixed;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%) translateY(150%);
+  left: 20px;
+  transform: translateY(150%);
   z-index: 999;
   display: flex;
   align-items: center;
@@ -2966,7 +2966,7 @@ p {
 }
 
 .sticky-cta-visible {
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
@@ -3002,6 +3002,9 @@ p {
 @media (max-width: 560px) {
   .sticky-cta {
     bottom: 12px;
+    left: 12px;
+    right: 12px;
+    width: auto;
     padding: 12px 14px;
     gap: 12px;
   }
