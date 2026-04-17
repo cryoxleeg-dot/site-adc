@@ -61,8 +61,8 @@
       favicon: 'images/Logo_Carré_blanc_v1.png'
     },
     en: {
-      nav: 'images/Logo_Rectangle_White_EN_v1.png',
-      favicon: 'images/Logo_Square_White_EN_v1.png'
+      nav: 'images/Logo_Rectangle_transparent_EN_v1.png',
+      favicon: 'images/Logo_Square_transparent_EN_v1.png'
     }
   };
 

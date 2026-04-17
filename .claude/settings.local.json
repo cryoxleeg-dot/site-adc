@@ -10,7 +10,8 @@
       "Bash(python3 -m http.server --help)",
       "mcp__Claude_Preview__preview_start",
       "WebFetch(domain:ramp.com)",
-      "WebFetch(domain:cpaquebec.ca)"
+      "WebFetch(domain:cpaquebec.ca)",
+      "Bash(python -c 'from PIL import Image *)"
     ]
   }
 }
