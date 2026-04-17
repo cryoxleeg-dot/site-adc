@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJ7J8CYD5E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VJ7J8CYD5E');
+  </script>
+
+  <title>Plus d'info | Affaire de Chiffres — CPA Montréal</title>
+
+  <meta name="description" content="Comparaison des options (DIY, teneur indépendant, Affaire de Chiffres) et calculateur ROI pour estimer vos économies potentielles.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://affairedechiffres.com/plus-info.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Affaire de Chiffres">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:title" content="Plus d'info | Affaire de Chiffres">
+  <meta property="og:description" content="Comparaison des options et calculateur ROI.">
+  <meta property="og:url" content="https://affairedechiffres.com/plus-info.html">
+  <meta property="og:image" content="https://affairedechiffres.com/images/Bannière_Linked_In_ADC.png">
+
+  <meta name="theme-color" content="#1A1A1A">
+
+  <link rel="icon" type="image/png" href="images/Logo_Carré_blanc_v1.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/Logo_Carré_blanc_v1.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ── Sub-page hero ── */
+    .subpage-hero {
+      background: var(--v2-ink);
+      color: #F4EFE5;
+      padding: clamp(100px, 13vw, 150px) var(--v2-container-x) clamp(40px, 6vw, 64px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .subpage-hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(232, 148, 58, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .subpage-hero > * { position: relative; z-index: 1; }
+    .subpage-hero .eyebrow { margin: 0 auto 16px; }
+    .subpage-hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 760px;
+      margin: 0 auto 14px;
+      letter-spacing: -0.02em;
+    }
+    .subpage-hero .subpage-sous-titre {
+      font-size: 1.05rem;
+      color: rgba(244, 239, 229, 0.7);
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <header class="nav-header" id="nav-header">
+    <nav class="nav-container" role="navigation" aria-label="Navigation principale">
+      <a href="index.html" class="nav-logo">
+        <img src="images/Logo_Rectangle_blanc_v1.png" alt="Logo Affaire de Chiffres" id="img-logo-nav" class="nav-logo-img" width="160" height="40">
+      </a>
+
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li role="none">
+          <a href="index.html#services" role="menuitem"><span data-lang="fr">Services</span><span data-lang="en">Services</span></a>
+        </li>
+        <li role="none">
+          <a href="index.html#forfaits" role="menuitem"><span data-lang="fr">Forfaits</span><span data-lang="en">Pricing</span></a>
+        </li>
+        <li role="none">
+          <a href="index.html#a-propos" role="menuitem"><span data-lang="fr">À propos</span><span data-lang="en">About</span></a>
+        </li>
+        <li role="none">
+          <a href="index.html#contact" role="menuitem"><span data-lang="fr">Contact</span><span data-lang="en">Contact</span></a>
+        </li>
+        <li role="none" class="nav-separateur" aria-hidden="true"></li>
+        <li role="none" class="nav-item-externe">
+          <a href="articles.html" role="menuitem"><span data-lang="fr">Articles</span><span data-lang="en">Articles</span></a>
+        </li>
+        <li role="none" class="nav-item-externe">
+          <a href="faq.html" role="menuitem"><span data-lang="fr">FAQ</span><span data-lang="en">FAQ</span></a>
+        </li>
+        <li role="none" class="nav-item-externe">
+          <a href="plus-info.html" role="menuitem" class="nav-lien-actif"><span data-lang="fr">Plus d'info</span><span data-lang="en">More info</span></a>
+        </li>
+      </ul>
+
+      <div class="nav-droite">
+        <div class="nav-langue">
+          <button type="button" class="btn-langue" id="btn-fr" data-langue="fr" aria-label="Passer en français">FR</button>
+          <span class="langue-separateur">|</span>
+          <button type="button" class="btn-langue" id="btn-en" data-langue="en" aria-label="Switch to English">EN</button>
+        </div>
+        <button type="button" class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="hamburger-barre"></span>
+          <span class="hamburger-barre"></span>
+          <span class="hamburger-barre"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenu-principal" role="main">
+
+    <!-- Hero -->
+    <section class="subpage-hero">
+      <span class="eyebrow">
+        <span data-lang="fr">Plus d'info</span>
+        <span data-lang="en">More info</span>
+      </span>
+      <h1>
+        <span data-lang="fr">Comparez vos options. Estimez vos économies.</span>
+        <span data-lang="en">Compare your options. Estimate your savings.</span>
+      </h1>
+      <p class="subpage-sous-titre">
+        <span data-lang="fr">Une vue d'ensemble pour vous aider à choisir la meilleure avenue pour votre comptabilité — avec un calculateur pour visualiser vos économies potentielles.</span>
+        <span data-lang="en">A clear overview to help you pick the best accounting path — plus a calculator to visualize your potential savings.</span>
+      </p>
+    </section>
+
+    <!-- Comparaison -->
+    <section id="comparaison" class="section section-comparaison" aria-label="Comparaison des options">
+      <div class="section-contenu comparaison-contenu">
+        <span class="eyebrow">
+          <span data-lang="fr">Comparaison</span>
+          <span data-lang="en">Comparison</span>
+        </span>
+        <h2>
+          <span data-lang="fr">Trois options. Comparez et choisissez.</span>
+          <span data-lang="en">Three options. Compare and choose.</span>
+        </h2>
+        <p class="comparaison-sous-titre">
+          <span data-lang="fr">Ce que vous obtenez en faisant vous-même, en embauchant un teneur de livres — ou en travaillant avec nous.</span>
+          <span data-lang="en">What you get going DIY, hiring a freelance bookkeeper — or working with us.</span>
+        </p>
+
+        <div class="comparaison-tableau-wrap">
+          <table class="comparaison-tableau">
+            <colgroup>
+              <col class="col-feature">
+              <col class="col-option">
+              <col class="col-option">
+              <col class="col-option">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="comparaison-th-feature">
+                  <span data-lang="fr">Ce que vous obtenez</span>
+                  <span data-lang="en">What you get</span>
+                </th>
+                <th>
+                  <span data-lang="fr">Faire soi-même<br><small>(QuickBooks + Excel)</small></span>
+                  <span data-lang="en">DIY<br><small>(QuickBooks + Excel)</small></span>
+                </th>
+                <th>
+                  <span data-lang="fr">Teneur de livres indépendant</span>
+                  <span data-lang="en">Freelance bookkeeper</span>
+                </th>
+                <th class="comparaison-th-mise-en-avant">
+                  <span data-lang="fr">Affaire de Chiffres</span>
+                  <span data-lang="en">Affaire de Chiffres</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><span data-lang="fr">Coût mensuel typique</span><span data-lang="en">Typical monthly cost</span></th>
+                <td>200 – 400 $</td>
+                <td>400 – 700 $</td>
+                <td class="td-mise-en-avant">450 – 900 $</td>
+              </tr>
+              <tr>
+                <th scope="row"><span data-lang="fr">Supervision CPA</span><span data-lang="en">CPA oversight</span></th>
+                <td class="td-non">✕</td>
+                <td><span data-lang="fr">Variable</span><span data-lang="en">Varies</span></td>
+                <td class="td-oui td-mise-en-avant">✓</td>
+              </tr>
+              <tr>
+                <th scope="row"><span data-lang="fr">Conseils et planifications intégrés à votre entreprise</span><span data-lang="en">Advice and planning integrated into your business</span></th>
+                <td class="td-non">✕</td>
+                <td><span data-lang="fr">Variable</span><span data-lang="en">Varies</span></td>
+                <td class="td-oui td-mise-en-avant">✓</td>
+              </tr>
+              <tr>
+                <th scope="row"><span data-lang="fr">Déclarations d'impôt et de taxes de ventes</span><span data-lang="en">Income tax and sales tax filings</span></th>
+                <td class="td-non">✕</td>
+                <td class="td-non">✕</td>
+                <td class="td-oui td-mise-en-avant">✓</td>
+              </tr>
+              <tr>
+                <th scope="row"><span data-lang="fr">Automatisation Dext + KNIME</span><span data-lang="en">Dext + KNIME automation</span></th>
+                <td class="td-non">✕</td>
+                <td class="td-partiel">~</td>
+                <td class="td-oui td-mise-en-avant">✓</td>
+              </tr>
+              <tr>
+                <th scope="row"><span data-lang="fr">Temps que vous y consacrez</span><span data-lang="en">Time you spend on it</span></th>
+                <td>15 – 25 h/mois</td>
+                <td>3 – 5 h/mois</td>
+                <td class="td-mise-en-avant">&lt; 1 h/mois</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="comparaison-note">
+          <span data-lang="fr">Comparaison à titre illustratif uniquement, basée sur notre expérience auprès de PME québécoises comparables. Les services offerts par chaque fournisseur varient considérablement. Nous vous encourageons à consulter plusieurs professionnels pour trouver la solution adaptée à votre situation.</span>
+          <span data-lang="en">Comparison for illustrative purposes only, based on our experience with comparable Quebec SMBs. Services offered by each provider vary considerably. We encourage you to consult multiple professionals to find the solution best suited to your situation.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Calculateur ROI -->
+    <section id="calculateur" class="section section-roi" aria-label="Calculateur d'économies">
+      <div class="section-contenu roi-contenu">
+        <span class="eyebrow">
+          <span data-lang="fr">Calculateur ROI</span>
+          <span data-lang="en">ROI Calculator</span>
+        </span>
+        <h2>
+          <span data-lang="fr">Estimez votre potentiel d'économies.</span>
+          <span data-lang="en">Estimate your potential savings.</span>
+        </h2>
+        <p class="roi-sous-titre">
+          <span data-lang="fr">Ajustez deux variables — transactions et revenu — et le calculateur affiche l'économie mensuelle et annuelle estimée pour votre PME.</span>
+          <span data-lang="en">Adjust two variables — transactions and revenue — and the calculator shows your SME's estimated monthly and yearly savings.</span>
+        </p>
+
+        <div id="roi-calculateur" class="roi-grille">
+
+          <div class="roi-entrees">
+            <p class="roi-entrees-titre">
+              <span data-lang="fr">Votre entreprise</span>
+              <span data-lang="en">Your business</span>
+            </p>
+            <div class="roi-champ">
+              <label for="roi-transactions">
+                <span data-lang="fr">Transactions par mois</span>
+                <span data-lang="en">Transactions per month</span>
+              </label>
+              <input type="range" id="roi-transactions" min="20" max="500" value="120" step="10">
+              <output id="roi-transactions-affichage" class="roi-output"></output>
+            </div>
+
+            <div class="roi-champ">
+              <label for="roi-revenu">
+                <span data-lang="fr">Chiffre d'affaires annuel ($)</span>
+                <span data-lang="en">Annual revenue ($)</span>
+              </label>
+              <input type="range" id="roi-revenu" min="100000" max="5000000" value="750000" step="50000">
+              <output id="roi-revenu-affichage" class="roi-output"></output>
+            </div>
+          </div>
+
+          <div class="roi-resultats">
+            <p class="roi-resultats-titre">
+              <span data-lang="fr">Économies estimées <small>(à titre indicatif)</small></span>
+              <span data-lang="en">Estimated savings <small>(illustrative only)</small></span>
+            </p>
+            <div class="roi-resultat-item">
+              <span class="roi-resultat-valeur" id="roi-sortie-heures">0 h</span>
+              <span class="roi-resultat-label">
+                <span data-lang="fr">économisées par mois</span>
+                <span data-lang="en">saved per month</span>
+              </span>
+            </div>
+            <div class="roi-resultat-item">
+              <span class="roi-resultat-valeur" id="roi-sortie-economies">0 $</span>
+              <span class="roi-resultat-label">
+                <span data-lang="fr">de saisie évitée par mois</span>
+                <span data-lang="en">of entry cost avoided per month</span>
+              </span>
+            </div>
+            <div class="roi-resultat-item roi-resultat-mise-en-avant">
+              <span class="roi-resultat-valeur" id="roi-sortie-equivalent">0 $</span>
+              <span class="roi-resultat-label">
+                <span data-lang="fr">comparaison illustrative<br>vs embauche junior in-house</span>
+                <span data-lang="en">illustrative comparison<br>vs hiring a junior in-house</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="roi-disclaimer">
+          <span data-lang="fr">Estimation théorique fondée sur des hypothèses standardisées (2 min/transaction sans automatisation, 80 % de réduction avec Dext, 35 $/h pour un teneur de livres junior et un coût annuel in-house ≈ 52 000 $). <strong>Aucune économie n'est garantie</strong> — les résultats varient selon votre situation. Une analyse personnalisée est offerte lors de la première rencontre.</span>
+          <span data-lang="en">Theoretical estimate based on standardized assumptions (2 min/transaction without automation, 80% reduction with Dext, $35/h for a junior bookkeeper, and an in-house annual cost of ~$52,000). <strong>No savings are guaranteed</strong> — results vary depending on your situation. A personalized analysis is provided during the first meeting.</span>
+        </p>
+
+        <div class="roi-cta">
+          <a href="https://outlook.office.com/book/ConsultationGratuite30Minutes@affairedechiffres.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-primaire">
+            <span data-lang="fr">Discuter de votre cas — 30 min sans frais</span>
+            <span data-lang="en">Discuss your case — 30 min at no charge</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/affaire-de-chiffres-b327ab3b7/" class="footer-social-lien" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="footer-cpa-lien" aria-label="Membre en règle de l'Ordre des CPA du Québec">
+          <span class="footer-cpa-texte">
+            <span data-lang="fr">Membre en règle<br><strong>Ordre des CPA du Québec</strong><br><span class="footer-cpa-num">N° de membre : A116527</span></span>
+            <span data-lang="en">Member in good standing<br><strong>Ordre des CPA du Québec</strong><br><span class="footer-cpa-num">Member #: A116527</span></span>
+          </span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          <span data-lang="fr">&copy; 2026 Affaire de Chiffres. Tous droits réservés.</span>
+          <span data-lang="en">&copy; 2026 Affaire de Chiffres. All rights reserved.</span>
+        </p>
+        <a href="index.html#accueil" class="footer-retour-haut">
+          <span data-lang="fr">Retour à l'accueil</span>
+          <span data-lang="en">Back to home</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts : script.js gère langue, hamburger et calculateur ROI -->
+  <script src="script.js"></script>
+
+</body>
+</html>

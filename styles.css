@@ -63,7 +63,7 @@
   --v2-text-xs:   0.75rem;
 
   /* Spacing */
-  --v2-section-py: clamp(88px, 11vw, 160px);
+  --v2-section-py: clamp(64px, 8vw, 120px);
   --v2-container-x: clamp(20px, 5vw, 48px);
   --v2-container-max: 1200px;
   --v2-gap-xs: 12px;
@@ -2947,8 +2947,8 @@ p {
 .sticky-cta {
   position: fixed;
   bottom: 20px;
-  left: 20px;
-  transform: translateY(150%);
+  left: 50%;
+  transform: translateX(-50%) translateY(150%);
   z-index: 999;
   display: flex;
   align-items: center;
@@ -2956,17 +2956,17 @@ p {
   background-color: var(--couleur-charbon);
   border: 1px solid rgba(245, 193, 108, 0.3);
   border-radius: 14px;
-  padding: 14px 18px;
+  padding: 14px 22px 14px 26px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   max-width: 92vw;
-  width: 540px;
+  width: 560px;
   opacity: 0;
   pointer-events: none;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
 
 .sticky-cta-visible {
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
@@ -3002,10 +3002,7 @@ p {
 @media (max-width: 560px) {
   .sticky-cta {
     bottom: 12px;
-    left: 12px;
-    right: 12px;
-    width: auto;
-    padding: 12px 14px;
+    padding: 12px 16px 12px 18px;
     gap: 12px;
   }
   .sticky-cta-texte strong { font-size: 0.85rem; }
@@ -3649,6 +3646,77 @@ h2.v2-h2 {
   color: var(--v2-ink);
   transform: none;
   box-shadow: var(--v2-shadow-sm);
+}
+
+/* ── Carte service vedette (Tenue de livres) ── */
+.section-services .carte-service-vedette {
+  position: relative;
+  background: linear-gradient(160deg, var(--v2-ink) 0%, #1f1f1f 100%);
+  border: 1px solid rgba(232, 148, 58, 0.45);
+  box-shadow: 0 8px 32px rgba(232, 148, 58, 0.12), 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #F4EFE5;
+  overflow: hidden;
+}
+.section-services .carte-service-vedette::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(232, 148, 58, 0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+.section-services .carte-service-vedette > * { position: relative; z-index: 1; }
+.section-services .carte-service-vedette:hover {
+  transform: translateY(-4px);
+  border-color: var(--v2-accent);
+  box-shadow: 0 14px 44px rgba(232, 148, 58, 0.22), 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.section-services .carte-badge-vedette {
+  display: inline-block;
+  background: var(--v2-accent);
+  color: var(--v2-ink);
+  font-family: 'Sora', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 5px 12px;
+  border-radius: var(--v2-radius-pill);
+  margin-bottom: 18px;
+  align-self: flex-start;
+}
+.section-services .carte-service-vedette .carte-titre { color: var(--v2-accent); }
+.section-services .carte-service-vedette .carte-description { color: rgba(244, 239, 229, 0.78); }
+.section-services .carte-service-vedette .carte-cas-usage {
+  border-top: 1px solid rgba(244, 239, 229, 0.12);
+}
+.section-services .carte-service-vedette .carte-cas-usage li { color: rgba(244, 239, 229, 0.82); }
+.section-services .carte-service-vedette .carte-cas-usage li::before { color: var(--v2-accent); }
+.section-services .carte-service-vedette .carte-tarif {
+  background: rgba(244, 239, 229, 0.06);
+  border-color: rgba(244, 239, 229, 0.12);
+}
+.section-services .carte-service-vedette .tarif-a-partir,
+.section-services .carte-service-vedette .tarif-a-partir strong { color: #F4EFE5; }
+.section-services .carte-service-vedette .tarif-suffixe { color: rgba(244, 239, 229, 0.6); }
+.section-services .carte-service-vedette .tarif-detail { color: rgba(244, 239, 229, 0.55); }
+.section-services .btn-carte-vedette {
+  background: var(--v2-accent);
+  border: 1px solid var(--v2-accent);
+  color: var(--v2-ink);
+  font-weight: 600;
+  border-radius: var(--v2-radius-pill);
+  padding: 14px 22px;
+  box-shadow: 0 4px 16px rgba(232, 148, 58, 0.25);
+}
+.section-services .btn-carte-vedette:hover {
+  background: #F5C16C;
+  border-color: #F5C16C;
+  color: var(--v2-ink);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(232, 148, 58, 0.4);
 }
 
 /* ================================================================
@@ -4478,6 +4546,23 @@ h2.v2-h2 {
   line-height: 1.65;
 }
 .section-faq .faq-reponse p { margin: 0; }
+
+/* ── Sub-page CTA en bas (FAQ/Plus-info) ── */
+.subpage-cta-bas {
+  margin-top: 56px;
+  padding: 40px 32px;
+  text-align: center;
+  background: var(--v2-ink);
+  border-radius: var(--v2-radius);
+  color: #F4EFE5;
+}
+.subpage-cta-bas p {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 20px;
+  color: var(--v2-accent);
+}
 
 /* ================================================================
    SECTION 12 — À PROPOS
