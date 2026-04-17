@@ -404,6 +404,10 @@
   (function () {
     'use strict';
     var langueActive = 'fr';
+    var logosParLangue = {
+      fr: { nav: 'images/Logo_Rectangle_blanc_v1.png', favicon: 'images/Logo_Carré_blanc_v1.png' },
+      en: { nav: 'images/Logo_Rectangle_White_EN_v1.png', favicon: 'images/Logo_Square_White_EN_v1.png' }
+    };
     function appliquerLangue(langue) {
       langueActive = langue;
       var elements = document.querySelectorAll('[data-lang]');
@@ -412,6 +416,12 @@
       }
       document.getElementById('btn-fr').classList.toggle('active', langue === 'fr');
       document.getElementById('btn-en').classList.toggle('active', langue === 'en');
+      var logoCfg = logosParLangue[langue] || logosParLangue.fr;
+      var navLogos = document.querySelectorAll('.nav-logo-img');
+      for (var n = 0; n < navLogos.length; n++) navLogos[n].setAttribute('src', logoCfg.nav);
+      var favs = document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]');
+      for (var f = 0; f < favs.length; f++) favs[f].setAttribute('href', logoCfg.favicon);
+      document.documentElement.lang = langue;
       try { localStorage.setItem('langue-adc', langue); } catch (e) {}
     }
     document.getElementById('btn-fr').addEventListener('click', function () { appliquerLangue('fr'); });

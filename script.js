@@ -54,6 +54,18 @@
     en: { 'img-logo-nav': 'Affaire de Chiffres Logo', 'img-logo-hero': 'Affaire de Chiffres — CPA Firm' }
   };
 
+  // Logos selon la langue (nav + favicon)
+  var logosParLangue = {
+    fr: {
+      nav: 'images/Logo_Rectangle_blanc_v1.png',
+      favicon: 'images/Logo_Carré_blanc_v1.png'
+    },
+    en: {
+      nav: 'images/Logo_Rectangle_White_EN_v1.png',
+      favicon: 'images/Logo_Square_White_EN_v1.png'
+    }
+  };
+
   // Aria-labels des sections selon la langue
   var ariaLabelsSections = {
     fr: { accueil: 'Accueil', 'chiffres-cles': 'Chiffres clés', services: 'Services', outils: 'Outils', 'a-propos': 'À propos', contact: 'Contact' },
@@ -175,6 +187,17 @@
     for (var id in alts) {
       var img = document.getElementById(id);
       if (img) img.setAttribute('alt', alts[id]);
+    }
+
+    // Mettre à jour les logos (nav + favicon) selon la langue
+    var logoConfig = logosParLangue[langue] || logosParLangue.fr;
+    var logosNav = document.querySelectorAll('.nav-logo-img');
+    for (var li = 0; li < logosNav.length; li++) {
+      logosNav[li].setAttribute('src', logoConfig.nav);
+    }
+    var favicons = document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]');
+    for (var fi = 0; fi < favicons.length; fi++) {
+      favicons[fi].setAttribute('href', logoConfig.favicon);
     }
 
     // Mettre à jour les aria-label des sections
