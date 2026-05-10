@@ -4903,3 +4903,231 @@ h2.v2-h2 {
   .hamburger { display: none; }
 }
 
+
+/* ================================================================
+   CRO REORG — Preuve sociale, Défi, Garanties CTA, Pré-booking
+   ================================================================ */
+
+/* ── Section Preuve sociale (juste sous le hero) ── */
+.section-preuve-sociale {
+  background: var(--v2-cream-2);
+  border-top: 1px solid var(--v2-line);
+  border-bottom: 1px solid var(--v2-line);
+  padding: clamp(48px, 7vw, 80px) var(--v2-container-x);
+}
+.section-preuve-sociale .preuve-contenu {
+  max-width: var(--v2-container-max);
+  margin: 0 auto;
+  text-align: center;
+}
+.section-preuve-sociale .preuve-eyebrow {
+  font-family: 'Sora', sans-serif;
+  font-size: var(--v2-text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--v2-ink-4);
+  margin-bottom: 32px;
+}
+.preuve-stats-grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px 48px;
+  max-width: 880px;
+  margin: 0 auto 40px;
+}
+@media (min-width: 700px) {
+  .preuve-stats-grille { grid-template-columns: repeat(3, 1fr); }
+}
+.preuve-stat { text-align: center; }
+.preuve-stat-valeur {
+  display: block;
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--v2-accent);
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+.preuve-stat-suffixe { font-size: 0.65em; color: var(--v2-accent); }
+.preuve-stat-texte { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+.preuve-stat-label {
+  display: block;
+  font-size: var(--v2-text-sm);
+  color: var(--v2-ink-3);
+  line-height: 1.5;
+  max-width: 220px;
+  margin: 0 auto;
+}
+.preuve-citation {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 28px;
+  background: var(--v2-surface);
+  border-left: 3px solid var(--v2-accent);
+  border-radius: var(--v2-radius-sm);
+  font-family: 'Sora', sans-serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--v2-ink-2);
+  line-height: 1.55;
+  text-align: left;
+}
+.preuve-citation-auteur {
+  display: block;
+  margin-top: 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-style: normal;
+  color: var(--v2-ink-4);
+  letter-spacing: 0.02em;
+}
+
+/* ── Section Le défi (pain points) ── */
+.section-defi {
+  background: var(--v2-cream);
+  padding: var(--v2-section-py) var(--v2-container-x);
+}
+.section-defi .defi-contenu {
+  max-width: var(--v2-container-max);
+  margin: 0 auto;
+  text-align: center;
+}
+.section-defi .eyebrow { display: inline-block; margin-bottom: 14px; }
+.section-defi h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: var(--v2-display-3, clamp(1.75rem, 3.5vw, 2.5rem));
+  font-weight: 700;
+  color: var(--v2-ink);
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+  margin: 0 auto 48px;
+  line-height: 1.15;
+}
+.defi-grille {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media (min-width: 800px) {
+  .defi-grille { grid-template-columns: repeat(3, 1fr); }
+}
+.defi-carte {
+  background: var(--v2-surface);
+  border: 1px solid var(--v2-line);
+  border-radius: var(--v2-radius);
+  padding: 32px 26px;
+  text-align: left;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.defi-carte:hover {
+  border-color: var(--v2-accent);
+  box-shadow: 0 6px 24px rgba(232, 148, 58, 0.1);
+  transform: translateY(-2px);
+}
+.defi-emoji {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.defi-titre {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--v2-ink);
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+.defi-texte {
+  font-size: var(--v2-text-sm);
+  color: var(--v2-ink-3);
+  line-height: 1.6;
+  margin: 0;
+}
+.defi-transition {
+  margin-top: 40px;
+  font-size: 1rem;
+  color: var(--v2-ink-2);
+  font-weight: 500;
+}
+.defi-transition a {
+  color: var(--v2-accent-dark, #C97A1F);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  font-weight: 600;
+}
+.defi-transition a:hover { color: var(--v2-accent); }
+
+/* ── Garanties — CTA inline ── */
+.garanties-cta {
+  margin-top: 40px;
+  padding: 32px 28px;
+  background: rgba(232, 148, 58, 0.08);
+  border: 1px solid rgba(232, 148, 58, 0.25);
+  border-radius: var(--v2-radius);
+  text-align: center;
+}
+.garanties-cta .btn {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  padding: 14px 32px;
+}
+.garanties-cta-rassurance {
+  font-size: var(--v2-text-xs);
+  color: var(--v2-ink-4);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── Contact — pré-booking mini form ── */
+.contact-prebooking {
+  margin-top: 28px;
+  padding: 24px 22px;
+  background: rgba(244, 239, 229, 0.04);
+  border: 1px solid rgba(244, 239, 229, 0.14);
+  border-radius: var(--v2-radius);
+}
+.contact-prebooking .contact-rdv-titre {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--v2-accent);
+  margin: 0 0 6px;
+}
+.contact-prebooking-desc {
+  font-size: 0.85rem;
+  color: rgba(244, 239, 229, 0.7);
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+.form-prebooking-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-prebooking-mini input[type="text"],
+.form-prebooking-mini input[type="email"] {
+  padding: 11px 14px;
+  border: 1px solid rgba(244, 239, 229, 0.2);
+  border-radius: var(--v2-radius-xs, 6px);
+  background: rgba(20, 20, 20, 0.4);
+  color: #F4EFE5;
+  font-family: inherit;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+.form-prebooking-mini input::placeholder { color: rgba(244, 239, 229, 0.45); }
+.form-prebooking-mini input:focus {
+  outline: 2px solid var(--v2-accent);
+  outline-offset: 1px;
+  border-color: var(--v2-accent);
+}
+.form-prebooking-mini .btn-rdv {
+  margin-top: 6px;
+  width: 100%;
+  justify-content: center;
+}
