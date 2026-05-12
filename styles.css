@@ -5028,10 +5028,15 @@ h2.v2-h2 {
   box-shadow: 0 6px 24px rgba(232, 148, 58, 0.1);
   transform: translateY(-2px);
 }
-.defi-emoji {
-  font-size: 2rem;
-  line-height: 1;
-  margin-bottom: 14px;
+.defi-numero {
+  display: block;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--v2-accent);
+  margin-bottom: 18px;
+  text-transform: uppercase;
 }
 .defi-titre {
   font-family: 'Sora', sans-serif;
