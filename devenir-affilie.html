@@ -298,6 +298,29 @@
       border: 1px solid var(--v2-line);
       border-radius: var(--v2-radius);
       padding: 40px 32px;
+      text-align: center;
+    }
+    .aff-apply-email {
+      margin: 18px 0 0;
+      font-size: 0.9rem;
+      color: var(--v2-ink-3);
+    }
+    .aff-apply-email a {
+      color: var(--v2-accent-dark, #C97A1F);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      font-weight: 600;
+    }
+    .aff-apply-email a:hover { color: var(--v2-accent); }
+    .aff-apply-info {
+      margin: 18px 0 0;
+      padding: 16px 20px;
+      background: var(--v2-cream);
+      border-radius: var(--v2-radius-sm);
+      font-size: 0.82rem;
+      color: var(--v2-ink-3);
+      line-height: 1.55;
+      text-align: left;
     }
     .aff-champ {
       margin-bottom: 18px;
@@ -544,85 +567,23 @@
         <span data-lang="en">Apply as an affiliate</span>
       </h2>
       <p class="aff-apply-subtitle lp-fade lp-delay-1">
-        <span data-lang="fr">Remplissez le formulaire. Notre équipe examine chaque demande et vous répond en 48 h avec votre lien personnalisé.</span>
-        <span data-lang="en">Fill out the form. Our team reviews each application and responds within 48 hours with your personalized link.</span>
+        <span data-lang="fr">Réservez 30 minutes sans frais avec notre équipe ou écrivez-nous directement. Nous étudions chaque demande et vous répondons sous 48 h avec votre lien personnalisé.</span>
+        <span data-lang="en">Book a free 30-minute call with our team, or email us directly. We review each application and respond within 48 hours with your personalized link.</span>
       </p>
 
       <div class="aff-form-card lp-fade lp-delay-2" id="aff-form-wrapper">
-        <form id="form-affiliate" action="https://formspree.io/f/mvzvlpql" method="POST">
-          <input type="hidden" name="_form_type" value="affiliate_application">
-          <input type="hidden" name="_gotcha" style="display:none">
-
-          <div class="aff-champ">
-            <label for="aff-nom">
-              <span data-lang="fr">Nom complet *</span>
-              <span data-lang="en">Full name *</span>
-            </label>
-            <input type="text" id="aff-nom" name="nom" required>
-          </div>
-
-          <div class="aff-champ">
-            <label for="aff-courriel">
-              <span data-lang="fr">Courriel *</span>
-              <span data-lang="en">Email *</span>
-            </label>
-            <input type="email" id="aff-courriel" name="courriel" required>
-          </div>
-
-          <div class="aff-champ">
-            <label for="aff-telephone">
-              <span data-lang="fr">Téléphone</span>
-              <span data-lang="en">Phone</span>
-            </label>
-            <input type="tel" id="aff-telephone" name="telephone">
-          </div>
-
-          <div class="aff-champ">
-            <label for="aff-entreprise">
-              <span data-lang="fr">Entreprise / Organisation</span>
-              <span data-lang="en">Company / Organization</span>
-            </label>
-            <input type="text" id="aff-entreprise" name="entreprise">
-          </div>
-
-          <div class="aff-champ">
-            <label for="aff-relation">
-              <span data-lang="fr">Comment comptez-vous nous référer des clients? *</span>
-              <span data-lang="en">How do you plan to refer clients to us? *</span>
-            </label>
-            <select id="aff-relation" name="canal_referral" required>
-              <option value="" disabled selected>
-                <span data-lang="fr">Sélectionnez</span>
-              </option>
-              <option value="Réseau professionnel">Réseau professionnel / Professional network</option>
-              <option value="Réseaux sociaux">Réseaux sociaux / Social media</option>
-              <option value="Blogue ou site web">Blogue ou site web / Blog or website</option>
-              <option value="Bouche-à-oreille">Bouche-à-oreille / Word of mouth</option>
-              <option value="Autre">Autre / Other</option>
-            </select>
-          </div>
-
-          <div class="aff-champ">
-            <label for="aff-message">
-              <span data-lang="fr">Parlez-nous de vous (optionnel)</span>
-              <span data-lang="en">Tell us about yourself (optional)</span>
-            </label>
-            <textarea id="aff-message" name="message" rows="3" placeholder=""></textarea>
-          </div>
-
-          <div class="aff-consent">
-            <input type="checkbox" id="aff-consent" name="consentement" required>
-            <label for="aff-consent">
-              <span data-lang="fr">J'accepte que mes renseignements soient utilisés pour traiter ma candidature, conformément à la <a href="#" class="lien-politique" data-ouvrir-politique>politique de confidentialité</a>.</span>
-              <span data-lang="en">I agree that my information may be used to process my application, in accordance with the <a href="#" class="lien-politique" data-ouvrir-politique>privacy policy</a>.</span>
-            </label>
-          </div>
-
-          <button type="submit" class="btn btn-primaire" id="aff-submit-btn">
-            <span data-lang="fr">Soumettre ma candidature</span>
-            <span data-lang="en">Submit my application</span>
-          </button>
-        </form>
+        <a href="https://outlook.office.com/book/ConsultationGratuite30Minutes@affairedechiffres.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-primaire" id="aff-submit-btn" data-event="affiliate_booking_click">
+          <span data-lang="fr">Réserver un appel — 30 min sans frais</span>
+          <span data-lang="en">Book a call — 30 min at no charge</span>
+        </a>
+        <p class="aff-apply-email">
+          <span data-lang="fr">Vous préférez écrire ? <a href="mailto:conseils@affairedechiffres.com?subject=Candidature%20programme%20d%27affiliation">conseils@affairedechiffres.com</a></span>
+          <span data-lang="en">Prefer to write? <a href="mailto:conseils@affairedechiffres.com?subject=Affiliate%20program%20application">conseils@affairedechiffres.com</a></span>
+        </p>
+        <p class="aff-apply-info">
+          <span data-lang="fr">Préparez : votre nom, votre entreprise ou organisation, comment vous comptez nous référer des clients, et toute information pertinente sur votre réseau.</span>
+          <span data-lang="en">Be ready to share: your name, your company or organization, how you plan to refer clients to us, and any relevant info about your network.</span>
+        </p>
       </div>
     </div>
   </section>
@@ -680,7 +641,7 @@
         <h3>4. Conservation</h3>
         <p>Vos renseignements sont conservés uniquement pour la durée nécessaire au traitement de votre demande.</p>
         <h3>5. Partage</h3>
-        <p>Vos renseignements ne sont partagés avec aucun tiers, à l'exception de Formspree Inc. (traitement technique du formulaire).</p>
+        <p>Vos renseignements ne sont partagés avec aucun tiers à des fins commerciales. Les outils techniques que nous utilisons (Microsoft Bookings, Google Analytics) traitent certaines données en notre nom à titre de sous-traitants.</p>
         <h3>6. Vos droits</h3>
         <p>Conformément à la Loi 25, vous avez le droit d'accéder à vos renseignements, de les faire rectifier ou supprimer. Contactez <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a>.</p>
         <h3>7. Consentement</h3>
@@ -698,7 +659,7 @@
         <h3>4. Retention</h3>
         <p>Your information is retained only for the time necessary to process your request.</p>
         <h3>5. Sharing</h3>
-        <p>Your information is not shared with any third party, except Formspree Inc. (technical form processing).</p>
+        <p>Your information is not shared with any third party for commercial purposes. The technical tools we use (Microsoft Bookings, Google Analytics) process certain data on our behalf as subprocessors.</p>
         <h3>6. Your rights</h3>
         <p>Under Law 25, you have the right to access, rectify, or delete your personal information. Contact <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a>.</p>
         <h3>7. Consent</h3>
@@ -710,40 +671,14 @@
   <!-- Scripts -->
   <script src="script.js"></script>
   <script>
-  /* ── Form AJAX submit with success state ── */
+  /* ── GA4 tracking for booking CTA ── */
   (function () {
-    var form = document.getElementById('form-affiliate');
-    if (!form) return;
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var btn = document.getElementById('aff-submit-btn');
-      if (btn) btn.disabled = true;
-
-      var formData = new FormData(form);
-
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      }).then(function (res) {
-        if (res.ok) {
-          if (typeof gtag === 'function') {
-            gtag('event', 'affiliate_application', { page: 'devenir-affilie' });
-          }
-          var wrapper = document.getElementById('aff-form-wrapper');
-          wrapper.innerHTML =
-            '<div class="aff-success">' +
-            '<h3><span data-lang="fr">Candidature envoyée!</span><span data-lang="en">Application sent!</span></h3>' +
-            '<p><span data-lang="fr">Merci pour votre intérêt. Notre équipe examine votre demande et vous contactera dans les 48 prochaines heures avec votre lien affilié personnalisé.</span>' +
-            '<span data-lang="en">Thank you for your interest. Our team will review your application and contact you within 48 hours with your personalized affiliate link.</span></p>' +
-            '</div>';
-          if (typeof appliquerLangue === 'function') appliquerLangue();
-        } else {
-          if (btn) btn.disabled = false;
-        }
-      }).catch(function () {
-        if (btn) btn.disabled = false;
+    document.addEventListener('click', function (e) {
+      var target = e.target.closest('[data-event]');
+      if (!target || typeof gtag !== 'function') return;
+      gtag('event', target.getAttribute('data-event'), {
+        event_category: 'engagement',
+        page_location: window.location.href
       });
     });
   })();

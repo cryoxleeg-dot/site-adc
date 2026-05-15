@@ -5136,3 +5136,75 @@ h2.v2-h2 {
   width: 100%;
   justify-content: center;
 }
+
+/* ── Contact — Booking card (Microsoft Bookings only) ── */
+.contact-booking-card {
+  background: rgba(244, 239, 229, 0.04);
+  border: 1px solid rgba(232, 148, 58, 0.3);
+  border-radius: var(--v2-radius);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact-booking-titre {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--v2-accent);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.contact-booking-desc {
+  font-size: 0.95rem;
+  color: rgba(244, 239, 229, 0.7);
+  line-height: 1.55;
+  margin: 0;
+}
+.contact-booking-liste {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-booking-liste li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: rgba(244, 239, 229, 0.85);
+}
+.contact-booking-liste li svg {
+  flex-shrink: 0;
+  color: var(--v2-accent);
+}
+.contact-booking-card .btn-booking {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--v2-radius-pill);
+  box-shadow: 0 4px 18px rgba(232, 148, 58, 0.25);
+}
+.contact-booking-card .btn-booking:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(232, 148, 58, 0.35);
+}
+.contact-booking-fallback {
+  font-size: 0.82rem;
+  color: rgba(244, 239, 229, 0.55);
+  margin: 4px 0 0;
+}
+.contact-booking-fallback a {
+  color: var(--v2-accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(232, 148, 58, 0.35);
+}
+.contact-booking-fallback a:hover {
+  border-bottom-color: var(--v2-accent);
+}

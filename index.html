@@ -1098,141 +1098,46 @@
               <span data-lang="en"><strong>24-business-hour response commitment.</strong></span>
             </p>
 
-            <!-- Bloc pré-réservation : capture nom+email puis redirige vers Outlook -->
-            <div class="contact-prebooking">
-              <p class="contact-rdv-titre">
-                <span data-lang="fr">Réservez un appel-vidéo en 1 clic</span>
-                <span data-lang="en">Book a video call in 1 click</span>
-              </p>
-              <p class="contact-prebooking-desc">
-                <span data-lang="fr">30 minutes sans frais avec un CPA, CA senior. Sans engagement.</span>
-                <span data-lang="en">30 minutes at no charge with a senior CPA, CA. No commitment.</span>
-              </p>
-              <form id="form-prebooking-index" action="https://formspree.io/f/mvzvlpql" method="POST" class="form-prebooking-mini">
-                <input type="hidden" name="_form_type" value="booking_request_index">
-                <input type="hidden" name="_source" value="index_contact">
-                <input type="hidden" name="_gotcha" style="display:none">
-                <input type="text" name="nom" required placeholder="Votre nom / Your name" aria-label="Nom">
-                <input type="email" name="courriel" required placeholder="Courriel / Email" aria-label="Courriel">
-                <button type="submit" class="btn btn-primaire btn-rdv" data-event="contact_prebooking_submit">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                  <span data-lang="fr">Réserver et ouvrir le calendrier</span>
-                  <span data-lang="en">Book and open calendar</span>
-                </button>
-              </form>
-            </div>
           </div>
 
           <!-- ============================================
-               COLONNE DROITE — Formulaire de contact
+               COLONNE DROITE — CTA de réservation Microsoft Bookings
                ============================================ -->
-          <div class="contact-formulaire scroll-reveal">
-            <form action="https://formspree.io/f/mvzvlpql" method="POST" id="formulaire-contact">
-              <input type="hidden" name="_next" value="#contact">
-              <input type="hidden" name="_gotcha" style="display:none">
-
-              <!-- Nom complet -->
-              <div class="champ-groupe">
-                <label for="champ-nom">
-                  <span data-lang="fr">Nom complet *</span>
-                  <span data-lang="en">Full name *</span>
-                </label>
-                <input type="text" id="champ-nom" name="nom" required data-placeholder-fr="Votre nom" data-placeholder-en="Your name" placeholder="Votre nom">
-                <span class="champ-erreur" id="erreur-nom" aria-live="polite"></span>
-              </div>
-
-              <!-- Courriel -->
-              <div class="champ-groupe">
-                <label for="champ-courriel">
-                  <span data-lang="fr">Courriel *</span>
-                  <span data-lang="en">Email *</span>
-                </label>
-                <input type="email" id="champ-courriel" name="courriel" required data-placeholder-fr="votre@courriel.com" data-placeholder-en="your@email.com" placeholder="votre@courriel.com">
-                <span class="champ-erreur" id="erreur-courriel" aria-live="polite"></span>
-              </div>
-
-              <!-- Téléphone (optionnel) -->
-              <div class="champ-groupe">
-                <label for="champ-telephone">
-                  <span data-lang="fr">Téléphone</span>
-                  <span data-lang="en">Phone</span>
-                </label>
-                <input type="tel" id="champ-telephone" name="telephone" placeholder="(514) 555-0000">
-              </div>
-
-              <!-- Entreprise (optionnel) -->
-              <div class="champ-groupe">
-                <label for="champ-entreprise">
-                  <span data-lang="fr">Entreprise</span>
-                  <span data-lang="en">Company</span>
-                </label>
-                <input type="text" id="champ-entreprise" name="entreprise" data-placeholder-fr="Nom de votre entreprise (facultatif)" data-placeholder-en="Your company name (optional)" placeholder="Nom de votre entreprise (facultatif)">
-              </div>
-
-              <!-- Service concerné (optionnel) — deux select bilingues -->
-              <div class="champ-groupe">
-                <label>
-                  <span data-lang="fr">Service concerné</span>
-                  <span data-lang="en">Service of interest</span>
-                </label>
-                <select name="service" id="select-service-fr" data-lang="fr">
-                  <option value="" disabled selected>Sélectionner un service</option>
-                  <option value="Planification fiscale">Planification fiscale</option>
-                  <option value="Intégration technologique">Intégration technologique</option>
-                  <option value="Forfait Démarrage">Forfait Démarrage (à partir de 750 $)</option>
-                  <option value="Forfait Essentiel">Forfait Essentiel (450-600 $/mois)</option>
-                  <option value="Forfait Complet">Forfait Complet (650-900 $/mois)</option>
-                  <option value="Forfait Premium">Forfait Premium (900 $+/mois)</option>
-                  <option value="Autre">Autre</option>
-                </select>
-                <select name="service-en" id="select-service-en" data-lang="en">
-                  <option value="" disabled selected>Select a service</option>
-                  <option value="Tax planning">Tax planning</option>
-                  <option value="Technology integration">Technology integration</option>
-                  <option value="Starter Package">Starter Package (from $750)</option>
-                  <option value="Standard Package">Standard Package ($450-$600/mo)</option>
-                  <option value="Complete Package">Complete Package ($650-$900/mo)</option>
-                  <option value="Premium Package">Premium Package ($900+/mo)</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <!-- Message -->
-              <div class="champ-groupe">
-                <label for="champ-message">
-                  <span data-lang="fr">Message *</span>
-                  <span data-lang="en">Message *</span>
-                </label>
-                <textarea id="champ-message" name="message" rows="5" required data-placeholder-fr="Décrivez votre besoin ou posez votre question" data-placeholder-en="Describe your need or ask your question" placeholder="Décrivez votre besoin ou posez votre question"></textarea>
-              </div>
-
-              <!-- Case de consentement (Loi 25 — obligatoire) -->
-              <div class="champ-groupe champ-consentement">
-                <label class="consentement-label">
-                  <input type="checkbox" name="consentement" required>
-                  <span class="consentement-texte">
-                    <span data-lang="fr">J'accepte que mes renseignements personnels soient utilisés par Affaire de Chiffres dans le seul but de répondre à ma demande, conformément à la <a href="#" class="lien-politique" data-ouvrir-politique>politique de confidentialité</a>.</span>
-                    <span data-lang="en">I consent to my personal information being used by Affaire de Chiffres solely to respond to my inquiry, in accordance with the <a href="#" class="lien-politique" data-ouvrir-politique>privacy policy</a>.</span>
-                  </span>
-                </label>
-              </div>
-
-              <!-- Bouton d'envoi -->
-              <button type="submit" class="btn btn-primaire btn-envoyer">
-                <span data-lang="fr">Envoyer</span>
-                <span data-lang="en">Send</span>
-              </button>
-
-              <!-- Indication champs obligatoires -->
-              <p class="champs-obligatoires">
-                <span data-lang="fr">* Champs obligatoires</span>
-                <span data-lang="en">* Required fields</span>
-              </p>
-
-              <!-- Message de confirmation / erreur -->
-              <div id="form-message" class="form-message" aria-live="polite"></div>
-
-            </form>
+          <div class="contact-booking-card scroll-reveal">
+            <h3 class="contact-booking-titre">
+              <span data-lang="fr">Réservez un appel-vidéo</span>
+              <span data-lang="en">Book a video call</span>
+            </h3>
+            <p class="contact-booking-desc">
+              <span data-lang="fr">30 minutes sans frais avec notre équipe CPA. Sans engagement. Choisissez votre créneau directement dans notre calendrier.</span>
+              <span data-lang="en">30 minutes at no charge with our CPA team. No commitment. Pick a time directly in our calendar.</span>
+            </p>
+            <ul class="contact-booking-liste">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span data-lang="fr">Analyse de votre situation actuelle</span>
+                <span data-lang="en">Review of your current situation</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span data-lang="fr">Estimé sur mesure en 24 h</span>
+                <span data-lang="en">Tailored estimate within 24h</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span data-lang="fr">Aucune présentation commerciale</span>
+                <span data-lang="en">No sales pitch</span>
+              </li>
+            </ul>
+            <a href="https://outlook.office.com/book/ConsultationGratuite30Minutes@affairedechiffres.com/?ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="btn btn-primaire btn-booking" data-event="contact_booking_click">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span data-lang="fr">Ouvrir le calendrier</span>
+              <span data-lang="en">Open the calendar</span>
+            </a>
+            <p class="contact-booking-fallback">
+              <span data-lang="fr">Vous préférez écrire ? <a href="mailto:conseils@affairedechiffres.com">Envoyez-nous un courriel</a>.</span>
+              <span data-lang="en">Prefer to write? <a href="mailto:conseils@affairedechiffres.com">Send us an email</a>.</span>
+            </p>
           </div>
 
         </div><!-- /.contact-grille -->
@@ -1274,7 +1179,7 @@
         <p>Affaire de Chiffres<br>Montréal, Québec<br>Courriel : <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a></p>
 
         <h3>2. Renseignements collectés</h3>
-        <p>Par le biais du formulaire de contact de ce site, nous collectons les renseignements suivants : nom, adresse courriel, et le contenu de votre message. Vous pouvez également fournir, de manière facultative, votre numéro de téléphone, le nom de votre entreprise et le service qui vous intéresse.</p>
+        <p>Lorsque vous réservez un appel-vidéo via notre calendrier en ligne (Microsoft Bookings) ou que vous nous contactez par courriel, nous collectons les renseignements que vous nous fournissez : nom, adresse courriel et, le cas échéant, le contenu de votre message ainsi que toute information additionnelle volontairement transmise (téléphone, nom de l'entreprise, service d'intérêt).</p>
 
         <h3>3. Finalité de la collecte</h3>
         <p>Vos renseignements sont collectés dans le seul but de répondre à votre demande de renseignements, de soumission ou de prise de rendez-vous.</p>
@@ -1283,13 +1188,13 @@
         <p>Vos renseignements sont conservés uniquement pour la durée nécessaire au traitement de votre demande, puis sont supprimés de manière sécurisée.</p>
 
         <h3>5. Partage</h3>
-        <p>Vos renseignements ne sont partagés avec aucun tiers, à l'exception de Formspree Inc., qui assure le traitement technique de la transmission du formulaire. Formspree agit à titre de sous-traitant et est tenu à des obligations de confidentialité.</p>
+        <p>Vos renseignements ne sont partagés avec aucun tiers à des fins commerciales. Les outils techniques que nous utilisons pour la prise de rendez-vous (Microsoft Bookings) et l'analyse d'audience (Google Analytics) traitent certaines données en notre nom à titre de sous-traitants, dans le respect de leurs propres engagements de confidentialité.</p>
 
         <h3>6. Vos droits</h3>
         <p>Conformément à la Loi sur la protection des renseignements personnels dans le secteur privé du Québec, vous avez le droit d'accéder à vos renseignements, de les faire rectifier ou supprimer. Pour exercer ces droits, contactez-nous à <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a>.</p>
 
         <h3>7. Consentement</h3>
-        <p>En soumettant le formulaire de contact, vous consentez à la collecte et à l'utilisation de vos renseignements aux fins décrites ci-dessus.</p>
+        <p>En réservant un rendez-vous ou en nous contactant, vous consentez à la collecte et à l'utilisation de vos renseignements aux fins décrites ci-dessus.</p>
       </div>
 
       <!-- Version anglaise -->
@@ -1301,7 +1206,7 @@
         <p>Affaire de Chiffres<br>Montréal, Quebec<br>Email: <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a></p>
 
         <h3>2. Information collected</h3>
-        <p>Through the contact form on this website, we collect the following information: name, email address, and the content of your message. You may also optionally provide your phone number, company name, and the service you are interested in.</p>
+        <p>When you book a video call through our online calendar (Microsoft Bookings) or contact us by email, we collect the information you provide: name, email address and, where applicable, the contents of your message and any additional information you voluntarily share (phone number, company name, service of interest).</p>
 
         <h3>3. Purpose of collection</h3>
         <p>Your information is collected solely to respond to your inquiry, quote request, or appointment booking.</p>
@@ -1310,13 +1215,13 @@
         <p>Your information is retained only for the time necessary to process your request, then securely deleted.</p>
 
         <h3>5. Sharing</h3>
-        <p>Your information is not shared with any third party, except Formspree Inc., which handles the technical processing of form submissions. Formspree acts as a subcontractor and is bound by confidentiality obligations.</p>
+        <p>Your information is not shared with any third party for commercial purposes. The technical tools we use for appointment booking (Microsoft Bookings) and audience analytics (Google Analytics) process certain data on our behalf as subprocessors, subject to their own confidentiality obligations.</p>
 
         <h3>6. Your rights</h3>
         <p>In accordance with Quebec's Act respecting the protection of personal information in the private sector, you have the right to access, rectify, or delete your personal information. To exercise these rights, contact us at <a href="mailto:conseils@affairedechiffres.com">conseils@affairedechiffres.com</a>.</p>
 
         <h3>7. Consent</h3>
-        <p>By submitting the contact form, you consent to the collection and use of your information for the purposes described above.</p>
+        <p>By booking an appointment or contacting us, you consent to the collection and use of your information for the purposes described above.</p>
       </div>
 
     </div>
@@ -1481,14 +1386,14 @@
   <script src="script.js"></script>
 
   <!-- ============================================
-       GA4 — Tracking événements CRO
+       GA4 — Tracking événements CRO (booking only)
        ============================================ -->
   <script>
   (function () {
     'use strict';
     if (typeof gtag !== 'function') return;
 
-    // 1. Clics sur tous les éléments avec data-event
+    // 1. Clics sur tous les éléments avec data-event (CTA booking, hero, garanties, etc.)
     document.addEventListener('click', function (e) {
       var target = e.target.closest('[data-event]');
       if (!target) return;
@@ -1501,41 +1406,7 @@
       });
     });
 
-    // 2. Pré-réservation : intercepter le submit, envoyer à Formspree, puis rediriger vers Outlook
-    var preBookingForm = document.getElementById('form-prebooking-index');
-    if (preBookingForm) {
-      preBookingForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var formData = new FormData(preBookingForm);
-        gtag('event', 'booking_submit', {
-          event_category: 'conversion',
-          event_label: 'index_prebooking',
-          value: 1
-        });
-        fetch(preBookingForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        }).then(function () {
-          window.open('https://outlook.office.com/book/ConsultationGratuite30Minutes@affairedechiffres.com/?ismsaljsauthenabled', '_blank', 'noopener');
-          var btn = preBookingForm.querySelector('button[type="submit"]');
-          if (btn) {
-            btn.disabled = true;
-            btn.innerHTML = '<span data-lang="fr">✓ Calendrier ouvert dans un nouvel onglet</span><span data-lang="en">✓ Calendar opened in a new tab</span>';
-            // Re-toggle language display
-            var lang = (document.documentElement.lang || 'fr');
-            btn.querySelectorAll('[data-lang]').forEach(function (el) {
-              el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
-            });
-          }
-        }).catch(function () {
-          // Même en cas d'erreur Formspree, on ouvre le calendrier
-          window.open('https://outlook.office.com/book/ConsultationGratuite30Minutes@affairedechiffres.com/?ismsaljsauthenabled', '_blank', 'noopener');
-        });
-      });
-    }
-
-    // 3. Scroll depth — 25 %, 50 %, 75 %, 90 %
+    // 2. Scroll depth — 25 %, 50 %, 75 %, 90 %
     var thresholds = [25, 50, 75, 90];
     var fired = {};
     function checkScroll() {
@@ -1561,18 +1432,6 @@
         scrollTimer = null;
       }, 250);
     }, { passive: true });
-
-    // 4. Soumission formulaire principal de contact
-    var formContact = document.getElementById('formulaire-contact');
-    if (formContact) {
-      formContact.addEventListener('submit', function () {
-        gtag('event', 'contact_submit', {
-          event_category: 'conversion',
-          event_label: 'index_contact_form',
-          value: 1
-        });
-      });
-    }
   })();
   </script>
 
